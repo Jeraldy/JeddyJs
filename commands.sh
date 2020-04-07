@@ -2,16 +2,16 @@
 npm run compile
 
 ## Copy Types
-xcopy /s lib\*.d.ts types\
+##xcopy /s lib\*.d.ts types\
 
 ## Remove types from lib
 ## rm -r lib\*.d.ts
 ## rm -r lib\**\*.d.ts
 ## rm -r lib\**\**\*.d.ts
 
-rm -r lib\*.js.map
-rm -r lib\**\*.js.map
-rm -r lib\**\**\*.js.map
+##rm -r lib\*.js.map
+##rm -r lib\**\*.js.map
+##rm -r lib\**\**\*.js.map
 
 ## Publish Jeddy Library
 cd lib
@@ -26,7 +26,7 @@ npm publish --access=public
 ## npm version patch
 ## npm publish --access=public
 
-## cd..
+cd..
 
 
 

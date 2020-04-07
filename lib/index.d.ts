@@ -13,7 +13,6 @@ export declare class StatefulWidget implements LifeCycleMethods {
     render(): void;
     private node;
     readonly props: any[];
-    private update;
     private domTree;
     state: any;
     constructor(props?: any);

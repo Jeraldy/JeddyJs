@@ -17,7 +17,6 @@ export class StatefulWidget implements LifeCycleMethods {
 
     private node: any;
     readonly props: any[];
-    private update: any;
     private domTree: {}[] = [];
     state: any
 
@@ -84,7 +83,6 @@ export class StatefulWidget implements LifeCycleMethods {
         var newTree = this.generateDomTree(newDom)
         for (var i = 0; i < newTree.tree.length; i++) {
             for (var attr in this.domTree[i]) {
-                // Update Other Props
                 if (attr != "child") {
                     //@ts-ignore	
                     if (this.domTree[i][attr] != newTree.tree[i][attr]) {
@@ -121,8 +119,7 @@ export class StatefulWidget implements LifeCycleMethods {
     }
 
     private initDomTree() {
-        var tree = this.generateDomTree(this.node)
-        this.domTree = tree.tree;
+        this.domTree = this.generateDomTree(this.node).tree;
     }
 }
 
