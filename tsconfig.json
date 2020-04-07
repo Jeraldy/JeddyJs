@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib/",
+    "module": "commonjs",
+    "target": "es5",
+    "declaration": true,
+    "sourceMap": true,
+    "allowJs": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "**/lib",
+    "**/*.spec.ts",
+    "webpack.config.js",
+    "node_modules"
+  ]
+}
