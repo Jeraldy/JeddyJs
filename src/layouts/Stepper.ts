@@ -9,7 +9,7 @@ import H5 from "../core/H5"
 import Divider from "../widgets/Divider/index"
 import Card from "../widgets/Card/index"
 import Button from "../widgets/Button/Index"
-import ButtonType from "../widgets/Button/ButtonTypes"
+import ButtonType from "../widgets/Button/ButtonType"
 import ActionButton from "../widgets/Button/ActionButton"
 import RowAlignment from "./RowAlignment"
 

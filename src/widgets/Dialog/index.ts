@@ -5,7 +5,7 @@ import TextView from '../../core/TextView';
 import Paragraph from '../../core/Paragraph';
 import Hr from '../../core/Hr';
 import Button from '../Button/Index';
-import ButtonType from '../Button/ButtonTypes';
+import ButtonType from '../Button/ButtonType';
 import ActionButton from '../Button/ActionButton';
 import '../../styles/dialog.css';
 import RowAlignment from '../../layouts/RowAlignment';

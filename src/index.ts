@@ -8,7 +8,9 @@ interface LifeCycleMethods {
 
 export class StatefulWidget implements LifeCycleMethods {
     mapStoreToState(reduxState: any): {} { return {} }
-    componentDidMount(): void { }
+    componentDidMount(): void {
+
+    }
     componentDidUpdate(): void { }
     componetWillUpdate(): void { }
     render() {
@@ -121,10 +123,11 @@ export class StatefulWidget implements LifeCycleMethods {
     private initDomTree() {
         this.domTree = this.generateDomTree(this.node).tree;
     }
+
 }
 
 export const Jeddy = {
-    Init(entryNode: any) {
+    Init(entryNode: any, reduxStore?: any) {
         document.body.appendChild(entryNode)
     }
 }

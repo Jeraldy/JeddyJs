@@ -16,7 +16,7 @@ const SideMenu = ({ headNode, menus, headerStyle }: { headNode: any, menus: [], 
         children: [
             Header({
                 children: [headNode],
-                style: { ...headerStyle,width:'15em' }
+                style: { ...headerStyle, width: '15em' }
             }),
             Nav({
                 class: 'sidebar-nav',
@@ -58,7 +58,7 @@ const Menu = ({ icon, title, menuItems, open, onclick }
             }),
             menuItems ? _menuItems() : null,
         ],
-        onclick: onclick || function () { },
+        onclick: function () { onclick() } || function () { },
         style: {
             border: '1px solid black'
         }
@@ -80,7 +80,7 @@ const MenuItem = ({ icon, title, active, onclick }:
                 }
             }),
         ],
-        onclick: onclick || function () { },
+        onclick: function () { onclick() } || function () { },
         style: {
             border: '1px solid #19222A'
         }
