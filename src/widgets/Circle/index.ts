@@ -1,17 +1,15 @@
 import Div from "../../core/Div"
 import Size from "../../utils/Size"
+import * as CSS from "../../css/index";
 
 export default ({ child, radius, style }: {
-    child: HTMLElement, radius: Size, style: {}
+    child: HTMLElement, radius: Size, style: CSS.Properties
 }) => {
-    const _style = {
+    style = {
         borderRadius: "100%",
         height: radius,
-        width: radius
+        width: radius,
+        ...style
     }
-    style = { ...style, _style }
-    return Div({
-        children: [child],
-        style
-    })
+    return Div({ children: [child], style })
 }

@@ -1,5 +1,5 @@
 import Div from "../core/Div"
-import colAlignment from "./ColAlignment"
+import ColAlignment from "./ColAlignment"
 
 const style = ({ align }: { align?: string }) => {
     return {
@@ -10,8 +10,7 @@ const style = ({ align }: { align?: string }) => {
     }
 }
 
-type cAlign = colAlignment.Start | colAlignment.End | colAlignment.Center
 
-export default ({ children, align }: { children: Array<any>, align?: cAlign }) => {
+export default ({ children, align }: { children: Array<any>, align?: ColAlignment }) => {
     return Div({ children, style: style({ align }) })
 }
