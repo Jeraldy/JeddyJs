@@ -1,6 +1,6 @@
-import colAlignment from "./ColAlignment";
+import ColAlignment from "./ColAlignment";
 declare const _default: ({ children, align }: {
     children: any[];
-    align?: colAlignment;
+    align?: ColAlignment;
 }) => HTMLElement;
 export default _default;

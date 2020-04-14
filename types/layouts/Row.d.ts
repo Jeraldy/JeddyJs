@@ -1,7 +1,7 @@
-import rowAlignment from "./RowAlignment";
+import RowAlignment from "./RowAlignment";
 declare const _default: ({ children, align, id }: {
     children: any[];
-    align?: rowAlignment;
+    align?: RowAlignment;
     id?: any;
 }) => HTMLElement;
 export default _default;

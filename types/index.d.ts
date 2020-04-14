@@ -13,7 +13,6 @@ export declare class StatefulWidget implements LifeCycleMethods {
     render(): void;
     private node;
     readonly props: any[];
-    private update;
     private domTree;
     state: any;
     constructor(props?: any);
@@ -28,6 +27,6 @@ export declare class StatefulWidget implements LifeCycleMethods {
     private initDomTree;
 }
 export declare const Jeddy: {
-    Init(entryNode: any): void;
+    Init(entryNode: any, reduxStore?: any): void;
 };
 export {};

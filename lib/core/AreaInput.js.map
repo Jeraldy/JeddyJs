@@ -1,1 +1,0 @@
-{"version":3,"file":"AreaInput.js","sourceRoot":"","sources":["../../src/core/AreaInput.ts"],"names":[],"mappings":";;AAAA,+BAA0B;AAE1B,mBAAe,UAAC,KAAU;IACxB,KAAK,CAAC,GAAG,GAAG,IAAI,CAAC,MAAM,EAAE;SACtB,QAAQ,CAAC,EAAE,CAAC;SACZ,SAAS,CAAC,CAAC,CAAC;SACZ,QAAQ,EAAE,CAAC;IACd,OAAO,cAAI,CAAC,KAAK,EAAE,UAAU,CAAC,CAAC;AACjC,CAAC,EAAC"}

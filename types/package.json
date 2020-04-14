@@ -1,12 +1,12 @@
 {
-  "name": "@types/jeddy",
-  "version": "1.0.23",
+  "name": "jeddy-types",
+  "version": "1.0.25",
   "main": "index.d.ts",
-  "description": "Reactive UI building Framework",
+  "description": "These are the types for JeddyJs",
   "keywords": [
     "Jeddy",
     "Types"
   ],
-  "author": "Jeraldy Deus",
+  "author": "Jeraldy Deus | deusjeraldy@gmail.com",
   "license": "ISC"
 }
