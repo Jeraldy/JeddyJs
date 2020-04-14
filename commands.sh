@@ -29,6 +29,6 @@ npm publish --access=public
 cd..
 
 git add .
-git commit -m "cleaning"
-
+git commit -m "some changes"
+git push
 

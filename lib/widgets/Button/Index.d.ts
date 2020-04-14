@@ -6,6 +6,6 @@ declare const _default: ({ label, icon, type, onclick, style }: {
     icon?: (props: any) => HTMLElement;
     type?: ButtonType;
     onclick?: (e: Event) => void;
-    style: CSS.Properties<string | 0>;
+    style?: CSS.Properties<string | 0>;
 }) => HTMLElement;
 export default _default;

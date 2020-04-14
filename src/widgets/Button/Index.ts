@@ -11,7 +11,7 @@ export default ({ label, icon, type, onclick, style }:
     {
         label?: string, icon?: typeof Icon,
         type?: ButtonType, onclick?: (e: Event) => void,
-        style: CSS.Properties
+        style?: CSS.Properties
     }) => {
 
     return Button({
