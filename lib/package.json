@@ -1,6 +1,6 @@
 {
   "name": "jeddy",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "main": "./index.js",
   "types": "./index.d.ts",
   "description": "Reactive UI building Framework",
@@ -24,7 +24,9 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
     "run-script-os": "^1.1.1",
     "jeddy-types": "latest"
   }
