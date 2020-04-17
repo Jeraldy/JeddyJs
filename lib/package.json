@@ -1,18 +1,20 @@
 {
   "name": "jeddy",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "main": "./index.js",
   "types": "./index.d.ts",
   "description": "Reactive UI building Framework",
   "scripts": {
-    "compile": "tsc"
+    "postinstall": "run-script-os",
+    "postinstall:win32": "xcopy /s node_modules\\jeddy-types node_modules\\@types\\jeddy\\",
+    "postinstall:darwin:linux": "cp -r ./node_modules/jeddy-types node_modules/@types/jeddy/"
   },
   "keywords": [
     "UI",
     "Reactive",
     "Web"
   ],
-  "author": "Jeraldy Deus",
+  "author": "Jeraldy Deus | deusjeraldy@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^3.4.2",
@@ -22,6 +24,8 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "run-script-os": "^1.1.1",
+    "jeddy-types": "latest"
   }
 }
