@@ -14,7 +14,7 @@ rm -r widgets
 rm -r css
 cd ..
 
-xcopy /s src\\css\\*.d.ts types\\css\\
+xcopy /s src\css\*.d.ts types\css\
 
 npm run compile
 
