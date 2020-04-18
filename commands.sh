@@ -4,6 +4,7 @@ rm -r core
 rm -r layouts 
 rm -r utils 
 rm -r widgets
+rm -r styles
 cd ..
 
 cd types
@@ -14,12 +15,20 @@ rm -r widgets
 rm -r css
 cd ..
 
+## Add CSS Types to types
 xcopy /s src\css\*.d.ts types\css\
 
+## Compile
 npm run compile
 
 ## Copy Types
 xcopy /s lib\*.d.ts types\
+
+## Copy Styles
+xcopy /s src\styles\* lib\styles\
+xcopy /s src\css\*.d.ts lib\css\
+
+
 
 ## Remove types from lib
 rm -r lib\*.d.ts
