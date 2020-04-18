@@ -32,3 +32,9 @@ git add .
 git commit -m "npm scrpts"
 git push
 
+#   "scripts": {
+#     "preinstall": "npm i run-script-os jeddy-types",
+#     "postinstall": "run-script-os",
+#     "postinstall:win32": "xcopy /s node_modules\\jeddy-types ..\\@types\\jeddy\\",
+#     "postinstall:darwin:linux": "cp -r ./node_modules/jeddy-types ../@types/jeddy/"
+#   },
