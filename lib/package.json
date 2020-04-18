@@ -5,7 +5,6 @@
   "types": "./index.d.ts",
   "description": "Reactive UI building Framework",
   "scripts": {
-    "preinstall": "npm i run-script-os jeddy-types",
     "postinstall": "run-script-os",
     "postinstall:win32": "xcopy /s jeddy-types @types\\jeddy\\",
     "postinstall:darwin:linux": "cp -r ./jeddy-types ./@types/jeddy/"
@@ -16,5 +15,9 @@
     "Web"
   ],
   "author": "Jeraldy Deus | deusjeraldy@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "run-script-os": "^1.1.1",
+    "jeddy-types": "latest"
+  }
 }
