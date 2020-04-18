@@ -3,8 +3,7 @@ cd lib
 rm -r core 
 rm -r layouts 
 rm -r utils 
-rm -r widgets 
-rm -r css
+rm -r widgets
 cd ..
 
 cd types
@@ -15,7 +14,7 @@ rm -r widgets
 rm -r css
 cd ..
 
-xcopy /s src\\css types\\css\\
+xcopy /s src\\css\\*.d.ts types\\css\\
 
 npm run compile
 
