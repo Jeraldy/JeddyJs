@@ -1,13 +1,14 @@
 {
   "name": "jeddy",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "main": "./index.js",
   "types": "./index.d.ts",
   "description": "Reactive UI building Framework",
   "scripts": {
+    "preinstall": "npm i run-script-os jeddy-types",
     "postinstall": "run-script-os",
-    "postinstall:win32": "xcopy /s jeddy-types @types\\jeddy\\",
-    "postinstall:darwin:linux": "cp -r ./jeddy-types ./@types/jeddy/"
+    "postinstall:win32": "xcopy /s node_modules\\jeddy-types ..\\@types\\jeddy\\",
+    "postinstall:darwin:linux": "cp -r ./node_modules/jeddy-types ../@types/jeddy/"
   },
   "keywords": [
     "UI",
