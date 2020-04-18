@@ -18,7 +18,7 @@ export class StatefulWidget implements LifeCycleMethods {
     }
 
     private node: any;
-    readonly props: any[];
+    readonly props: any;
     private domTree: {}[] = [];
     state: any
 
