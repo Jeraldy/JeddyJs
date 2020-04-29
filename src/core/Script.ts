@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Script = (props: any) => {
   return Node(props, 'script');
-};
+}
+
+export default Script;

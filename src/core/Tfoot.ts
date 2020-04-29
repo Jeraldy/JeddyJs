@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Tfoot = (props: any) => {
   return Node(props, 'tfoot');
-};
+}
+
+export default Tfoot;

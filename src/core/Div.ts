@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Div = (props: any) => {
   return Node(props, 'div');
-};
+}
+
+export default Div;

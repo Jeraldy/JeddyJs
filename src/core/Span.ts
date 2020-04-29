@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Span = (props: any) => {
   return Node(props, 'span');
-};
+}
+
+export default Span;

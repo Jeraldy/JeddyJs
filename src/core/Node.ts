@@ -1,3 +1,10 @@
+import * as CSS from '../css/index';
+
+interface Params{
+  style: CSS.Properties,
+  children: Array<HTMLElement>
+}
+
 export default (props = {}, tag: string) => {
   var node = document.createElement(tag);
 

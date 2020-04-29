@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Image = (props: any) => {
   return Node(props, 'img');
-};
+}
+
+export default Image;

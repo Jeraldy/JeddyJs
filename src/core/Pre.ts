@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Pre = (props: any) => {
   return Node(props, 'pre');
-};
+}
+
+export default Pre;

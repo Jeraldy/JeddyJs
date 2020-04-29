@@ -9,7 +9,9 @@ const style = (align?: string) => {
     }
 }
 
-export default ({ children, align, id }:
+const Row = ({ children, align, id }:
     { children: Array<any>, align?: RowAlignment, id?: any }) => {
     return Div({ children, style: style(align), id })
 }
+
+export default Row;

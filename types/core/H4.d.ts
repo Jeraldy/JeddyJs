@@ -1,2 +1,2 @@
-declare const _default: (props: any) => HTMLElement;
-export default _default;
+declare const H4: (props: any) => HTMLElement;
+export default H4;

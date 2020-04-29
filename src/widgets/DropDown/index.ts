@@ -1,4 +1,4 @@
-import DropDown from "../../core/DropDown"
+import DropDown from "../../core/Select"
 
 const style = {
     minWidth: "150px",

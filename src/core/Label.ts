@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Label = (props: any) => {
   return Node(props, 'label');
-};
+}
+
+export default Label;

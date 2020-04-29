@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Nav = (props: any) => {
   return Node(props, 'nav');
-};
+}
+
+export default Nav;

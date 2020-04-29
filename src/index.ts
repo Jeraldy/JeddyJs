@@ -8,19 +8,14 @@ interface LifeCycleMethods {
 
 export class StatefulWidget implements LifeCycleMethods {
     mapStoreToState(reduxState: any): {} { return {} }
-    componentDidMount(): void {
-
-    }
+    componentDidMount(): void { }
     componentDidUpdate(): void { }
     componetWillUpdate(): void { }
-    render() {
-        throw new Error("Method not implemented.");
-    }
-
-    private node: any;
-    readonly props: any;
+    render(): HTMLElement { throw new Error("Method not implemented."); }
+    private node: HTMLElement;
+    readonly props: {};
     private domTree: {}[] = [];
-    state: any
+    state: {}
 
     constructor(props?: any) {
         this.props = props

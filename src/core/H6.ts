@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const H6 = (props: any) => {
   return Node(props, 'h6');
-};
+}
+
+export default H6;

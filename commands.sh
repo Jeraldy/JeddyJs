@@ -21,6 +21,9 @@ xcopy /s src\css\*.d.ts types\css\
 ## Compile
 npm run compile
 
+## Generate Documentation
+## typedoc --out docs --theme minimal  --excludePrivate
+
 ## Copy Types
 xcopy /s lib\*.d.ts types\
 

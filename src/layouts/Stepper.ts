@@ -13,14 +13,13 @@ import ButtonType from "../widgets/Button/ButtonType"
 import ActionButton from "../widgets/Button/ActionButton"
 import RowAlignment from "./RowAlignment"
 
-export default ({ child, activeStep, callBack, steps }:
+const Stepper = ({ child, activeStep, callBack, steps }:
     {
-        child: any,
+        child: HTMLElement,
         activeStep: number,
         callBack: (activeStep: number) => void,
         steps: Array<string>
     }) => {
-
     return Card({
         children: [
             Column({
@@ -52,12 +51,9 @@ export default ({ child, activeStep, callBack, steps }:
                 ]
             })
         ],
-        style: {
-            padding: Size._8px
-        }
+        style: { padding: Size._8px }
     })
 }
-
 
 function Step(title: string, index: number, activeStep: number, callBack: (activeStep: number) => void) {
     return Row({
@@ -67,16 +63,14 @@ function Step(title: string, index: number, activeStep: number, callBack: (activ
                 style: {
                     height: activeStep == index ? Size._30px : Size._25px,
                     width: activeStep == index ? Size._30px : Size._25px,
-                    borderRadius: '100%',
+                    borderRadius: Size._100P,
                     backgroundColor: '#FF6600',
                     border: '2px solid #FF6600',
                     color: Colors.white,
                     cursor: 'pointer'
                 },
                 children: [
-                    Center({
-                        child: TextView(`${index}`)
-                    })
+                    Center({ child: TextView(`${index}`) })
                 ],
                 onclick: () => callBack(index)
             }),
@@ -93,3 +87,5 @@ function Step(title: string, index: number, activeStep: number, callBack: (activ
         ]
     })
 }
+
+export default Stepper;

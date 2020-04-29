@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const IFrame = (props: any) => {
   return Node(props, 'iframe');
-};
+}
+
+export default IFrame;

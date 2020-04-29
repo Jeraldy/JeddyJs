@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Footer = (props: any) => {
   return Node(props, 'footer');
-};
+}
+
+export default Footer;

@@ -1,2 +1,2 @@
-declare const _default: (text: string) => Text;
-export default _default;
+declare const TextView: (text: string) => Text;
+export default TextView;

@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Form = (props: any) => {
   return Node(props, 'form');
-};
+}
+
+export default Form;

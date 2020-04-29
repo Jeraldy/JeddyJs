@@ -1,4 +1,4 @@
-import DatePicker from "../../core/DatePicker";
+import DatePicker from "../../core/DateInput";
 
 const style = {
     outline: 'none',

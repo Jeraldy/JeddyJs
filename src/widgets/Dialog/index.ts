@@ -2,7 +2,7 @@ import Div from '../../core/Div';
 import Row from '../../layouts/Row';
 import Size from '../../utils/Size';
 import TextView from '../../core/TextView';
-import Paragraph from '../../core/Paragraph';
+import Paragraph from '../../core/P';
 import Hr from '../../core/Hr';
 import Button from '../Button/Index';
 import ButtonType from '../Button/ButtonType';

@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Svg = (props: any) => {
   return Node(props, 'svg');
-};
+}
+
+export default Svg;

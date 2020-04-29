@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Headers = (props: any) => {
   return Node(props, 'header');
-};
+}
+
+export default Headers;

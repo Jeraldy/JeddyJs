@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Strong  = (props: any) => {
   return Node(props, 'strong');
-};
+}
+
+export default Strong;

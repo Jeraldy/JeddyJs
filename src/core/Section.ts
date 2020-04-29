@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Section = (props: any) => {
   return Node(props, 'section');
-};
+}
+
+export default Section;

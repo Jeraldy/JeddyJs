@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Thead = (props: any) => {
   return Node(props, 'thead');
-};
+}
+
+export default Thead;

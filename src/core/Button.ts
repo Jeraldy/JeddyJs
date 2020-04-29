@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Button = (props: any) => {
   return Node(props, 'button');
-};
+}
+
+export default Button;

@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Summary = (props: any) => {
   return Node(props, 'summary');
-};
+}
+
+export default Summary;

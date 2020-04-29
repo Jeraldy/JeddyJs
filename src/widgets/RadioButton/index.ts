@@ -1,4 +1,4 @@
-import RadioButton from "../../core/RadioButton"
+import RadioButton from "../../core/RadioInput"
 
 const style = {
     minWidth: "20px",

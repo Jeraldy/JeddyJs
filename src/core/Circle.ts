@@ -1,5 +1,7 @@
 import Node from './Node';
 
-export default (props: any) => {
+const Circle = (props: any) => {
   return Node(props, 'circle');
-};
+}
+
+export default Circle;

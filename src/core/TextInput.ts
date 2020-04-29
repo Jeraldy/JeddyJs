@@ -1,6 +1,8 @@
 import Node from './Node';
 
-export default (props: any) => {
+const TextInput = (props: any) => {
   props.type = 'text';
   return Node(props, 'input');
-};
+}
+
+export default TextInput;

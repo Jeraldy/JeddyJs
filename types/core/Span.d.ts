@@ -1,2 +1,2 @@
-declare const _default: (props: any) => HTMLElement;
-export default _default;
+declare const Span: (props: any) => HTMLElement;
+export default Span;
