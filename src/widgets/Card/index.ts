@@ -1,7 +1,10 @@
 import Div from "../../core/Div"
 import * as CSS from "../../css/index";
 
-export default ({ children, style }: { children: Array<Node>, style: CSS.Properties }) => {
+export default ({ children, style }:
+     { children: Array<HTMLElement | Text>, 
+        style: CSS.Properties
+     }) => {
     style = {
         background: '#fff',
         borderRadius: "2px",

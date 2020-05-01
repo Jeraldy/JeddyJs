@@ -1,10 +1,11 @@
 import Div from "../../core/Div"
 import Icon from "../Icon/index"
 import TextField from "../TextField/index"
+import Icons from "../../utils/Icons"
 
 export default () => {
     return Div({
-        class: 'search-container',
+        className: 'search-container',
         style: {
             float: 'right',
             backgroundColor: "white",
@@ -17,7 +18,7 @@ export default () => {
         },
         children: [
             Icon({
-                name: 'search',
+                name: Icons.search,
                 style: {
                     position: 'relative',
                     top: '5px',

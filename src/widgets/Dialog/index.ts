@@ -12,7 +12,7 @@ import RowAlignment from '../../layouts/RowAlignment';
 
 export default ({ open = false, title}: { open?: boolean,title: string }) => {
     const modal = Div({
-        class: 'modal',
+        className: 'modal',
         style: {
             display: open ? "block" : "none",
             boxShadow: '-3px 3px 3px -3px rgba(0,0,0,.5)',
@@ -22,13 +22,13 @@ export default ({ open = false, title}: { open?: boolean,title: string }) => {
                 align: RowAlignment.Center,
                 children: [
                     Div({
-                        class: "modal-content",
+                        className: "modal-content",
                         style: {
                             width: Size._600px
                         },
                         children: [
                             Div({
-                                class: "modal-header",
+                                className: "modal-header",
                                 style: {
                                     padding: Size._8px
                                 },
@@ -58,7 +58,7 @@ export default ({ open = false, title}: { open?: boolean,title: string }) => {
                                 ]
                             }),
                             Div({
-                                class: "modal-body",
+                                className: "modal-body",
                                 style: {
                                     height: Size._200px
                                 },

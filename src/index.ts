@@ -11,8 +11,8 @@ export class StatefulWidget implements LifeCycleMethods {
     componentDidMount(): void { }
     componentDidUpdate(): void { }
     componetWillUpdate(): void { }
-    render(): HTMLElement { throw new Error("Method not implemented."); }
-    private node: HTMLElement;
+    render(): any { throw new Error("Method not implemented."); }
+    private node: any;
     readonly props: {};
     private domTree: {}[] = [];
     state: {}

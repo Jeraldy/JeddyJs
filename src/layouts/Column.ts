@@ -1,11 +1,12 @@
 import Div from "../core/Div"
 import ColAlignment from "./ColAlignment"
-
-const style = ({ align }: { align?: string }) => {
+import Size from "../utils/Size"
+import * as CSS from "../css/index";
+const style = ({ align }: { align?: string }): CSS.Properties => {
     return {
         display: 'flex',
         flexDirection: 'column',
-        width: '100%',
+        width: Size._100P,
         alignItems: align
     }
 }

@@ -1,6 +1,6 @@
 import H1 from "../../core/H1"
 import TextView from "../../core/TextView"
-import Search from "./Search"
+import Search from "./Searchts"
 import Row from "../../layouts/Row"
 import Size from "../../utils/Size"
 import Div from "../../core/Div"

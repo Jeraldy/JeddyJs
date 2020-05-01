@@ -18,19 +18,18 @@ export default (props: any) => {
             TextInput({
                 id: "search-input",
                 placeholder: "Search",
-                class: "browser-default search-field",
+                className: "browser-default search-field",
                 value: props.query,
                 autocomplete: "off",
                 ariaLabel: "Search box",
-                //@ts-ignore
-                onkeyup: (e: Event) => props.filter(e),
+                onKeyUp: (e: Event) => props.filter(e),
                 style
             }),
             Label({
-                for: "search-input",
+                For: "search-input",
                 children: [
                     I({
-                        class: "material-icons search-icon",
+                        className: "material-icons search-icon",
                         children: [
                             TextView("search")
                         ]

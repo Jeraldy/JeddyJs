@@ -10,7 +10,7 @@ export declare class StatefulWidget implements LifeCycleMethods {
     componentDidMount(): void;
     componentDidUpdate(): void;
     componetWillUpdate(): void;
-    render(): HTMLElement;
+    render(): any;
     private node;
     readonly props: {};
     private domTree;
@@ -23,7 +23,7 @@ export declare class StatefulWidget implements LifeCycleMethods {
     private updateDom;
     private componentMounted;
     private focusTarget;
-    connect(): HTMLElement;
+    connect(): any;
     private initDomTree;
 }
 export declare const Jeddy: {

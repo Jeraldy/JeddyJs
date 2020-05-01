@@ -1,51 +1,34 @@
-import * as CSS from '../css/index';
-
-interface Params{
-  style: CSS.Properties,
-  children: Array<HTMLElement>
-}
 
 export default (props = {}, tag: string) => {
+  //@ts-ignore
+  const { children, style, ...rest } = { ...props }
+
   var node = document.createElement(tag);
 
-  //@ts-ignore
-  if (props.children) {
-    //@ts-ignore
-    props.children.forEach(child => {
+  if (children) {
+    children.forEach(child => {
       if (child !== null) {
         node.appendChild(child);
       }
     });
-    //@ts-ignore
-    delete props.children;
   }
 
-  var style = '';
-  //@ts-ignore
-  if (props.style) {
-    //@ts-ignore
-    var _style = props.style;
-    for (var key in _style) {
-      style += resolveCamelCase(key) + ':' + _style[key] + ';';
+  if (style) {
+    for (var key in style) {
+      // style += resolveCamelCase(key) + ':' + _style[key] + ';';
+      node.style[key] = style[key]
     }
-    //@ts-ignore
-    props.style = style;
   }
 
-  for (var key of Object.keys(props)) {
-    //@ts-ignore
-    if (typeof props[key] === 'function') {
-      //@ts-ignore
-      if (props[key] !== null) {
-        //@ts-ignore
-        node[key] = props[key];
+  for (var key of Object.keys(rest)) {
+    if (rest[key]) {
+      if (typeof rest[key] === 'function') {
+        node[key] = rest[key];
+      } else {
+        node.setAttribute(key, rest[key]);
       }
-    } else {
-      //@ts-ignore
-      node.setAttribute(key, props[key]);
     }
   }
-  //node.setAttribute("id", Math.random().toString(36))
   return node;
 };
 

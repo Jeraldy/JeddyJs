@@ -10,16 +10,25 @@ import Span from '../../core/Span';
 import Section from '../../core/Section';
 import '../../styles/silver.dashboard.css';
 
-const SideMenu = ({ headNode, menus, headerStyle }: { headNode: any, menus: [], headerStyle: {} }) => {
+const SideMenu = (
+    {
+        headNode,
+        menus,
+        headerStyle
+    }: {
+        headNode: any,
+        menus: [],
+        headerStyle: {}
+    }) => {
     return Aside({
-        class: 'sidebar',
+        className: 'sidebar',
         children: [
             Header({
                 children: [headNode],
                 style: { ...headerStyle, width: '15em' }
             }),
             Nav({
-                class: 'sidebar-nav',
+                className: 'sidebar-nav',
                 children: [
                     UnorderedList({ children: menus })
                 ]
@@ -38,7 +47,7 @@ const Menu = ({ icon, title, menuItems, open, onclick }
 
     const _menuItems = () => {
         return UnorderedList({
-            class: 'nav-flyout',
+            className: 'nav-flyout',
             children: menuItems,
             style
         })
@@ -49,7 +58,7 @@ const Menu = ({ icon, title, menuItems, open, onclick }
             Link({
                 href: '#',
                 children: [
-                    I({ class: 'material-icons', children: [TextView(icon)] }),
+                    I({ className: 'material-icons', children: [TextView(icon)] }),
                     Span({ children: [TextView(title)] })
                 ],
                 style: {
@@ -58,7 +67,7 @@ const Menu = ({ icon, title, menuItems, open, onclick }
             }),
             menuItems ? _menuItems() : null,
         ],
-        onclick: function () { onclick() } || function () { },
+        onClick: function () { onclick() } || function () { },
         style: {
             border: '1px solid black'
         }
@@ -72,7 +81,7 @@ const MenuItem = ({ icon, title, active, onclick }:
             Link({
                 href: '#',
                 children: [
-                    I({ class: 'material-icons', children: [TextView(icon)] }),
+                    I({ className: 'material-icons', children: [TextView(icon)] }),
                     TextView(title)
                 ],
                 style: {
@@ -80,7 +89,7 @@ const MenuItem = ({ icon, title, active, onclick }:
                 }
             }),
         ],
-        onclick: function () { onclick() } || function () { },
+        onClick: function () { onclick() } || function () { },
         style: {
             border: '1px solid #19222A'
         }
@@ -89,7 +98,7 @@ const MenuItem = ({ icon, title, active, onclick }:
 
 const Scaffold = ({ sideMenu, toolBar, main }: { sideMenu: any, toolBar: any, main: any }) => {
     return Section({
-        class: 'app',
+        className: 'app',
         children: [
             toolBar,
             sideMenu,

@@ -12,6 +12,7 @@ import Button from "../widgets/Button/Index"
 import ButtonType from "../widgets/Button/ButtonType"
 import ActionButton from "../widgets/Button/ActionButton"
 import RowAlignment from "./RowAlignment"
+import Icons from "../utils/Icons"
 
 const Stepper = ({ child, activeStep, callBack, steps }:
     {
@@ -37,7 +38,7 @@ const Stepper = ({ child, activeStep, callBack, steps }:
                                 align: RowAlignment.SpaceBetween,
                                 children: [
                                     ActionButton({
-                                        icon: 'keyboard_arrow_left',
+                                        icon: Icons.keyboard_arrow_left,
                                         onclick: () => activeStep == 1 ? null : callBack(activeStep - 1)
                                     }),
                                     Button({
@@ -72,7 +73,7 @@ function Step(title: string, index: number, activeStep: number, callBack: (activ
                 children: [
                     Center({ child: TextView(`${index}`) })
                 ],
-                onclick: () => callBack(index)
+                onClick: () => callBack(index)
             }),
             Div({
                 children: [

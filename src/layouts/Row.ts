@@ -1,7 +1,8 @@
 import Div from "../core/Div"
 import RowAlignment from "./RowAlignment"
+import * as CSS from "../css/index";
 
-const style = (align?: string) => {
+const style = (align?: string): CSS.Properties => {
     return {
         display: 'flex',
         flexWrap: 'wrap',

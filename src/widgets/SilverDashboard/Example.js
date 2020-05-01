@@ -5,7 +5,7 @@ import Size from "../../utils/Size";
 import Colors from "../../utils/Colors";
 import TableExample from "../Table/Example";
 import Row, { RowAlignment } from "../../layouts/Row";
-import Image from "../../core/Image";
+import Image from "../../core/Img";
 import TextView from "../../core/TextView";
 
 class SilverDashboard extends StatefulWidget {
@@ -24,7 +24,7 @@ class SilverDashboard extends StatefulWidget {
             toolBar: Div({
                 style: {
                     backgroundColor: '#00796b',
-                    height: Size._43px,
+                    height: Size._43px
                 }
             }),
             sideMenu: SideMenu({

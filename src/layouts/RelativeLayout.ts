@@ -1,10 +1,10 @@
 import Div from "../core/Div"
 import Size from "../utils/Size"
-
-const style = {
+import * as CSS from "../css/index"
+const style: CSS.Properties = {
     position: 'relative',
-    height: '100%',
-    width: '100%'
+    height: Size._100P,
+    width: Size._100P
 }
 
 export default ({ children }: { children: Array<any> }) => {

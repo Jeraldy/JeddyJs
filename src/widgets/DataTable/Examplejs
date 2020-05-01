@@ -1,7 +1,7 @@
 import { StatefulWidget } from "../../tikiti/index";
 import Div from "../../core/Div";
 import SIZE from "../../utils/Size";
-import Table from "./index";
+import Table from "./indexts";
 import axios from 'axios';
 import Menu, { toggleMenu } from "../Menu/Menu";
 import MenuItem from "../Menu/MenuItem";

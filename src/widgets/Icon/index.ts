@@ -1,12 +1,12 @@
 import I from "../../core/I"
 import TextView from "../../core/TextView"
+import Icons from "../../utils/Icons"
+import * as CSS from "../../css";
 
-export default (props: any) => {
-    //@ts-ignore
-    const { name, ...other } = { ...props }
+export default ({ name, style }: { name: Icons, style?: CSS.Properties }) => {
     return I({
-        class: 'material-icons',
+        className: 'material-icons',
         children: [TextView(name)],
-        ...other,
+        style,
     })
 }

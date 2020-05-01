@@ -1,12 +1,13 @@
 import Size from "../../utils/Size"
+import * as CSS from "../../css/index";
 
 export default {
-    all: (size: Size): Object => {
+    all: (size: Size): CSS.Properties => {
         return { margin: size }
     },
     only: ({ left, right, top, bottom }: {
         left: Size, right: Size, top: Size, bottom: Size
-    }): Object => {
+    }): CSS.Properties => {
         return {
             marginLeft: left || Size._0px,
             marginRight: right || Size._0px,

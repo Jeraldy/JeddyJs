@@ -4,18 +4,21 @@ import TextView from "../../core/TextView"
 import Span from "../../core/Span"
 import Size from "../../utils/Size"
 
-const style = {
-    fontWeight: 'bold',
-    padding: Size._9px,
-}
 
 export default ({ currency = 'TZS', props }: { currency: string, props: any }) => {
     let { value = '0', ...rest } = { ...props }
     return Div({
         children: [
-            Span({ children: [TextView(currency)], style }),
+            Span({
+                children: [TextView(currency)],
+                style: {
+                    fontWeight: 'bold',
+                    padding: Size._9px,
+                }
+            }),
             TextField({
-                ...rest, value: AddSeparator(value),
+                ...rest, 
+                value: AddSeparator(value),
                 style: {
                     border: '1px solid white',
                     borderRadius: '0px',

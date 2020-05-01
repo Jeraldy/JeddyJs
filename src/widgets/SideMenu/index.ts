@@ -25,7 +25,7 @@ export default ({ title }: { title: "" }) => {
 
 function MenuItem(title: string) {
 
-    const btn = Button({ class: "collapsible", children: [TextView(title)] })
+    const btn = Button({ className: "collapsible", children: [TextView(title)] })
     btn.addEventListener("click", function () {
         const contents = document.getElementsByClassName('content');
         const content = this.nextSibling;
@@ -52,7 +52,7 @@ function MenuItem(title: string) {
 
     return Div({
         children: [btn, Div({
-            class: "content",
+            className: "content",
             children: [TextView(" Contets for " + title)],
             style: {
                 height: Size._0px

@@ -62,7 +62,7 @@ class _Table extends StatefulWidget {
     render() {
         const data = this.state.data.slice(this.state.start, this.state.end);
         return Section({
-            class: "md-ui component-data-table",
+            className: "md-ui component-data-table",
             children: [
                 TableHeader({
                     filter: (e: Event) => this.filterTable(e),
@@ -72,25 +72,25 @@ class _Table extends StatefulWidget {
                 }),
                 Divider({ style: { backgroundColor: '#e0e0e0' } }),
                 Div({
-                    class: "main-table-wrapper",
+                    className: "main-table-wrapper",
                     children: [
                         Table({
-                            class: "main-table-content",
+                            className: "main-table-content",
                             children: [
                                 Thead({
-                                    class: "data-table-header",
+                                    className: "data-table-header",
                                     children: [
                                         Tr({
-                                            class: "data-table-row",
+                                            className: "data-table-row",
                                             children: this.state.titles.map((v: any) => TD(v.title, v.style))
                                         })
                                     ]
                                 }),
                                 Tbody({
-                                    class: "data-table-content",
+                                    className: "data-table-content",
                                     children: data.map((row: any) =>
                                         Tr({
-                                            class: "data-table-row",
+                                            className: "data-table-row",
                                             children: row.map((v: any) => TD(v))
                                         }),
                                     )
@@ -100,7 +100,7 @@ class _Table extends StatefulWidget {
                     ]
                 }),
                 Footer({
-                    class: "main-table-footer",
+                    className: "main-table-footer",
                     children: [
                         // Span({
                         //     class: "rows-selection",
@@ -116,12 +116,12 @@ class _Table extends StatefulWidget {
                         //     ]
                         // }),
                         Span({
-                            class: "rows-amount",
+                            className: "rows-amount",
                             //@ts-ignore
                             children: [TextView(`Showing: ${this.state.start + 1}-${data.length + this.state.start} of ${this.props.data.length}`)]
                         }),
                         Span({
-                            class: "table-pagination",
+                            className: "table-pagination",
                             children: [
                                 ActionButton({
                                     icon: "keyboard_arrow_left",

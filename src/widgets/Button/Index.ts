@@ -10,14 +10,14 @@ import * as CSS from '../../css/index';
 export default ({ label, icon, type, onclick, style }:
     {
         label?: string, icon?: typeof Icon,
-        type?: ButtonType, onclick?: (e: Event) => void,
+        type?: ButtonType, onclick?: () => void,
         style?: CSS.Properties
     }) => {
 
     return Button({
-        class: type || ButtonType.UNELEVETED,
+        className: type || ButtonType.UNELEVETED,
         children: buttonChidren(type, label),
-        onclick: onclick || function () { },
+        onClick: onclick || function () { },
         style
     })
 }
@@ -27,9 +27,9 @@ function buttonChidren(type: ButtonType, label: string) {
         return [TextView(label || '')]
     }
     return [
-        Div({ class: 'mdc-button__ripple' }),
+        Div({ className: 'mdc-button__ripple' }),
         Span({
-            class: 'mdc-button__label',
+            className: 'mdc-button__label',
             children: [TextView(label || '')]
         })
     ]

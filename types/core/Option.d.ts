@@ -1,2 +1,6 @@
-declare const Option: (props: any) => HTMLElement;
+declare const Option: ({ value, text, attributes }: {
+    value?: string;
+    text?: string;
+    attributes?: {};
+}) => HTMLElement;
 export default Option;
