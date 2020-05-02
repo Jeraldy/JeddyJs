@@ -1,4 +1,4 @@
-declare const Style: ({ media, type, children, attributes }: {
+declare const Style: ({ media, type, children, attributes }?: {
     media?: string;
     type?: string;
     children?: (HTMLElement | Text)[];

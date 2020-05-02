@@ -1,4 +1,4 @@
-declare const Option: ({ value, text, attributes }: {
+declare const Option: ({ value, text, attributes }?: {
     value?: string;
     text?: string;
     attributes?: {};

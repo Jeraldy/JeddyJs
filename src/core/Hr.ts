@@ -183,7 +183,7 @@ const Hr = ({
   onVolumeChange,
   onWaiting,
   onWheel,
-}: Params) => {
+}: Params = {}) => {
   return Node({
     class: className,
     style,

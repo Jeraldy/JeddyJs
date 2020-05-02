@@ -1,7 +1,7 @@
 import Node from './Node';
 import * as CSS from "../css/index";
 
-const Th =  ({
+const Th = ({
   className,
   children,
   style,
@@ -183,7 +183,7 @@ const Th =  ({
   onVolumeChange?: (e: Event) => void,
   onWaiting?: (e: Event) => void,
   onWheel?: (e: Event) => void,
-}) => {
+} = {}) => {
   return Node({
     class: className,
     children,

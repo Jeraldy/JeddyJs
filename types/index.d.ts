@@ -12,11 +12,11 @@ export declare class StatefulWidget implements LifeCycleMethods {
     componetWillUpdate(): void;
     render(): any;
     private node;
-    readonly props: {};
+    readonly props: any;
     private domTree;
-    state: {};
+    state: any;
     constructor(props?: any);
-    setState(NewState: {}, e?: Event): Promise<{}>;
+    setState(NewState: {}, e?: Event): Promise<any>;
     setEffect(NewState: {}): void;
     private generateDomTree;
     private domTreeTraversal;
@@ -27,6 +27,6 @@ export declare class StatefulWidget implements LifeCycleMethods {
     private initDomTree;
 }
 export declare const Jeddy: {
-    Init(entryNode: any, reduxStore?: any): void;
+    Init(entryNode: HTMLElement | Text): void;
 };
 export {};

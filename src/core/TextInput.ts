@@ -113,8 +113,8 @@ const TextInput = ({
   id?: string,
   style?: CSS.Properties,
   placeholder?: string,
-  autocomplete: string,
-  ariaLabel?:string,
+  autocomplete?: string,
+  ariaLabel?: string,
   attributes?: {},
   onAbort?: (e: Event) => void,
   onAnimationCancel?: (e: Event) => void,
@@ -201,7 +201,7 @@ const TextInput = ({
   onVolumeChange?: (e: Event) => void,
   onWaiting?: (e: Event) => void,
   onWheel?: (e: Event) => void,
-}) => {
+} = {}) => {
   return Node({
     class: className,
     autocomplete,

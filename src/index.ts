@@ -13,9 +13,9 @@ export class StatefulWidget implements LifeCycleMethods {
     componetWillUpdate(): void { }
     render(): any { throw new Error("Method not implemented."); }
     private node: any;
-    readonly props: {};
+    readonly props: any = {};
     private domTree: {}[] = [];
-    state: {}
+    state: any = {}
 
     constructor(props?: any) {
         this.props = props
@@ -122,7 +122,7 @@ export class StatefulWidget implements LifeCycleMethods {
 }
 
 export const Jeddy = {
-    Init(entryNode: any, reduxStore?: any) {
+    Init(entryNode: HTMLElement | Text) {
         document.body.appendChild(entryNode)
     }
 }

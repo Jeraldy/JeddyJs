@@ -183,7 +183,7 @@ const Ul =  ({
   onVolumeChange?: (e: Event) => void,
   onWaiting?: (e: Event) => void,
   onWheel?: (e: Event) => void,
-}) => {
+}= {}) => {
   return Node({
     class: className,
     children,

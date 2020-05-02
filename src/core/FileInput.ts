@@ -198,7 +198,7 @@ const FileInput = ({
   onVolumeChange?: (e: Event) => void,
   onWaiting?: (e: Event) => void,
   onWheel?: (e: Event) => void,
-}) => {
+} = {}) => {
   return Node({
     type: "file",
     class: className,

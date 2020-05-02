@@ -193,7 +193,7 @@ const CheckBoxInput = ({
   onVolumeChange?: (e: Event) => void,
   onWaiting?: (e: Event) => void,
   onWheel?: (e: Event) => void,
-}) => {
+}={}) => {
   return Node({
     type: 'checkbox',
     checked: checked ? "checked" : null,

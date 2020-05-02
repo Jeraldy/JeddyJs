@@ -27,7 +27,6 @@ class _Table extends StatefulWidget {
         var _data: any[] = [];
         //@ts-ignore
         let query = e.target.value
-        //@ts-ignore
         this.props.data.forEach((row: any) => {
             for (var j = 0; j < row.length; j++) {
                 if (typeof row[j] != 'object') {
@@ -117,7 +116,6 @@ class _Table extends StatefulWidget {
                         // }),
                         Span({
                             className: "rows-amount",
-                            //@ts-ignore
                             children: [TextView(`Showing: ${this.state.start + 1}-${data.length + this.state.start} of ${this.props.data.length}`)]
                         }),
                         Span({

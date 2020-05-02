@@ -1,4 +1,4 @@
-import _Table from './_Tablets';
+import _Table from './_Table';
 import '../../styles/data.table.css';
 import * as CSS from "../../css/index";
 

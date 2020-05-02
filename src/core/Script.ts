@@ -17,7 +17,7 @@ const Script = ({
   src?: string,
   type?: string,
   attributes?: {}
-}) => {
+}= {}) => {
   return Node({
     children,
     async: async ? "async" : "",

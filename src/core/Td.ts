@@ -189,7 +189,7 @@ const Td = ({
   onVolumeChange?: (e: Event) => void,
   onWaiting?: (e: Event) => void,
   onWheel?: (e: Event) => void,
-}) => {
+} = {}) => {
   return Node({
     class: className,
     rowspan: rowSpan,

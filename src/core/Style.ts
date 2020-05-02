@@ -10,7 +10,7 @@ const Style = ({
   type?: string,
   children?: Array<HTMLElement | Text>,
   attributes?: {}
-}) => {
+}= {}) => {
   return Node({
     type,
     media,
