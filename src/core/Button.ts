@@ -1,9 +1,11 @@
 import Node from './Node';
 import * as CSS from "../css/index";
+import TextView from './TextView';
 
 const Button = ({
   className,
   children,
+  label,
   style,
   autofocus,
   disabled,
@@ -106,6 +108,7 @@ const Button = ({
 }: {
   className?: string,
   children?: Array<HTMLElement | Text>,
+  label?: string,
   style?: CSS.Properties,
   id?: string,
   autofocus?: boolean,
@@ -208,7 +211,10 @@ const Button = ({
 } = {}) => {
   return Node({
     class: className,
-    children,
+    children: [
+      ...children || [],
+      label ? TextView(label) : null
+    ],
     style,
     autofocus: autofocus ? "autofocus" : "",
     disabled: disabled ? "disabled" : "",

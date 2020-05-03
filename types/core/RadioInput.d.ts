@@ -1,5 +1,5 @@
 import * as CSS from "../css/index";
-declare const RadioInput: ({ className, children, style, group, autoFocus, disabled, name, pattern, readonly, required, id, value, controller, attributes, onAbort, onAnimationCancel, onAnimationEnd, onAnimationIteration, onAnimationStart, onAuxClick, onBlur, onCancel, onCanPlay, onCanPlayThrough, onChange, onClick, onClose, onContextMenu, onCueChange, onDblClick, onDrag, onDragEnd, onDragEnter, onDragExit, onDragLeave, onDragOver, onDragStart, onDrop, onDurationChange, onEmptied, onEnded, onError, onFocus, onGotPointerCapture, onInput, onInvalid, onKeyDown, onKeyPress, onKeyUp, onLoad, onLoadedData, onLoadedMetaData, onLoadStart, onLostPointerCapture, onMouseDown, onMouseEnter, onMouseLeave, onMouseMove, onMouseOut, onMouseOver, onMouseUp, onPause, onPlay, onPlaying, onPointerCancel, onPointerDown, onPointerEnter, onPointerLeave, onPointerMove, onPointerOut, onPointerOver, onPointerUp, onProgress, onRateChange, onReset, onResize, onScroll, onSecurityPolicyViolation, onSeeked, onSeeking, onSelect, onSelectionChange, onSelectStart, onStalled, onSubmit, onSuspend, onTimeUpdate, onToggle, onTouchCancel, onTouchEnd, onTouchMove, onTouchStart, onTransitionCancel, onTransitionEnd, onTransitionRun, onTransitionStart, onVolumeChange, onWaiting, onWheel, }?: {
+declare const RadioInput: ({ className, children, style, group, autoFocus, disabled, name, pattern, readonly, required, checked, id, value, attributes, onAbort, onAnimationCancel, onAnimationEnd, onAnimationIteration, onAnimationStart, onAuxClick, onBlur, onCancel, onCanPlay, onCanPlayThrough, onChange, onClick, onClose, onContextMenu, onCueChange, onDblClick, onDrag, onDragEnd, onDragEnter, onDragExit, onDragLeave, onDragOver, onDragStart, onDrop, onDurationChange, onEmptied, onEnded, onError, onFocus, onGotPointerCapture, onInput, onInvalid, onKeyDown, onKeyPress, onKeyUp, onLoad, onLoadedData, onLoadedMetaData, onLoadStart, onLostPointerCapture, onMouseDown, onMouseEnter, onMouseLeave, onMouseMove, onMouseOut, onMouseOver, onMouseUp, onPause, onPlay, onPlaying, onPointerCancel, onPointerDown, onPointerEnter, onPointerLeave, onPointerMove, onPointerOut, onPointerOver, onPointerUp, onProgress, onRateChange, onReset, onResize, onScroll, onSecurityPolicyViolation, onSeeked, onSeeking, onSelect, onSelectionChange, onSelectStart, onStalled, onSubmit, onSuspend, onTimeUpdate, onToggle, onTouchCancel, onTouchEnd, onTouchMove, onTouchStart, onTransitionCancel, onTransitionEnd, onTransitionRun, onTransitionStart, onVolumeChange, onWaiting, onWheel, }?: {
     className?: string;
     children?: (HTMLElement | Text)[];
     style?: CSS.Properties<string | 0>;
@@ -8,6 +8,7 @@ declare const RadioInput: ({ className, children, style, group, autoFocus, disab
     value?: string;
     autoFocus?: boolean;
     disabled?: boolean;
+    checked?: boolean;
     pattern?: string;
     readonly?: boolean;
     required?: boolean;
