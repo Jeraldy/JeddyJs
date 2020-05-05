@@ -9,6 +9,6 @@ const style = {
     alignItems: 'center', // Center Vertical   
 }
 
-export default ({ child }: { child: any }) => {
+export default ({ child }: { child: HTMLElement | Text }) => {
     return Div({ children: [child], style })
 }

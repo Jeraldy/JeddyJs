@@ -3,7 +3,7 @@ export default (props = {}, tag: string) => {
   //@ts-ignore
   const { children, style, ...rest } = { ...props }
 
-  var node = document.createElement(tag);
+  let node = document.createElement(tag);
 
   if (children) {
     children.forEach((child: HTMLElement | Text) => {
@@ -14,12 +14,12 @@ export default (props = {}, tag: string) => {
   }
 
   if (style) {
-    for (var key in style) {
+    for (let key in style) {
       node.style[key] = style[key]
     }
   }
 
-  for (var key of Object.keys(rest)) {
+  for (let key of Object.keys(rest)) {
     if (rest[key]) {
       if (typeof rest[key] === 'function') {
         node[key] = rest[key];
@@ -28,6 +28,7 @@ export default (props = {}, tag: string) => {
       }
     }
   }
+
   return node;
 };
 

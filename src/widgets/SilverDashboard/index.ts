@@ -37,8 +37,19 @@ const SideMenu = (
     })
 }
 
-const Menu = ({ icon, title, menuItems, open, onclick }
-    : { icon: '', title: '', menuItems: [], open: false, onclick: () => void }) => {
+const Menu = ({
+    icon,
+    title,
+    menuItems,
+    open,
+    onclick
+}: {
+    icon: '',
+    title: '',
+    menuItems: [],
+    open: false,
+    onclick: () => void
+}) => {
 
     const style = open ? {
         transform: 'translateX(0)',
@@ -58,7 +69,10 @@ const Menu = ({ icon, title, menuItems, open, onclick }
             Link({
                 href: '#',
                 children: [
-                    I({ className: 'material-icons', children: [TextView(icon)] }),
+                    I({
+                        className: 'material-icons',
+                        children: [TextView(icon)]
+                    }),
                     Span({ children: [TextView(title)] })
                 ],
                 style: {
@@ -67,7 +81,7 @@ const Menu = ({ icon, title, menuItems, open, onclick }
             }),
             menuItems ? _menuItems() : null,
         ],
-        onClick: function () { onclick() } || function () { },
+        onClick: onclick ? () => onclick() : () => { },
         style: {
             border: '1px solid black'
         }
@@ -81,7 +95,10 @@ const MenuItem = ({ icon, title, active, onclick }:
             Link({
                 href: '#',
                 children: [
-                    I({ className: 'material-icons', children: [TextView(icon)] }),
+                    I({
+                        className: 'material-icons',
+                        children: [TextView(icon)]
+                    }),
                     TextView(title)
                 ],
                 style: {
@@ -89,14 +106,15 @@ const MenuItem = ({ icon, title, active, onclick }:
                 }
             }),
         ],
-        onClick: function () { onclick() } || function () { },
+        onClick: onclick ? () => onclick() : () => { },
         style: {
             border: '1px solid #19222A'
         }
     })
 }
 
-const Scaffold = ({ sideMenu, toolBar, main }: { sideMenu: any, toolBar: any, main: any }) => {
+const Scaffold = ({ sideMenu, toolBar, main }:
+     { sideMenu: any, toolBar: any, main: any }) => {
     return Section({
         className: 'app',
         children: [

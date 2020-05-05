@@ -7,11 +7,13 @@ const style: CSS.Properties = {
     width: Size._100P
 }
 
-export default ({ children }: { children: Array<any> }) => {
+export default ({ children }:
+     { children: Array<any> }) => {
     return Div({ children, style })
 }
 
-export function Locate({ child, x, y, zIndex }: { child: any, x: Size, y: Size, zIndex?: number }) {
+export function Locate({ child, x, y, zIndex }:
+     { child: any, x: Size, y: Size, zIndex?: number }) {
     return Div({
         children: [child],
         style: {

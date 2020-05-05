@@ -12,6 +12,6 @@ const style = ({ align }: { align?: string }): CSS.Properties => {
 }
 
 
-export default ({ children, align }: { children: Array<any>, align?: ColAlignment }) => {
+export default ({ children, align }: { children: Array<HTMLElement | Text>, align?: ColAlignment }) => {
     return Div({ children, style: style({ align }) })
 }

@@ -110,16 +110,17 @@ export class StatefulWidget implements LifeCycleMethods {
     }
 
     connect() {
-        const _render = this.render()
+        const _render = this.render();
         if (_render.nodeName === '#text') {
-            const container = document.createElement('div')
-            container.appendChild(_render)
-            this.node = container
-        } else {
-            this.node = _render
+            let container = document.createElement('div');
+            container.appendChild(_render);
+            this.node = container;
         }
-        this.initDomTree()
-        return this.node
+        else {
+            this.node = _render;
+        }
+        this.initDomTree();
+        return this.node;
     }
 
     private initDomTree() {
