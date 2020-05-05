@@ -60,5 +60,5 @@ npm publish --access=public
 cd..
 
 git add .
-git commit -m "core docs"
+git commit -m "StackPane"
 git push

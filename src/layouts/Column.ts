@@ -2,7 +2,10 @@ import Div from "../core/Div"
 import ColAlignment from "./ColAlignment"
 import Size from "../utils/Size"
 import * as CSS from "../css/index";
-const style = ({ align }: { align?: string }): CSS.Properties => {
+const style = ({ align }:
+    {
+        align?: string
+    }): CSS.Properties => {
     return {
         display: 'flex',
         flexDirection: 'column',
