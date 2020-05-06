@@ -32,8 +32,11 @@ function MenuItem(title: string) {
         //@ts-ignore
         for (let el of contents) {
             if (el != content) {
+                 //@ts-ignore
                 el.style.visibility = 'hidden';
+                 //@ts-ignore
                 el.style.opacity = '0';
+                 //@ts-ignore
                 el.style.height = '0px';
             }
         }
