@@ -60,5 +60,5 @@ npm publish --access=public
 cd..
 
 git add .
-git commit -m "StackPane"
+git commit -m "Collapsible"
 git push
