@@ -1,3 +1,5 @@
+import { converToHFun, updateElement } from './reconcile';
+
 interface LifeCycleMethods {
     componentDidMount(): void
     componentDidUpdate(): void
@@ -14,7 +16,6 @@ export class StatefulWidget implements LifeCycleMethods {
     render(): any { throw new Error("Method not implemented."); }
     private node: any;
     readonly props: any = {};
-    private domTree: {}[] = [];
     state: any = {}
 
     constructor(props?: any) {
@@ -26,71 +27,14 @@ export class StatefulWidget implements LifeCycleMethods {
         this.componetWillUpdate()
         this.state = { ...this.state, ...NewState }
         let newNode = this.render()
-        this.node.parentNode.replaceChild(newNode, this.node)
+        updateElement(
+            document.getElementById("root"),
+            converToHFun(newNode),
+            converToHFun(this.node)
+        )
         this.node = newNode
-        this.initDomTree()
-        this.focusTarget(e);
         this.componentDidUpdate()
         return this.state
-    }
-
-    setEffect(NewState: {}) {
-        this.componetWillUpdate()
-        this.state = { ...this.state, ...NewState }
-        this.updateDom(this.render())
-        this.componentDidUpdate()
-    }
-
-    private generateDomTree(dom: any): any {
-        var names: any[] = [];
-        var tree: {}[] = []
-        var nodeList = this.domTreeTraversal(dom);
-        nodeList.forEach((child: any) => {
-            names.push(child.nodeName)
-            var childProps = {}
-            for (var key of Object.keys(child.attributes)) {
-                var ch = child.attributes[key]
-                childProps = { ...childProps, [ch.name]: ch.value }
-            }
-            tree.push({ ...childProps, child })
-            childProps = {}
-        });
-        return { names, tree, nodeList }
-    }
-
-    private domTreeTraversal(dom: any): Array<Object> {
-        var treeWalker = document.createTreeWalker(
-            dom,
-            NodeFilter.SHOW_ELEMENT,
-            { acceptNode: (node) => NodeFilter.FILTER_ACCEPT },
-            false
-        );
-
-        var nodeList = [];
-        var currentNode = treeWalker.currentNode;
-
-        while (currentNode) {
-            nodeList.push(currentNode);
-            currentNode = treeWalker.nextNode();
-        }
-        return nodeList;
-    }
-
-    private updateDom(newDom: any) {
-        var newTree = this.generateDomTree(newDom)
-        for (var i = 0; i < newTree.tree.length; i++) {
-            for (var attr in this.domTree[i]) {
-                if (attr != "child") {
-                    //@ts-ignore	
-                    if (this.domTree[i][attr] != newTree.tree[i][attr]) {
-                        //@ts-ignore
-                        this.domTree[i][attr] = newTree.tree[i][attr]
-                        //@ts-ignore
-                        this.domTree[i].child.setAttribute(attr, newTree.tree[i][attr])
-                    }
-                }
-            }
-        }
     }
 
     private componentMounted() {
@@ -99,38 +43,19 @@ export class StatefulWidget implements LifeCycleMethods {
                 (_) => this.componentDidMount());
     }
 
-    private focusTarget(e: Event) {
-        if (e) {
-            //@ts-ignore
-            let el = document.getElementById(e.target.id);
-            el.focus();
-            //@ts-ignore
-            el.selectionStart = el.selectionEnd = el.value.length;
-        }
-    }
-
     connect() {
-        const _render = this.render();
-        if (_render.nodeName === '#text') {
-            let container = document.createElement('div');
-            container.appendChild(_render);
-            this.node = container;
-        }
-        else {
-            this.node = _render;
-        }
-        this.initDomTree();
-        return this.node;
-    }
-
-    private initDomTree() {
-        this.domTree = this.generateDomTree(this.node).tree;
+        this.node = this.render()
+        return this.node
     }
 
 }
 
 export const Jeddy = {
-    Init(entryNode: HTMLElement | Text) {
-        document.body.appendChild(entryNode)
+    Init(entryNode: any) {
+        console.log(converToHFun(entryNode))
+        updateElement(
+            document.getElementById("root"),
+            converToHFun(entryNode)
+        )
     }
 }

@@ -76,7 +76,10 @@ function addEventListeners($target, props) {
         if (isEventProp(name)) {
             $target.addEventListener(
                 extractEventName(name),
-                props[name]
+                function _listener(e) {
+                    props[name].call(e)
+                    $target.removeEventListener(extractEventName(name), _listener);
+                }
             );
         }
     });
@@ -122,6 +125,7 @@ function updateElement($parent, newNode, oldNode, index = 0) {
             newNode.props,
             oldNode.props
         );
+
         const newLength = newNode.children.length;
         const oldLength = oldNode.children.length;
         for (let i = 0; i < newLength || i < oldLength; i++) {
@@ -132,9 +136,9 @@ function updateElement($parent, newNode, oldNode, index = 0) {
                 i
             );
         }
+        addEventListeners($parent.childNodes[index], newNode.props)
     }
 }
-
 
 function converToHFun(node) {
     let props = {}
