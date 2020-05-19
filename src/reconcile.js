@@ -76,7 +76,10 @@ function addEventListeners($target, props) {
         if (isEventProp(name)) {
             $target.addEventListener(
                 extractEventName(name),
-                props[name]
+                function _listener(e) {
+                    props[name](e)
+                    $target.removeEventListener(extractEventName(name), _listener);
+                }
             );
         }
     });
@@ -133,7 +136,7 @@ function updateElement($parent, newNode, oldNode, index = 0) {
                 i
             );
         }
-        //addEventListeners($parent.childNodes[index], newNode.props)
+        addEventListeners($parent.childNodes[index], newNode.props)
     }
 }
 
