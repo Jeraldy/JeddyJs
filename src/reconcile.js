@@ -74,13 +74,10 @@ function updateProps($target, newProps, oldProps = {}) {
 function addEventListeners($target, props) {
     Object.keys(props).forEach(name => {
         if (isEventProp(name)) {
-            $target.addEventListener(
-                extractEventName(name),
-                function _listener(e) {
-                    props[name](e)
-                    $target.removeEventListener(extractEventName(name), _listener);
-                }
-            );
+            $target[name] = function _listener(e) {
+                props[name](e)
+                $target.removeEventListener(name, _listener);
+            }
         }
     });
 }
@@ -125,6 +122,7 @@ function updateElement($parent, newNode, oldNode, index = 0) {
             newNode.props,
             oldNode.props
         );
+        addEventListeners($parent.childNodes[index], newNode.props)
 
         const newLength = newNode.children.length;
         const oldLength = oldNode.children.length;
@@ -135,8 +133,7 @@ function updateElement($parent, newNode, oldNode, index = 0) {
                 oldNode.children[i],
                 i
             );
-        }
-        addEventListeners($parent.childNodes[index], newNode.props)
+        } 
     }
 }
 
