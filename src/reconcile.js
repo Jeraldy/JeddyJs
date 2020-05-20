@@ -158,7 +158,7 @@ function generateHTree(node) {
             if (node.nodeName == "#text") {
                 return node.data
             }
-            return converToHFun(node)
+            return generateHTree(node)
         })
     }
 }
