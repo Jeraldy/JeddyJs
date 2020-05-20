@@ -1,4 +1,4 @@
-import EVENTS from "./Events";
+import EVENTS from "./events";
 
 function setBooleanProp($target, name, value) {
     if (value) {
@@ -46,7 +46,11 @@ function removeProp($target, name, value) {
     } else if (typeof value === 'boolean') {
         removeBooleanProp($target, name);
     } else {
-        $target.removeAttribute(name);
+        if ($target.nodeName == "INPUT" && name == "value") {
+            $target.value = ''
+        } else {
+            $target.removeAttribute(name);
+        }
     }
 }
 
@@ -123,7 +127,7 @@ function updateElement($parent, newNode, oldNode, index = 0) {
             oldNode.props
         );
         addEventListeners($parent.childNodes[index], newNode.props)
-
+        console.log(newNode.props)
         const newLength = newNode.children.length;
         const oldLength = oldNode.children.length;
         for (let i = 0; i < newLength || i < oldLength; i++) {
@@ -133,15 +137,16 @@ function updateElement($parent, newNode, oldNode, index = 0) {
                 oldNode.children[i],
                 i
             );
-        } 
+        }
     }
 }
 
-function converToHFun(node) {
+function generateHTree(node) {
     let props = {}
-    node.getAttributeNames().forEach(name => {
-        props[name] = node.getAttribute(name)
-    })
+    node.getAttributeNames()
+        .forEach(name => {
+            props[name] = node.getAttribute(name)
+        })
     EVENTS.forEach(e => {
         if (node[e]) {
             props[e] = node[e]
@@ -159,6 +164,6 @@ function converToHFun(node) {
 }
 
 export {
-    converToHFun,
+    generateHTree,
     updateElement
 }

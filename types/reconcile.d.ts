@@ -1,4 +1,4 @@
-export function converToHFun(node: any): {
+export function generateHTree(node: any): {
     type: any;
     props: {};
     children: any;

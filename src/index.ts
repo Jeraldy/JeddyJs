@@ -1,4 +1,4 @@
-import { converToHFun, updateElement } from './reconcile';
+import { generateHTree, updateElement } from './reconcile';
 
 interface LifeCycleMethods {
     componentDidMount(): void
@@ -29,8 +29,8 @@ export class StatefulWidget implements LifeCycleMethods {
         let newNode = this.render()
         updateElement(
             document.getElementById("root"),
-            converToHFun(newNode),
-            converToHFun(this.node)
+            generateHTree(newNode),
+            generateHTree(this.node)
         )
         this.node = newNode
         this.componentDidUpdate()
@@ -52,10 +52,9 @@ export class StatefulWidget implements LifeCycleMethods {
 
 export const Jeddy = {
     Init(entryNode: any) {
-        console.log(converToHFun(entryNode))
         updateElement(
             document.getElementById("root"),
-            converToHFun(entryNode)
+            generateHTree(entryNode)
         )
     }
 }
