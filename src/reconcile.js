@@ -34,8 +34,20 @@ function setProp($target, name, value) {
     } else if (typeof value === 'boolean') {
         setBooleanProp($target, name, value);
     } else {
-        $target.setAttribute(name, value);
+        if (($target.nodeName == "INPUT"
+            || $target.nodeName == "SELECT"
+            || $target.nodeName == "TEXTAREA"
+        ) && name == "value") {
+            setValue($target, value);
+        } else {
+            $target.setAttribute(name, value);
+        }
     }
+}
+
+function setValue($target, value) {
+    document.addEventListener('DOMContentLoaded', () => { $target.value = value })
+    $target.value = value
 }
 
 function removeProp($target, name, value) {
@@ -46,7 +58,9 @@ function removeProp($target, name, value) {
     } else if (typeof value === 'boolean') {
         removeBooleanProp($target, name);
     } else {
-        if ($target.nodeName == "INPUT" && name == "value") {
+        if (($target.nodeName == "INPUT"
+            || $target.nodeName == "TEXTAREA")
+            && name == "value") {
             $target.value = ''
         } else {
             $target.removeAttribute(name);
@@ -144,7 +158,11 @@ function generateHTree(node) {
     let props = {}
     node.getAttributeNames()
         .forEach(name => {
-            props[name] = node.getAttribute(name)
+            if (node.type == "radio" && name == "checked") {
+                props[name] = node.getAttribute(name) == "true"
+            } else {
+                props[name] = node.getAttribute(name)
+            }
         })
     EVENTS.forEach(e => {
         if (node[e]) {
