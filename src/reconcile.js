@@ -180,7 +180,4 @@ function generateHTree(node) {
     }
 }
 
-export {
-    generateHTree,
-    updateElement
-}
+export { generateHTree, updateElement }

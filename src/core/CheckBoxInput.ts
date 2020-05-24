@@ -196,11 +196,11 @@ const CheckBoxInput = ({
 }={}) => {
   return Node({
     type: 'checkbox',
-    checked: checked ? "checked" : null,
-    autofocus: autoFocus ? "checked" : null,
-    disabled: disabled ? "disabled" : null,
-    required: required ? "required" : null,
-    readonly: readonly ? "readonly" : null,
+    checked,
+    autofocus: autoFocus,
+    disabled,
+    required,
+    readonly,
     name,
     pattern,
     value,

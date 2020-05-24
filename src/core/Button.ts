@@ -216,8 +216,8 @@ const Button = ({
       label ? TextView(label) : null
     ],
     style,
-    autofocus: autofocus ? "autofocus" : "",
-    disabled: disabled ? "disabled" : "",
+    autofocus,
+    disabled,
     form,
     formaction,
     formenctype,
