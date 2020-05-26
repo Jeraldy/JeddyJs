@@ -1,5 +1,5 @@
-import { NodeParams } from "./../params/NodeParams";
-export interface args extends NodeParams {
+import { NodeArgs } from '../core/Args';
+export interface args extends NodeArgs {
 }
 declare const Header: (args?: args) => HTMLElement;
 export default Header;

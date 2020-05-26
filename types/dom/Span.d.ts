@@ -1,5 +1,5 @@
-import { NodeParams } from "../core/NodeParams";
-export interface args extends NodeParams {
+import { NodeArgs } from '../core/Args';
+export interface args extends NodeArgs {
 }
 declare const Span: (args?: args) => HTMLElement;
 export default Span;
