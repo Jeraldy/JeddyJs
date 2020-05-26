@@ -28,7 +28,7 @@ export class StatefulWidget implements LifeCycleMethods {
         this.state = { ...this.state, ...NewState }
         let newNode = this.render()
         updateElement(
-            this.node,
+            this.node.parentNode,
             generateHTree(newNode),
             generateHTree(this.node)
         )
@@ -40,7 +40,7 @@ export class StatefulWidget implements LifeCycleMethods {
     private componentMounted() {
         document
             .addEventListener("DOMContentLoaded",
-                (_) => this.componentDidMount());
+            (_) => this.componentDidMount());
     }
 
     connect() {
