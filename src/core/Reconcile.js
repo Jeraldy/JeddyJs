@@ -1,4 +1,4 @@
-import EVENTS from ".Events/Events";
+import EVENTS from "./Events";
 
 function setBooleanProp($target, name, value) {
     if (value) {

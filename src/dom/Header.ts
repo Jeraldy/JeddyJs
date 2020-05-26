@@ -1,7 +1,7 @@
 import Node from '../core/Node';
-import { NodeParams } from "./../params/NodeParams";
+import { NodeArgs } from '../core/Args';
 
-export interface args extends NodeParams { }
+export interface args extends NodeArgs { }
 
 const Header = (args?: args) => {
   return Node(args, 'header');
