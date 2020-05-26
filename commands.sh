@@ -60,5 +60,5 @@ npm publish --access=public
 cd..
 
 git add .
-git commit -m "reconciliation"
+git commit -m "core args"
 git push

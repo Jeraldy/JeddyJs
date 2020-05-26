@@ -1,4 +1,4 @@
-import TextInput from "../../core/TextInput"
+import TextInput from "../../dom/TextInput"
 
 const style = {
     outline: 'none',

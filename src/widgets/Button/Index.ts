@@ -1,8 +1,8 @@
-import Button from "../../core/Button"
+import Button from "../../dom/Button"
 import ButtonType from "./ButtonType"
-import Div from "../../core/Div"
-import Span from "../../core/Span"
-import TextView from "../../core/TextView"
+import Div from "../../dom/Div"
+import Span from "../../dom/Span"
+import TextView from "../../dom/TextView"
 import '../../styles/button.css';
 import Icon from "../Icon"
 import * as CSS from '../../css/index';
@@ -15,7 +15,7 @@ export default ({ label, icon, type, onclick, style }:
     }) => {
 
     return Button({
-        className: type || ButtonType.UNELEVETED,
+        class: type || ButtonType.UNELEVETED,
         children: buttonChidren(type, label),
         onClick: onclick || function () { },
         style
@@ -27,9 +27,9 @@ function buttonChidren(type: ButtonType, label: string) {
         return [TextView(label || '')]
     }
     return [
-        Div({ className: 'mdc-button__ripple' }),
+        Div({ class: 'mdc-button__ripple' }),
         Span({
-            className: 'mdc-button__label',
+            class: 'mdc-button__label',
             children: [TextView(label || '')]
         })
     ]

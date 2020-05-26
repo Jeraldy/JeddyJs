@@ -1,12 +1,12 @@
 import { StatefulWidget } from "../../tikiti/index";
 import { SideMenu, Menu, MenuItem, Scaffold } from "./index";
-import Div from "../../core/Div";
+import Div from "../../dom/Div";
 import Size from "../../utils/Size";
 import Colors from "../../utils/Colors";
 import TableExample from "../Table/Example";
 import Row, { RowAlignment } from "../../layouts/Row";
-import Image from "../../core/Img";
-import TextView from "../../core/TextView";
+import Image from "../../dom/Img";
+import TextView from "../../dom/TextView";
 
 class SilverDashboard extends StatefulWidget {
     constructor() {

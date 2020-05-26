@@ -1,8 +1,8 @@
-import Div from "../../core/Div"
+import Div from "../../dom/Div"
 
 export default ({ children,...props }: { children: Array<any>, props: any }) => {
     return Div({
-        className: "mdc-layout-grid__cell",
+        class: "mdc-layout-grid__cell",
         children,
         ...props
     })

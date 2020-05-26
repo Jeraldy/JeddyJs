@@ -1,4 +1,4 @@
-import Div from "../core/Div"
+import Div from "../dom/Div"
 import RowAlignment from "./RowAlignment"
 import * as CSS from "../css/index";
 

@@ -1,4 +1,4 @@
-import { generateHTree, updateElement } from './reconcile';
+import { generateHTree, updateElement } from './core/Reconcile';
 
 interface LifeCycleMethods {
     componentDidMount(): void

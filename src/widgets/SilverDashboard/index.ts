@@ -1,13 +1,13 @@
-import Aside from '../../core/Aside';
-import Header from '../../core/Header';
-import TextView from '../../core/TextView';
-import Nav from '../../core/Nav';
-import UnorderedList from '../../core/Ul';
-import ListItem from '../../core/Li';
-import Link from '../../core/A';
-import I from '../../core/I';
-import Span from '../../core/Span';
-import Section from '../../core/Section';
+import Aside from '../../dom/Aside';
+import Header from '../../dom/Header';
+import TextView from '../../dom/TextView';
+import Nav from '../../dom/Nav';
+import UnorderedList from '../../dom/Ul';
+import ListItem from '../../dom/Li';
+import Link from '../../dom/A';
+import I from '../../dom/I';
+import Span from '../../dom/Span';
+import Section from '../../dom/Section';
 import '../../styles/silver.dashboard.css';
 
 const SideMenu = (
@@ -21,14 +21,14 @@ const SideMenu = (
         headerStyle: {}
     }) => {
     return Aside({
-        className: 'sidebar',
+        class: 'sidebar',
         children: [
             Header({
                 children: [headNode],
                 style: { ...headerStyle, width: '15em' }
             }),
             Nav({
-                className: 'sidebar-nav',
+                class: 'sidebar-nav',
                 children: [
                     UnorderedList({ children: menus })
                 ]
@@ -58,7 +58,7 @@ const Menu = ({
 
     const _menuItems = () => {
         return UnorderedList({
-            className: 'nav-flyout',
+            class: 'nav-flyout',
             children: menuItems,
             style
         })
@@ -70,7 +70,7 @@ const Menu = ({
                 href: '#',
                 children: [
                     I({
-                        className: 'material-icons',
+                        class: 'material-icons',
                         children: [TextView(icon)]
                     }),
                     Span({ children: [TextView(title)] })
@@ -96,7 +96,7 @@ const MenuItem = ({ icon, title, active, onclick }:
                 href: '#',
                 children: [
                     I({
-                        className: 'material-icons',
+                        class: 'material-icons',
                         children: [TextView(icon)]
                     }),
                     TextView(title)
@@ -116,7 +116,7 @@ const MenuItem = ({ icon, title, active, onclick }:
 const Scaffold = ({ sideMenu, toolBar, main }:
      { sideMenu: any, toolBar: any, main: any }) => {
     return Section({
-        className: 'app',
+        class: 'app',
         children: [
             toolBar,
             sideMenu,

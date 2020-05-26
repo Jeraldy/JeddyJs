@@ -1,4 +1,4 @@
-import AreaInput from "../../core/TextArea"
+import AreaInput from "../../dom/TextArea"
 
 const style = {
     outline: 'none',

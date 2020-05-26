@@ -1,4 +1,4 @@
-import CheckBox from "../../core/CheckBoxInput"
+import CheckBox from "../../dom/CheckBoxInput"
 
 const style = {
     minWidth: "20px",

@@ -1,9 +1,9 @@
-import Div from '../../core/Div';
+import Div from '../../dom/Div';
 import Row from '../../layouts/Row';
 import Size from '../../utils/Size';
-import TextView from '../../core/TextView';
-import Paragraph from '../../core/P';
-import Hr from '../../core/Hr';
+import TextView from '../../dom/TextView';
+import Paragraph from '../../dom/P';
+import Hr from '../../dom/Hr';
 import Button from '../Button/Index';
 import ButtonType from '../Button/ButtonType';
 import ActionButton from '../Button/ActionButton';
@@ -12,7 +12,7 @@ import RowAlignment from '../../layouts/RowAlignment';
 
 export default ({ open = false, title}: { open?: boolean,title: string }) => {
     const modal = Div({
-        className: 'modal',
+        class: 'modal',
         style: {
             display: open ? "block" : "none",
             boxShadow: '-3px 3px 3px -3px rgba(0,0,0,.5)',
@@ -22,13 +22,13 @@ export default ({ open = false, title}: { open?: boolean,title: string }) => {
                 align: RowAlignment.Center,
                 children: [
                     Div({
-                        className: "modal-content",
+                        class: "modal-content",
                         style: {
                             width: Size._600px
                         },
                         children: [
                             Div({
-                                className: "modal-header",
+                                class: "modal-header",
                                 style: {
                                     padding: Size._8px
                                 },
@@ -58,7 +58,7 @@ export default ({ open = false, title}: { open?: boolean,title: string }) => {
                                 ]
                             }),
                             Div({
-                                className: "modal-body",
+                                class: "modal-body",
                                 style: {
                                     height: Size._200px
                                 },

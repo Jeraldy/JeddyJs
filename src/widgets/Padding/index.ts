@@ -1,4 +1,4 @@
-import Div from "../../core/Div"
+import Div from "../../dom/Div"
 import EdgeInsets from "./EdgeInsets";
 import * as CSS from "../../css/index";
 

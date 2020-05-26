@@ -1,11 +1,11 @@
 import Icons from "../../utils/Icons";
 import * as CSS from "../../css";
-import Div from "../../core/Div";
+import Div from "../../dom/Div";
 import Row from "../../layouts/Row";
 import Icon from "../Icon";
 import RowAlignment from "../../layouts/RowAlignment";
 import Size from "../../utils/Size";
-import TextView from "../../core/TextView";
+import TextView from "../../dom/TextView";
 import Colors from "../../utils/Colors";
 
 const Collapsible = ({

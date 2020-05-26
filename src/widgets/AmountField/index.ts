@@ -1,7 +1,7 @@
-import Div from "../../core/Div"
+import Div from "../../dom/Div"
 import TextField from "../TextField/index"
-import TextView from "../../core/TextView"
-import Span from "../../core/Span"
+import TextView from "../../dom/TextView"
+import Span from "../../dom/Span"
 import Size from "../../utils/Size"
 
 

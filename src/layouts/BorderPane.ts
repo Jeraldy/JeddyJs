@@ -1,4 +1,4 @@
-import Div from "../core/Div"
+import Div from "../dom/Div"
 import Column from "./Column"
 import Row from "./Row"
 

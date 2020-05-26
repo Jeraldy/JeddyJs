@@ -1,3 +1,4 @@
+import TextView from "../dom/TextView";
 
 export default (props = {}, tag: string) => {
   //@ts-ignore
@@ -8,7 +9,11 @@ export default (props = {}, tag: string) => {
   if (children) {
     children.forEach((child: HTMLElement | Text) => {
       if (child) {
-        node.appendChild(child);
+        if (typeof child == 'string') {
+          node.appendChild(TextView(child));
+        } else {
+          node.appendChild(child);
+        }
       }
     });
   }
@@ -22,9 +27,9 @@ export default (props = {}, tag: string) => {
   for (let key of Object.keys(rest)) {
     if (rest[key]) {
       if (typeof rest[key] === 'function') {
-        node[key] = rest[key];
+        node[key.toLocaleLowerCase()] = rest[key];
       } else {
-        node.setAttribute(key, rest[key]);
+        node.setAttribute(key.toLocaleLowerCase(), rest[key]);
       }
     }
   }

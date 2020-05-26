@@ -1,5 +1,5 @@
 import { StatefulWidget } from "../../tikiti/index";
-import Div from "../../core/Div";
+import Div from "../../dom/Div";
 import SIZE from "../../utils/Size";
 import Table from "./indexts";
 import axios from 'axios';

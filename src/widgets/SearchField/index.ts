@@ -1,11 +1,11 @@
-import Div from "../../core/Div"
+import Div from "../../dom/Div"
 import Icon from "../Icon/index"
 import TextField from "../TextField/index"
 import Icons from "../../utils/Icons"
 
 export default () => {
     return Div({
-        className: 'search-container',
+        class: 'search-container',
         style: {
             float: 'right',
             backgroundColor: "white",

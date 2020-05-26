@@ -5,6 +5,6 @@ declare class TableExample {
     };
     componentDidMount(): void;
     generateData(): Promise<void>;
-    action(id: any): any;
+    action(id: any): HTMLElement;
     render(): any;
 }

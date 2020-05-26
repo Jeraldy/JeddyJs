@@ -1,4 +1,4 @@
-import Div from "../../core/Div";
+import Div from "../../dom/Div";
 import '../../styles/loader.css';
 import Size from "../../utils/Size";
 
@@ -12,7 +12,7 @@ export default ({
     color?: string
 } = {}) => {
     return Div({
-        className: 'loader',
+        class: 'loader',
         style: {
             height: radius,
             width: radius,

@@ -1,4 +1,4 @@
-import Div from "../core/Div"
+import Div from "../dom/Div"
 import * as CSS from "../css/index";
 
 const StatckPane = ({ children, style }: {

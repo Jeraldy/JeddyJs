@@ -1,16 +1,16 @@
 import { StatefulWidget } from "../../index";
-import Table from "../../core/Table";
-import Thead from "../../core/Thead";
-import Tr from "../../core/Tr";
-import Tbody from "../../core/Tbody";
-import TextView from "../../core/TextView";
-import Td from "../../core/Td";
+import Table from "../../dom/Table";
+import Thead from "../../dom/Thead";
+import Tr from "../../dom/Tr";
+import Tbody from "../../dom/Tbody";
+import TextView from "../../dom/TextView";
+import Td from "../../dom/Td";
 import TableHeader from "./TableHeader";
 import Divider from "../Divider/index";
-import Div from "../../core/Div";
-import Section from "../../core/Section";
-import Footer from "../../core/Footer";
-import Span from "../../core/Span";
+import Div from "../../dom/Div";
+import Section from "../../dom/Section";
+import Footer from "../../dom/Footer";
+import Span from "../../dom/Span";
 import ActionButton from "../Button/ActionButton";
 
 enum DIMS { SIZE = 10 }
@@ -61,7 +61,7 @@ class _Table extends StatefulWidget {
     render() {
         const data = this.state.data.slice(this.state.start, this.state.end);
         return Section({
-            className: "md-ui component-data-table",
+            class: "md-ui component-data-table",
             children: [
                 TableHeader({
                     filter: (e: Event) => this.filterTable(e),
@@ -71,25 +71,25 @@ class _Table extends StatefulWidget {
                 }),
                 Divider({ style: { backgroundColor: '#e0e0e0' } }),
                 Div({
-                    className: "main-table-wrapper",
+                    class: "main-table-wrapper",
                     children: [
                         Table({
-                            className: "main-table-content",
+                            class: "main-table-content",
                             children: [
                                 Thead({
-                                    className: "data-table-header",
+                                    class: "data-table-header",
                                     children: [
                                         Tr({
-                                            className: "data-table-row",
+                                            class: "data-table-row",
                                             children: this.state.titles.map((v: any) => TD(v.title, v.style))
                                         })
                                     ]
                                 }),
                                 Tbody({
-                                    className: "data-table-content",
+                                    class: "data-table-content",
                                     children: data.map((row: any) =>
                                         Tr({
-                                            className: "data-table-row",
+                                            class: "data-table-row",
                                             children: row.map((v: any) => TD(v))
                                         }),
                                     )
@@ -99,7 +99,7 @@ class _Table extends StatefulWidget {
                     ]
                 }),
                 Footer({
-                    className: "main-table-footer",
+                    class: "main-table-footer",
                     children: [
                         // Span({
                         //     class: "rows-selection",
@@ -115,11 +115,11 @@ class _Table extends StatefulWidget {
                         //     ]
                         // }),
                         Span({
-                            className: "rows-amount",
+                            class: "rows-amount",
                             children: [TextView(`Showing: ${this.state.start + 1}-${data.length + this.state.start} of ${this.props.data.length}`)]
                         }),
                         Span({
-                            className: "table-pagination",
+                            class: "table-pagination",
                             children: [
                                 ActionButton({
                                     icon: "keyboard_arrow_left",
