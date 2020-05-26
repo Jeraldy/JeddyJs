@@ -28,7 +28,7 @@ export class StatefulWidget implements LifeCycleMethods {
         this.state = { ...this.state, ...NewState }
         let newNode = this.render()
         updateElement(
-            document.getElementById("root"),
+            this.node,
             generateHTree(newNode),
             generateHTree(this.node)
         )
@@ -51,10 +51,7 @@ export class StatefulWidget implements LifeCycleMethods {
 }
 
 export const Jeddy = {
-    Init(entryNode: any) {
-        updateElement(
-            document.getElementById("root"),
-            generateHTree(entryNode)
-        )
+    Init(entryNode: HTMLElement, rootNode: HTMLElement) {
+        updateElement(rootNode, generateHTree(entryNode))
     }
 }
