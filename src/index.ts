@@ -23,7 +23,7 @@ export class StatefulWidget implements LifeCycleMethods {
         this.componentMounted()
     }
 
-    async setState(NewState: {}, e?: Event) {
+    async setState(NewState: {}) {
         this.componetWillUpdate()
         this.state = { ...this.state, ...NewState }
         let newNode = this.render()
