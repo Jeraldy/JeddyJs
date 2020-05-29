@@ -28,7 +28,7 @@ export class StatefulWidget implements LifeCycleMethods {
         this.state = { ...this.state, ...NewState }
         let newNode = this.render()
         updateElement(
-            this.node.parentNode,
+            document.getElementById("root"),
             generateHTree(newNode),
             generateHTree(this.node)
         )
