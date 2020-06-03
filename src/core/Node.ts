@@ -33,9 +33,10 @@ export default (props = {}, tag: string) => {
   for (let key of Object.keys(rest)) {
     if (rest[key]) {
       if (typeof rest[key] === 'function') {
-        node[key.toLocaleLowerCase()] = rest[key];
+        node[key.toLowerCase()] = rest[key];
       } else {
-        node.setAttribute(key.toLocaleLowerCase(), rest[key]);
+        node[key] = rest[key];
+        node.setAttribute(key, rest[key]);
       }
     }
   }
