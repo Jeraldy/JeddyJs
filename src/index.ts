@@ -1,4 +1,6 @@
 import { generateHTree, updateElement } from './core/Reconcile';
+import { replaceReducer } from "./jredux";
+import { combineReducers } from 'redux';
 
 interface LifeCycleMethods {
     componentDidMount(): void
@@ -23,9 +25,9 @@ export class StatefulWidget implements LifeCycleMethods {
         this.componentMounted()
     }
 
-    async setState(NewState: {}) {
+    async setState(newState: {}) {
         this.componetWillUpdate()
-        this.state = { ...this.state, ...NewState }
+        this.state = { ...this.state, ...newState }
         let newNode = this.render()
         updateElement(
             document.getElementById("root"),
@@ -39,19 +41,26 @@ export class StatefulWidget implements LifeCycleMethods {
 
     private componentMounted() {
         document
-            .addEventListener("DOMContentLoaded",
-            (_) => this.componentDidMount());
+            .addEventListener("DOMContentLoaded", (_) => {
+                this.componentDidMount()
+            });
     }
 
     connect() {
         this.node = this.render()
         return this.node
     }
-
 }
 
 export const Jeddy = {
-    Init(entryNode: HTMLElement, rootNode: HTMLElement) {
-        updateElement(rootNode, generateHTree(entryNode))
-    }
+    Init({ app, root }: { app: HTMLElement, root: HTMLElement }) {
+        updateElement(root, generateHTree(app))
+        return {
+            Reducers(reducers: {}) {
+                replaceReducer(
+                    combineReducers({ ...reducers })
+                )
+            }
+        }
+    },
 }
