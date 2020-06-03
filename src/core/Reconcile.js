@@ -46,9 +46,12 @@ function setProp($target, name, value) {
 }
 
 function setValue($target, value) {
-    document.addEventListener('DOMContentLoaded', () => { $target.value = value })
+    document.addEventListener('DOMContentLoaded', () => { 
+        $target.value = value 
+        $target.setAttribute('value', value);
+    })
     $target.value = value
-    $target.setAttribute(name, value);
+    $target.setAttribute('value', value);
 }
 
 function removeProp($target, name, value) {
