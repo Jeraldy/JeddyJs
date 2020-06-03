@@ -53,8 +53,8 @@ export class StatefulWidget implements LifeCycleMethods {
 }
 
 export const Jeddy = {
-    Init({ app, root }: { app: HTMLElement, root: HTMLElement }) {
-        updateElement(root, generateHTree(app))
+    Init({ app }: { app: HTMLElement }) {
+        updateElement(document.getElementById("root"), generateHTree(app))
         return {
             Reducers(reducers: {}) {
                 replaceReducer(
