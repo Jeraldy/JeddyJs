@@ -1,5 +1,5 @@
 import { generateHTree, updateElement } from './core/Reconcile';
-import { replaceReducer } from "./jredux";
+import { replaceReducer, state } from "./jredux";
 import { combineReducers } from 'redux';
 
 interface LifeCycleMethods {
@@ -57,6 +57,9 @@ export const Jeddy = {
         if (reducers) {
             replaceReducer(combineReducers({ ...reducers }))
         }
+        console.log("=============================")
+        console.log(state)
+        console.log("=============================")
         setTimeout(() => updateElement(document.getElementById("root"), generateHTree(app)), 100)
     },
 }

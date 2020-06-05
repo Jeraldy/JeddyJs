@@ -35,4 +35,6 @@ export const connect = (mapStoreToState) => {
 
 export const createReducer = (reducer) => createSlice(reducer)
 
+export const state = store.getState();
+
 
