@@ -46,8 +46,8 @@ function setProp($target, name, value) {
 }
 
 function setValue($target, value) {
-    document.addEventListener('DOMContentLoaded', () => { 
-        $target.value = value 
+    document.addEventListener('DOMContentLoaded', () => {
+        $target.value = value
         $target.setAttribute('value', value);
     })
     $target.value = value
@@ -130,9 +130,17 @@ function updateElement($parent, newNode, oldNode, index = 0) {
             createElement(newNode)
         );
     } else if (!newNode) {
-        $parent.removeChild(
-            $parent.childNodes[index]
-        );
+        try {
+            $parent.removeChild(
+                $parent.childNodes[index]
+            );
+        } catch (e) {
+            console.log("================ ERROR CHILD REMOVAL =================")
+            console.log(e)
+            console.log($parent.childNodes[index])
+            console.log("=====================================================")
+        }
+
     } else if (changed(newNode, oldNode)) {
         $parent.replaceChild(
             createElement(newNode),
