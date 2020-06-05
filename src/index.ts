@@ -57,6 +57,6 @@ export const Jeddy = {
         if (reducers) {
             replaceReducer(combineReducers({ ...reducers }))
         }
-        updateElement(document.getElementById("root"), generateHTree(app))
+        setTimeout(() => updateElement(document.getElementById("root"), generateHTree(app)), 100)
     },
 }
