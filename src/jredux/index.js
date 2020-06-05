@@ -23,13 +23,13 @@ function _updateState(context) {
 }
 
 export const connect = (mapStoreToState) => {
-    console.log(store.getState())
-    if (store.getState().hasOwnProperty('reducer')) {
-        return (widget) => {
-            console.log(widget)
-            return (args) => Div({ children: ["Reducer is not configired"] })
-        }
-    }
+    // console.log(store.getState())
+    // if (store.getState().hasOwnProperty('reducer')) {
+    //     return (widget) => {
+    //         console.log(widget)
+    //         return (args) => Div({ children: ["Reducer is not configired"] })
+    //     }
+    // }
     return (widget) => (args) => widget(mapStoreToState(store.getState()), args)
 }
 
