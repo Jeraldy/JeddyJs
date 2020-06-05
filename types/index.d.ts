@@ -20,9 +20,8 @@ export declare class StatefulWidget implements LifeCycleMethods {
     connect(): any;
 }
 export declare const Jeddy: {
-    Init({ app, reducers }: {
+    Init({ app }: {
         app: HTMLElement;
-        reducers?: any;
     }): void;
 };
 export {};

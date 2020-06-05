@@ -22,6 +22,9 @@ export class StatefulWidget implements LifeCycleMethods {
 
     constructor(props?: any) {
         this.props = props
+        if (props.reducers) {
+            replaceReducer(combineReducers({ ...props.reducers }))
+        }
         this.componentMounted()
     }
 
@@ -53,18 +56,7 @@ export class StatefulWidget implements LifeCycleMethods {
 }
 
 export const Jeddy = {
-    Init({ app, reducers }: { app: HTMLElement, reducers?: any }) {
-        if (reducers) {
-            replaceReducer(combineReducers({ ...reducers }))
-        }
-        const stateReady = () => {
-            console.log("=============================")
-            console.log(state)
-            console.log("=============================")
-            if (state.hasOwnProperty('reducer')) {
-                return stateReady()
-            }
-            setTimeout(() => updateElement(document.getElementById("root"), generateHTree(app)), 100)
-        }
+    Init({ app }: { app: HTMLElement }) {
+        updateElement(document.getElementById("root"), generateHTree(app))
     },
 }
