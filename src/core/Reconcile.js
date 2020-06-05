@@ -137,7 +137,9 @@ function updateElement($parent, newNode, oldNode, index = 0) {
         } catch (e) {
             console.log("================ ERROR CHILD REMOVAL =================")
             console.log(e)
-            console.log($parent.childNodes[index])
+            console.log($parent)
+            console.log($parent.childNodes)
+            console.log(index)
             console.log("=====================================================")
         }
 
