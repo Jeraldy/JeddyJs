@@ -141,6 +141,9 @@ function updateElement($parent, newNode, oldNode, index = 0) {
             console.log($parent.childNodes)
             console.log(index)
             console.log("=====================================================")
+            $parent.removeChild(
+                $parent.childNodes[index-1]
+            );
         }
 
     } else if (changed(newNode, oldNode)) {
