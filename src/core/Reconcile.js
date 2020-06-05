@@ -141,9 +141,6 @@ function updateElement($parent, newNode, oldNode, index = 0) {
             console.log($parent.childNodes)
             console.log(index)
             console.log("=====================================================")
-            $parent.removeChild(
-                $parent.childNodes[index-1]
-            );
         }
 
     } else if (changed(newNode, oldNode)) {
@@ -190,7 +187,9 @@ function generateHTree(node) {
         type: node.nodeName, props,
         children: [].slice.call(node.childNodes).map(node => {
             if (node.nodeName == "#text") {
-                return node.data
+                if (node.data.trim()) {
+                    return node.data
+                }
             }
             return generateHTree(node)
         })
