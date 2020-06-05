@@ -57,9 +57,14 @@ export const Jeddy = {
         if (reducers) {
             replaceReducer(combineReducers({ ...reducers }))
         }
-        console.log("=============================")
-        console.log(state)
-        console.log("=============================")
-        setTimeout(() => updateElement(document.getElementById("root"), generateHTree(app)), 100)
+        const stateReady = () => {
+            console.log("=============================")
+            console.log(state)
+            console.log("=============================")
+            if (state.hasOwnProperty('reducer')) {
+                return stateReady()
+            }
+            setTimeout(() => updateElement(document.getElementById("root"), generateHTree(app)), 100)
+        }
     },
 }
