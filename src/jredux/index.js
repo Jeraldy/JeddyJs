@@ -1,5 +1,6 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import reducer from "./reducer";
+import Div from '../dom/Div';
 
 const store = configureStore({ reducer })
 
@@ -22,6 +23,9 @@ function _updateState(context) {
 }
 
 export const connect = (mapStoreToState) => {
+    if (store.getState().hasOwnProperty('reducer')) {
+        return () => Div({ children: ["Reducer is not configired"] })
+    }
     return (widget) => (args) => widget(mapStoreToState(store.getState()), args)
 }
 
