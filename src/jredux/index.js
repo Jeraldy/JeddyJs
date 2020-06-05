@@ -24,7 +24,7 @@ function _updateState(context) {
 
 export const connect = (mapStoreToState) => {
     if (store.getState().hasOwnProperty('reducer')) {
-        return () => Div({ children: ["Reducer is not configired"] })
+        return (widget) => (args) => Div({ children: ["Reducer is not configired"] })
     }
     return (widget) => (args) => widget(mapStoreToState(store.getState()), args)
 }
