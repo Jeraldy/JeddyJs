@@ -187,9 +187,7 @@ function generateHTree(node) {
         type: node.nodeName, props,
         children: [].slice.call(node.childNodes).map(node => {
             if (node.nodeName == "#text") {
-                if (node.data.trim()) {
-                    return node.data
-                }
+                return node.data
             }
             return generateHTree(node)
         })

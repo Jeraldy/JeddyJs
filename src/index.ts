@@ -37,7 +37,7 @@ export class StatefulWidget implements LifeCycleMethods {
             generateHTree(newNode),
             generateHTree(this.node)
         )
-        this.node = newNode
+        //this.node = newNode
         this.componentDidUpdate()
         return this.state
     }
