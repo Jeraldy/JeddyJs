@@ -60,5 +60,5 @@ npm publish --access=public
 cd..
 
 git add .
-git commit -m "jredux"
+git commit -m "stateful widget"
 git push
