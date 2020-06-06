@@ -130,6 +130,14 @@ function updateElement($parent, newNode, oldNode, index = 0) {
             createElement(newNode)
         );
     } else if (!newNode) {
+        if(oldNode.type == "BUTTON"){
+            console.log("******************")
+            console.log(oldNode)
+            console.log($parent)
+            console.log($parent.childNodes)
+            console.log(index)
+            console.log("******************")
+        }
         try {
             $parent.removeChild(
                 $parent.childNodes[index]
@@ -180,9 +188,7 @@ function generateHTree(node) {
             }
         })
     EVENTS.forEach(e => {
-        if (node[e]) {
-            props[e] = node[e]
-        }
+        if (node[e]) { props[e] = node[e] }
     })
     return {
         type: node.nodeName, props,
