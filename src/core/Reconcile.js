@@ -125,7 +125,7 @@ function changed(node1, node2) {
 }
 
 function updateElement($parent, newNode, oldNode, index = 0) {
-    console.log(Index + "******************* Update **************************")
+    console.log(index + "******************* Update **************************")
     console.log($parent)
     console.log(newNode)
     console.log(oldNode)
