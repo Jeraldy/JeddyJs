@@ -17,6 +17,7 @@ export class StatefulWidget implements LifeCycleMethods {
     componetWillUpdate(): void { }
     render(): any { throw new Error("Method not implemented."); }
     private node: any;
+    private _node: any;
     readonly props: any = {};
     state: any = {}
 
@@ -33,13 +34,13 @@ export class StatefulWidget implements LifeCycleMethods {
         this.state = { ...this.state, ...newState }
         let newNode = this.render()
         let _newNode = generateHTree(newNode)
-        let _node = generateHTree(this.node)
+        // let _node = generateHTree(this.node)
         console.log("_newNode::::::::::::::::::::::::")
         console.log(_newNode)
         console.log("_node::::::::::::::::::::::::")
-        console.log(_node)
-        updateElement(document.getElementById("root"), _newNode, _node)
-        this.node = newNode
+        // console.log(_node)
+        updateElement(document.getElementById("root"), _newNode, this._node)
+        this._node = _newNode
         this.componentDidUpdate()
         return this.state
     }
@@ -53,6 +54,7 @@ export class StatefulWidget implements LifeCycleMethods {
 
     connect() {
         this.node = this.render()
+        this._node = generateHTree(this.node)
         return this.node
     }
 }
