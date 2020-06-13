@@ -5,8 +5,8 @@ export interface args extends NodeArgs {
   value?: string,
 }
 
-const RadioInput = (args?: args) => {
+const Select = (args?: args) => {
   return Node(args, 'select');
 }
 
-export default RadioInput;
+export default Select;

@@ -2,8 +2,16 @@ import Div from "../../dom/Div"
 import Icon from "../Icon/index"
 import TextField from "../TextField/index"
 import Icons from "../../utils/Icons"
+import { NodeArgs } from '../../core/Args';
 
-export default () => {
+export interface args extends NodeArgs {
+  value?: string,
+  placeholder?: string,
+  autocomplete?: string,
+  ariaLabel?: string
+}
+
+export default (args?: args) => {
     return Div({
         class: 'search-container',
         style: {
@@ -12,8 +20,6 @@ export default () => {
             color: "black",
             border: "1px solid #ccc",
             borderRadius: "4px",
-            paddingLeft: "8px",
-            marginBottom: "5px",
             height: "30px"
         },
         children: [
@@ -33,6 +39,7 @@ export default () => {
                     position: 'relative',
                     top: '-5px'
                 },
+                ...args
             }),
         ]
     })
