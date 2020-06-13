@@ -35,7 +35,7 @@ export default (props = {}, tag: string) => {
       if (typeof rest[key] === 'function') {
         node[key.toLowerCase()] = rest[key];
       } else {
-        node.setAttribute(key.toLowerCase(), rest[key]);
+        node.setAttribute(key, rest[key]);
       }
     }
   }

@@ -1,4 +1,4 @@
-import EVENTS from "./Events";
+const EVENTS = require("./Events");
 
 function setBooleanProp($target, name, value) {
     if (value) {
@@ -125,29 +125,15 @@ function changed(node1, node2) {
 }
 
 function updateElement($parent, newNode, oldNode, index = 0) {
-    console.log(index + "******************* Update **************************")
-    console.log($parent)
-    console.log(newNode)
-    console.log(oldNode)
     if (!oldNode) {
-        $parent.appendChild(
-            createElement(newNode)
-        );
+        $parent.appendChild(createElement(newNode));
     } else if (!newNode) {
-        try {
-            $parent.removeChild(
-                $parent.childNodes[index]
-            );
-        } catch (e) {
-            console.log("================ ERROR CHILD REMOVAL =================")
-            console.log(e)
-            console.log(oldNode)
-            console.log($parent)
-            console.log($parent.childNodes)
-            console.log(index)
-            console.log("=====================================================")
+        let times = ($parent.childNodes.length || 0) - index;
+        while (times-- > 0) {
+            if ($parent.lastChild) {
+                $parent.removeChild($parent.lastChild);
+            }
         }
-
     } else if (changed(newNode, oldNode)) {
         $parent.replaceChild(
             createElement(newNode),
