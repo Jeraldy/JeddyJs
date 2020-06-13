@@ -1,4 +1,4 @@
-const EVENTS = require("./Events");
+import EVENTS from "./Events";
 
 function setBooleanProp($target, name, value) {
     if (value) {
