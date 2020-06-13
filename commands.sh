@@ -60,5 +60,5 @@ npm publish --access=public
 cd..
 
 git add .
-git commit -m "stateful widget"
+git commit -m "table"
 git push
