@@ -1,5 +1,5 @@
 import { generateHTree, updateElement } from './core/Reconcile';
-import { replaceReducer, state } from "./jredux";
+import { replaceReducer } from "./jredux/index";
 import { combineReducers } from 'redux';
 
 interface LifeCycleMethods {
@@ -17,12 +17,12 @@ export class StatefulWidget implements LifeCycleMethods {
     componetWillUpdate(): void { }
     render(): any { throw new Error("Method not implemented."); }
     private node: any;
-    readonly props: any = {};
     state: any = {}
+    props: any = {};
 
     constructor(props?: any) {
         this.props = props
-        if (props.reducers) {
+        if (props && props.reducers) {
             replaceReducer(combineReducers({ ...props.reducers }))
         }
         this.componentMounted()
@@ -31,32 +31,39 @@ export class StatefulWidget implements LifeCycleMethods {
     async setState(newState: {}) {
         this.componetWillUpdate()
         this.state = { ...this.state, ...newState }
-        let newNode = this.render()
+        let tree_n = generateHTree(this.render())
+        let tree_o = generateHTree(this.node)
         updateElement(
-            document.getElementById("root"),
-            generateHTree(newNode),
-            generateHTree(this.node)
+            document.getElementById(this.constructor.name),
+            tree_n,
+            tree_o
         )
-        this.node = newNode
         this.componentDidUpdate()
         return this.state
     }
 
     private componentMounted() {
-        document
-            .addEventListener("DOMContentLoaded", (_) => {
-                this.componentDidMount()
-            });
+        document.addEventListener("DOMContentLoaded", (_) => {
+            this.componentDidMount()
+        });
+    }
+
+    private createWrapper(child: any): any {
+        let wrapper = document.createElement("div")
+        wrapper.id = this.constructor.name
+        wrapper.appendChild(child)
+        return wrapper
     }
 
     connect() {
         this.node = this.render()
-        return this.node
+        return this.createWrapper(this.node)
     }
+
 }
 
 export const Jeddy = {
-    Init({ app }: { app: HTMLElement }) {
-        updateElement(document.getElementById("root"), generateHTree(app))
+    Init({ app, root }: { app: HTMLElement, root: HTMLElement }) {
+        root.appendChild(app)
     },
 }

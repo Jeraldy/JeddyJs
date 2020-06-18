@@ -12,16 +12,18 @@ export declare class StatefulWidget implements LifeCycleMethods {
     componetWillUpdate(): void;
     render(): any;
     private node;
-    readonly props: any;
     state: any;
+    props: any;
     constructor(props?: any);
     setState(newState: {}): Promise<any>;
     private componentMounted;
+    private createWrapper;
     connect(): any;
 }
 export declare const Jeddy: {
-    Init({ app }: {
+    Init({ app, root }: {
         app: HTMLElement;
+        root: HTMLElement;
     }): void;
 };
 export {};
