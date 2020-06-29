@@ -6,6 +6,7 @@ interface LifeCycleMethods {
     componentDidMount(): void
     componentDidUpdate(): void
     componetWillUpdate(): void
+    mapStoreToState(reduxState: any): {}
     render(): any
 }
 
@@ -13,6 +14,7 @@ export class StatefulWidget implements LifeCycleMethods {
     componentDidMount(): void { }
     componentDidUpdate(): void { }
     componetWillUpdate(): void { }
+    mapStoreToState(reduxState: any): {} { return {} }
     render(): any { throw new Error("Method not implemented."); }
     private node: any;
     state: any = {}
