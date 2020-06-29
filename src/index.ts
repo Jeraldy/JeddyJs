@@ -6,12 +6,10 @@ interface LifeCycleMethods {
     componentDidMount(): void
     componentDidUpdate(): void
     componetWillUpdate(): void
-    mapStoreToState(reduxState: any): {}
     render(): any
 }
 
 export class StatefulWidget implements LifeCycleMethods {
-    mapStoreToState(reduxState: any): {} { return {} }
     componentDidMount(): void { }
     componentDidUpdate(): void { }
     componetWillUpdate(): void { }
@@ -31,13 +29,9 @@ export class StatefulWidget implements LifeCycleMethods {
     async setState(newState: {}) {
         this.componetWillUpdate()
         this.state = { ...this.state, ...newState }
-        let tree_n = generateHTree(this.render())
-        let tree_o = generateHTree(this.node)
-        updateElement(
-            document.getElementById(this.constructor.name),
-            tree_n,
-            tree_o
-        )
+        let newTree = generateHTree(this.render())
+        let oldTree = generateHTree(this.node)
+        updateElement(document.getElementById('root'), newTree, oldTree)
         this.componentDidUpdate()
         return this.state
     }
@@ -57,7 +51,7 @@ export class StatefulWidget implements LifeCycleMethods {
 
     connect() {
         this.node = this.render()
-        return this.createWrapper(this.node)
+        return this.node
     }
 
 }

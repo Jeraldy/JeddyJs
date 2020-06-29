@@ -2,11 +2,9 @@ interface LifeCycleMethods {
     componentDidMount(): void;
     componentDidUpdate(): void;
     componetWillUpdate(): void;
-    mapStoreToState(reduxState: any): {};
     render(): any;
 }
 export declare class StatefulWidget implements LifeCycleMethods {
-    mapStoreToState(reduxState: any): {};
     componentDidMount(): void;
     componentDidUpdate(): void;
     componetWillUpdate(): void;
