@@ -31,9 +31,14 @@ export class StatefulWidget implements LifeCycleMethods {
     async setState(newState: {}) {
         this.componetWillUpdate()
         this.state = { ...this.state, ...newState }
-        let newTree = generateHTree(this.render())
-        let oldTree = generateHTree(this.node)
-        updateElement(document.getElementById('root'), newTree, oldTree)
+        let newTree = this.render()
+        let oldTree = this.node
+        updateElement(
+            document.getElementById('root'),
+            generateHTree(newTree),
+            generateHTree(oldTree)
+        )
+        this.node = newTree
         this.componentDidUpdate()
         return this.state
     }
