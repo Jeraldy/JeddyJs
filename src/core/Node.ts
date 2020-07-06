@@ -13,6 +13,11 @@ export default (props = {}, tag: string) => {
           node.appendChild(TextView(child));
         } else {
           node.appendChild(child);
+          //@ts-ignore
+          if (child.nodeName == "OPTION" && props.value == child.value) {
+            //@ts-ignore
+            child.setAttribute('selected', 'selected');
+          }
         }
       }
     });
