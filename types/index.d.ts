@@ -17,7 +17,6 @@ export declare class StatefulWidget implements LifeCycleMethods {
     constructor(props?: any);
     setState(newState: {}): Promise<any>;
     private componentMounted;
-    private createWrapper;
     connect(): any;
 }
 export declare const Jeddy: {

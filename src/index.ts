@@ -44,13 +44,6 @@ export class StatefulWidget implements LifeCycleMethods {
         });
     }
 
-    private createWrapper(child: any): any {
-        let wrapper = document.createElement("div")
-        wrapper.id = this.constructor.name
-        wrapper.appendChild(child)
-        return wrapper
-    }
-
     connect() {
         this.node = this.render()
         return this.node
@@ -60,6 +53,6 @@ export class StatefulWidget implements LifeCycleMethods {
 
 export const Jeddy = {
     Init({ app, root }: { app: HTMLElement, root: HTMLElement }) {
-        root.appendChild(app)
+        updateElement(root, generateHTree(app))
     },
 }
