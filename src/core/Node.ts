@@ -14,10 +14,10 @@ export default (props = {}, tag: string) => {
         } else {
           node.appendChild(child);
           //@ts-ignore
-          if (child.nodeName == "OPTION" && props.value == child.value) {
-            //@ts-ignore
-            child.setAttribute('selected', 'selected');
-          }
+          // if (child.nodeName == "OPTION" && props.value == child.value) {
+          //   //@ts-ignore
+          //   child.setAttribute('selected', 'selected');
+          // }
         }
       }
     });
