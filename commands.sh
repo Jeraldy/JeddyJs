@@ -60,5 +60,5 @@ npm publish --access=public
 cd..
 
 git add .
-git commit -m "dom"
+git commit -m "reconcilliation"
 git push

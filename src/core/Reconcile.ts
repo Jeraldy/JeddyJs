@@ -1,6 +1,6 @@
 import EVENTS from "./Events";
 
-function setBooleanProp($target, name, value) {
+function setBooleanProp($target: HTMLElement, name: string, value: string) {
     if (value) {
         $target.setAttribute(name, value);
         $target[name] = true;
@@ -9,24 +9,24 @@ function setBooleanProp($target, name, value) {
     }
 }
 
-function removeBooleanProp($target, name) {
+function removeBooleanProp($target: HTMLElement, name: string) {
     $target.removeAttribute(name);
     $target[name] = false;
 }
 
-function isEventProp(name) {
+function isEventProp(name: string) {
     return /^on/.test(name);
 }
 
-function extractEventName(name) {
+function extractEventName(name: string) {
     return name.slice(2).toLowerCase();
 }
 
-function isCustomProp(name) {
+function isCustomProp(name: string) {
     return isEventProp(name) || name === 'forceUpdate';
 }
 
-function setProp($target, name, value) {
+function setProp($target: HTMLElement, name: string, value: string) {
     if (isCustomProp(name)) {
         return;
     } else if (name === 'className') {
@@ -45,16 +45,18 @@ function setProp($target, name, value) {
     }
 }
 
-function setValue($target, value) {
+function setValue($target: HTMLElement, value: string) {
     document.addEventListener('DOMContentLoaded', () => {
+        //@ts-ignore
         $target.value = value
         $target.setAttribute('value', value);
     })
+    //@ts-ignore
     $target.value = value
     $target.setAttribute('value', value);
 }
 
-function removeProp($target, name, value) {
+function removeProp($target: HTMLElement, name: string, value: string) {
     if (isCustomProp(name)) {
         return;
     } else if (name === 'className') {
@@ -65,6 +67,7 @@ function removeProp($target, name, value) {
         if (($target.nodeName == "INPUT"
             || $target.nodeName == "TEXTAREA")
             && name == "value") {
+            //@ts-ignore
             $target.value = ''
         } else {
             $target.removeAttribute(name);
@@ -72,13 +75,13 @@ function removeProp($target, name, value) {
     }
 }
 
-function setProps($target, props) {
+function setProps($target: HTMLElement, props: any) {
     Object.keys(props).forEach(name => {
         setProp($target, name, props[name]);
     });
 }
 
-function updateProp($target, name, newVal, oldVal) {
+function updateProp($target: HTMLElement, name: string, newVal: string, oldVal: string) {
     if (!newVal) {
         removeProp($target, name, oldVal);
     } else if (!oldVal || newVal !== oldVal) {
@@ -86,17 +89,17 @@ function updateProp($target, name, newVal, oldVal) {
     }
 }
 
-function updateProps($target, newProps, oldProps = {}) {
+function updateProps($target: HTMLElement, newProps: {}, oldProps = {}) {
     const props = Object.assign({}, newProps, oldProps);
     Object.keys(props).forEach(name => {
         updateProp($target, name, newProps[name], oldProps[name]);
     });
 }
 
-function addEventListeners($target, props) {
+function addEventListeners($target: HTMLElement, props: any) {
     Object.keys(props).forEach(name => {
         if (isEventProp(name)) {
-            $target[name] = function _listener(e) {
+            $target[name] = function _listener(e: any) {
                 props[name](e)
                 $target.removeEventListener(name, _listener);
             }
@@ -104,7 +107,7 @@ function addEventListeners($target, props) {
     });
 }
 
-function createElement(node) {
+function createElement(node: any) {
     if (typeof node === 'string') {
         return document.createTextNode(node);
     }
@@ -117,14 +120,14 @@ function createElement(node) {
     return $el;
 }
 
-function changed(node1, node2) {
+function changed(node1: any, node2: any) {
     return typeof node1 !== typeof node2 ||
         typeof node1 === 'string' && node1 !== node2 ||
         node1.type !== node2.type ||
         node1.props && node1.props.forceUpdate;
 }
 
-function updateElement($parent, newNode, oldNode, index = 0) {
+function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
     if (!oldNode) {
         $parent.appendChild(createElement(newNode));
     } else if (!newNode) {
@@ -159,16 +162,29 @@ function updateElement($parent, newNode, oldNode, index = 0) {
     }
 }
 
-function generateHTree(node) {
+function generateHTree(node: HTMLElement) {
     let props = {}
-    node.getAttributeNames()
-        .forEach(name => {
-            if (node.type == "radio" && name == "checked") {
-                props[name] = node.getAttribute(name) == "true"
-            } else {
-                props[name] = node.getAttribute(name)
+    node.getAttributeNames().forEach(name => {
+        //@ts-ignore
+        if (node.type == "radio" && name == "checked") {
+            props[name] = node.getAttribute(name) == "true"
+            //@ts-ignore
+        } else {
+            props[name] = node.getAttribute(name)
+        }
+    })
+
+    //@ts-ignore
+    if (node.type == "select" && node.value) {
+        [].slice.call(node.childNodes).forEach(child => {
+            //@ts-ignore
+            if (child.value == node.value) {
+                child.selected = true
+                child.setAttribute('selected', 'selected')
             }
-        })
+        });
+    }
+
     EVENTS.forEach(e => {
         if (node[e]) { props[e] = node[e] }
     })

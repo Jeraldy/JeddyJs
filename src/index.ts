@@ -28,7 +28,7 @@ export class StatefulWidget implements LifeCycleMethods {
         this.componentMounted()
     }
 
-    async setState(newState: {}) {
+    setState(newState: {}){
         this.componetWillUpdate()
         this.state = { ...this.state, ...newState }
         let newTree = this.render()
@@ -58,6 +58,6 @@ export class StatefulWidget implements LifeCycleMethods {
 
 export const Jeddy = {
     Init({ app, root }: { app: HTMLElement, root: HTMLElement }) {
-        updateElement(root, generateHTree(app))
+        updateElement(root, generateHTree(app), 0)
     },
 }
