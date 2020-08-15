@@ -45,18 +45,16 @@ function setProp($target: HTMLElement, name: string, value: string) {
     }
 }
 
-function setValue($target: HTMLElement, value: string) {
+function setValue($target: any, value: string) {
     document.addEventListener('DOMContentLoaded', () => {
-        //@ts-ignore
         $target.value = value
         $target.setAttribute('value', value);
     })
-    //@ts-ignore
     $target.value = value
     $target.setAttribute('value', value);
 }
 
-function removeProp($target: HTMLElement, name: string, value: string) {
+function removeProp($target: any, name: string, value: string) {
     if (isCustomProp(name)) {
         return;
     } else if (name === 'className') {
@@ -67,7 +65,6 @@ function removeProp($target: HTMLElement, name: string, value: string) {
         if (($target.nodeName == "INPUT"
             || $target.nodeName == "TEXTAREA")
             && name == "value") {
-            //@ts-ignore
             $target.value = ''
         } else {
             $target.removeAttribute(name);
@@ -128,6 +125,7 @@ function changed(node1: any, node2: any) {
 }
 
 function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
+    updateDropdowns($parent)
     if (!oldNode) {
         $parent.appendChild(createElement(newNode));
     } else if (!newNode) {
@@ -162,22 +160,26 @@ function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
     }
 }
 
-function generateHTree(node: HTMLElement) {
+function updateDropdowns($el: any) {
+    if ($el.nodeName == "OPTION") {
+        if ($el.parentNode.getAttribute('value') == $el.value) {
+            $el.parentNode.value = $el.value
+        }
+    }
+}
+
+function generateHTree(node: any) {
     let props = {}
     node.getAttributeNames().forEach(name => {
-        //@ts-ignore
         if (node.type == "radio" && name == "checked") {
             props[name] = node.getAttribute(name) == "true"
-            //@ts-ignore
         } else {
             props[name] = node.getAttribute(name)
         }
     })
 
-    //@ts-ignore
     if (node.type == "select" && node.value) {
         [].slice.call(node.childNodes).forEach(child => {
-            //@ts-ignore
             if (child.value == node.value) {
                 child.selected = true
                 child.setAttribute('selected', 'selected')
