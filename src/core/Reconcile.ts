@@ -161,8 +161,10 @@ function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
 }
 
 function isDynamicList(newNode, oldNode) {
-    return (newNode.hasAttribute("key")
-        && oldNode.hasAttribute("key"))
+    if (newNode.props.key && oldNode.props.key) {
+        return newNode.props.key != oldNode.props.key
+    }
+    return false
 }
 
 function dropdownHook($el) {
