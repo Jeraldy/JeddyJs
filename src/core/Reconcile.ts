@@ -135,7 +135,7 @@ function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
                 $parent.removeChild($parent.lastChild);
             }
         }
-    } else if (changed(newNode, oldNode)) {
+    } else if (changed(newNode, oldNode) || isDynamicList(newNode, oldNode)) {
         $parent.replaceChild(
             createElement(newNode),
             $parent.childNodes[index]
@@ -160,6 +160,10 @@ function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
     }
 }
 
+function isDynamicList(newNode, oldNode) {
+    return (newNode.hasAttribute("key")
+        && oldNode.hasAttribute("key"))
+}
 
 function dropdownHook($el) {
     if ($el.nodeName == "OPTION") {
