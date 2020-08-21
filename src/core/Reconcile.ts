@@ -125,7 +125,7 @@ function changed(node1: any, node2: any) {
 }
 
 function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
-    updateDropdowns($parent)
+    hooks($parent)
     if (!oldNode) {
         $parent.appendChild(createElement(newNode));
     } else if (!newNode) {
@@ -160,12 +160,24 @@ function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
     }
 }
 
-function updateDropdowns($el: any) {
+
+function dropdownHook($el) {
     if ($el.nodeName == "OPTION") {
         if ($el.parentNode.getAttribute('value') == $el.value) {
             $el.parentNode.value = $el.value
         }
     }
+}
+
+function onConnectedCallBackHook($el) {
+    if ($el.hasAttribute("onconnected")) {
+        $el.onconnected($el.parentNode)
+    }
+}
+
+function hooks($el) {
+    dropdownHook($el)
+    onConnectedCallBackHook($el)
 }
 
 function generateHTree(node: any) {
