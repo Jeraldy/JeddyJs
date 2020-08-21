@@ -83,7 +83,8 @@ const EVENTS = [
     "ontransitionstart",
     "onvolumechange",
     "onwaiting",
-    "onwheel"
+    "onwheel",
+    "onconnected"
 ]
 
 export default EVENTS;

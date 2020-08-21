@@ -4,5 +4,5 @@ declare const _default: ({ top, left, right, bottom, center }: {
     left?: any;
     right?: any;
     center: any;
-}) => HTMLElement;
+}) => any;
 export default _default;

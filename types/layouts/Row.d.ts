@@ -5,5 +5,5 @@ declare const Row: ({ children, align, id, backgroundColor, wrapContent }: {
     wrapContent?: boolean;
     id?: string;
     backgroundColor?: string;
-}) => HTMLElement;
+}) => any;
 export default Row;

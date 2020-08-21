@@ -6,9 +6,9 @@ declare const _default: ({ label, icon, type, onclick, style }: {
     icon?: ({ name, style }: {
         name: import("../../utils/Icons").default;
         style?: CSS.Properties<string | 0>;
-    }) => HTMLElement;
+    }) => any;
     type?: ButtonType;
     onclick?: () => void;
     style?: CSS.Properties<string | 0>;
-}) => HTMLElement;
+}) => any;
 export default _default;

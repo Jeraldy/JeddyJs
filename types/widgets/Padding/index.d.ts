@@ -10,5 +10,5 @@ declare const _default: ({ child, padding }: {
             bottom: import("../../utils/Size").default;
         }) => CSS.Properties<string | 0>;
     };
-}) => HTMLElement;
+}) => any;
 export default _default;

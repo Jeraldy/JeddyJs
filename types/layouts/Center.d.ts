@@ -1,4 +1,4 @@
 declare const _default: ({ child }: {
     child: HTMLElement | Text;
-}) => HTMLElement;
+}) => any;
 export default _default;

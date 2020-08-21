@@ -1,5 +1,5 @@
 declare const _default: ({ currency, props }: {
     currency: string;
     props: any;
-}) => HTMLElement;
+}) => any;
 export default _default;

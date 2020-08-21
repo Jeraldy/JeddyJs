@@ -3,5 +3,5 @@ declare const Stepper: ({ child, activeStep, callBack, steps }: {
     activeStep: number;
     callBack: (activeStep: number) => void;
     steps: string[];
-}) => HTMLElement;
+}) => any;
 export default Stepper;

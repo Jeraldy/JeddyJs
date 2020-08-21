@@ -1,4 +1,4 @@
 declare const CollapsibleGroup: ({ children }: {
     children: HTMLElement[];
-}) => HTMLElement;
+}) => any;
 export default CollapsibleGroup;

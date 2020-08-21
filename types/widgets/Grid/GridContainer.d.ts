@@ -1,5 +1,5 @@
 declare const _default: ({ grid, ...props }: {
     grid: any;
     props: any;
-}) => HTMLElement;
+}) => any;
 export default _default;

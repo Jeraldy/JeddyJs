@@ -4,5 +4,5 @@ declare const _default: ({ child, radius, style }: {
     child: HTMLElement;
     radius: Size;
     style: CSS.Properties<string | 0>;
-}) => HTMLElement;
+}) => any;
 export default _default;

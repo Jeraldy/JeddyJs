@@ -3,23 +3,23 @@ declare const SideMenu: ({ headNode, menus, headerStyle }: {
     headNode: any;
     menus: [];
     headerStyle: {};
-}) => HTMLElement;
+}) => any;
 declare const Menu: ({ icon, title, menuItems, open, onclick }: {
     icon: "";
     title: "";
     menuItems: [];
     open: false;
     onclick: () => void;
-}) => HTMLElement;
+}) => any;
 declare const MenuItem: ({ icon, title, active, onclick }: {
     icon: "";
     title: "";
     active: false;
     onclick: () => void;
-}) => HTMLElement;
+}) => any;
 declare const Scaffold: ({ sideMenu, toolBar, main }: {
     sideMenu: any;
     toolBar: any;
     main: any;
-}) => HTMLElement;
+}) => any;
 export { SideMenu, Menu, MenuItem, Scaffold };
