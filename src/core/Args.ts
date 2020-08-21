@@ -86,7 +86,7 @@ export interface ActionEvents {
     onVolumeChange?: (e: Event) => void,
     onWaiting?: (e: Event) => void,
     onWheel?: (e: Event) => void,
-    onConnected: (parent: HTMLElement) => void
+    onConnected?: (parent: HTMLElement) => void
 }
 
 export interface NodeArgs extends ActionEvents {

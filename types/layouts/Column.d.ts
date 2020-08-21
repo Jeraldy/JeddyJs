@@ -2,5 +2,5 @@ import ColAlignment from "./ColAlignment";
 declare const _default: ({ children, align }: {
     children: (HTMLElement | Text)[];
     align?: ColAlignment;
-}) => any;
+}) => HTMLElement;
 export default _default;

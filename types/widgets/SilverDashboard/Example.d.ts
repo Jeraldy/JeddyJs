@@ -6,5 +6,5 @@ declare class SilverDashboard {
         page: string;
     };
     activeSubmenu(menu: any, subMenu: any): boolean;
-    render(): any;
+    render(): HTMLElement;
 }

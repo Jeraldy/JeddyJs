@@ -4,6 +4,6 @@ declare class _Table extends StatefulWidget {
     filterTable(e: Event): void;
     nextData(): void;
     prevData(): void;
-    render(): any;
+    render(): HTMLElement;
 }
 export default _Table;
