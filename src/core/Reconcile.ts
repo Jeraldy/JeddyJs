@@ -161,8 +161,10 @@ function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
 }
 
 function isDynamicList(newNode, oldNode) {
-    if (newNode.props.key && oldNode.props.key) {
-        return newNode.props.key != oldNode.props.key
+    if (newNode.props && oldNode.props) {
+        if (newNode.props.key && oldNode.props.key) {
+            return newNode.props.key != oldNode.props.key
+        }
     }
     return false
 }
