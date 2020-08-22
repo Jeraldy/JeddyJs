@@ -99,5 +99,6 @@ export interface NodeArgs extends ActionEvents {
     readOnly?: boolean,
     disabled?: boolean,
     autoFocus?: boolean,
+    key?: string,
     attributes?: {},
 }
