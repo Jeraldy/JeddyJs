@@ -7,4 +7,4 @@ const H3 = (args?: args) => {
   return Node(args, 'h3');
 }
 
-export default H2;
+export default H3;
