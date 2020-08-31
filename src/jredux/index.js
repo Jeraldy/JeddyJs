@@ -21,8 +21,14 @@ function _updateState(context) {
     context.setState({ ...context.state, ...newState })
 }
 
-export const connect = (mapStoreToState) => {
-    return (widget) => (args) => widget(mapStoreToState(store.getState()), args)
+export const connect = (mapStoreToState, index = 0) => {
+    return (widget) => (args) => {
+        if (widget.onInit && index == 1) {
+            widget.onInit()
+        }
+        index += 1;
+        return widget(mapStoreToState(store.getState()), args)
+    }
 }
 
 export const createReducer = (reducer) => createSlice(reducer)
