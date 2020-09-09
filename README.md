@@ -17,11 +17,11 @@ $ npm install && npm start
 Then open: [http://localhost:9000/](http://localhost:9000/)
 
 ### How does Jeddyjs Work?
- Jeddyjs creates a VIRTUAL DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applaying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees better user experience and higher app performance.
+ Jeddyjs creates a virtual DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applaying changes only to what needs to be changed. This method guarantees better user experience and higher app performance.
 
 ### Using JeddyJs
   We will build a simple counter application using
-  two different approches. The first part will use a simple state management mechanism,
+  two approches. The first part will use a simple state management mechanism,
   And on the second part we will use redux.The second approach 
   is recommended for better state management.
 ### PART I: Using Local State
