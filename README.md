@@ -43,6 +43,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     └── webpack.config.js
 We will be focusing on **index.html** and the **src** folder.
 - **index.html**: This is the entry point of our site
+
     ├── public
         └── index.html
 ```html
@@ -59,6 +60,7 @@ should not be removed. The script tag with main.js is needed to load our compile
 This is a regular web page so feel free to add global css, icons etc..
 
 - **src**: Here is where will be writting our app logic
+
     ├── src
         ├── App.js
         └── index.js
