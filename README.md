@@ -1,9 +1,9 @@
-# JeddyJS
+### JeddyJS
  - Makes it fun and enjoyable to build web UIs
  using pure javascript functions(No more HTML Tags).
  It gives you the flexibility to write reusable, clean and maintainable code.
 
-## Quick-Start
+### Quick-Start
 ```sh
 # Clone the Quick Start repository
 $ git clone https://github.com/Jeraldy/jeddy-quick-start
@@ -16,10 +16,10 @@ $ npm install && npm start
 ```
 Then open: [http://localhost:9000/](http://localhost:9000/)
 
-## How does Jeddyjs Work?
+### How does Jeddyjs Work?
  - Jeddyjs creates a VIRTUAL DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applaying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees better user experience and higher app performance.
 
-## Using JeddyJs
+### Using JeddyJs
   - We will build a simple counter application using
   two different approches. The first part will use a simple state management mechanism,
   And on the second part we will use redux.The second approach 
@@ -45,11 +45,11 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 - To your project link [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
 
 
-## Contributing
+### Contributing
 The JavaScript Templates project comes with
 [Unit Tests](https://en.wikipedia.org/wiki/Unit_testing).  
 There are two different ways to run the tests:
 
-## License
+### License
 The Jeddy JS is released under the
 [MIT license](https://opensource.org/licenses/MIT).
