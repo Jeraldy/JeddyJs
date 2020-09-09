@@ -49,7 +49,7 @@ We will be focusing on **index.html** and the **src** folder.
 ```
 ```html
 <html lang="en">
-<!--Some content has been supressed for brevity-->
+<!--Some content has been suppressed for brevity-->
 <body>
     <div id="root"></div>
 	<script src="main.js"></script>
@@ -66,6 +66,30 @@ This is a regular web page so feel free to add global css, icons etc..
         ├── App.js
         └── index.js
 ```
+  - **index.js**:
+```js
+import { Jeddy, StatefulWidget } from "jeddy";
+import Div from "jeddy/dom/Div";
+
+class Main extends StatefulWidget {
+    constructor() {
+        super()
+        //TODO: Add State here
+        return this.connect()
+    }
+    //TODO: Replace render
+    render() {
+        return Div({
+            children: [
+                "Hello World"
+            ]
+        })
+    }
+}
+
+Jeddy.Init({ app: new Main() });
+```
+
 #### Step 3: Coding your app
 
 #### Step 4: Deploying
