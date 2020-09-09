@@ -1,9 +1,8 @@
 ### JeddyJS
-We make it fun and enjoyable to build web UIs by
-using pure javascript(No HTML Tags). Which makes it easy to write clean,
-reusable and maintainable code.
+We make it fun and enjoyable to build web UIs using pure javascript(No HTML Tags),
+which makes it easy to write clean, reusable and maintainable code.
 
-### Quick-Start
+### Quick start
 ```sh
     # Clone the Quick Start repository
     $ git clone https://github.com/Jeraldy/jeddy-quick-start
@@ -16,10 +15,10 @@ reusable and maintainable code.
 ```
 Then open: [http://localhost:9000/](http://localhost:9000/)
 
-### How does Jeddyjs Work?
+### How does Jeddyjs work?
 Jeddyjs creates a virtual DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first, and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees a better user experience and higher app performance.
 
-### Using JeddyJs
+### Getting started
 We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
 
 #### Step 1: Clone the quick start repository
