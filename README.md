@@ -61,10 +61,11 @@ should not be removed. The script tag with main.js is needed to load our compile
 This is a regular web page so feel free to add global css, icons etc..
 
 - **src**: Here is where will be writting our app logic
-
+```sh
     ├── src
         ├── App.js
         └── index.js
+```
 #### Step 3: Coding your app
 
 #### Step 4: Deploying
