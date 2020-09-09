@@ -44,14 +44,12 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 We will be focusing on **index.html** and the **src** folder
 - **index.html**: This is the entry point for our site
 ```html
-<!DOCTYPE html>
 <html lang="en">
-//...some content has been supressed for brevity
+<!--Some content has been supressed for brevity-->
 <body>
     <div id="root"></div>
 	<script src="main.js"></script>
 </body>
-
 </html>
 ```
 #### Step 3: Coding your app
