@@ -1,5 +1,5 @@
 ### JeddyJS
-Makes it fun and enjoyable to build web UIs
+We make it fun and enjoyable to build web UIs by
 using pure javascript(No HTML Tags). Which makes it easy to write clean,
 reusable and maintainable code.
 
@@ -20,14 +20,13 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 Jeddyjs creates a virtual DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first, and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees a better user experience and higher app performance.
 
 ### Using JeddyJs
-We will build a simple counter application using two approaches. The first part will use a simple state management mechanism, and in the second part, we will use redux. The second approach is recommended for better state management and performance.
+We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
 
-### PART I: Using Local State
-#### Step 1: Clone the Quick Start repository
+#### Step 1: Clone the quick start repository
     - $ git clone https://github.com/Jeraldy/jeddy-quick-start
     - $ cd jeddy-quick-start
     - $ npm install && npm start
-    - Then open: [http://localhost:9000/](http://localhost:9000/)
+Then open: [http://localhost:9000/](http://localhost:9000/)
 
 #### Step 2: Folder Structure
 
@@ -35,7 +34,7 @@ We will build a simple counter application using two approaches. The first part 
 
 #### Step 4: Deploying
 
-### PART II: Using Redux(Recommended)
+
 ### More Examples
 - [TodoList](https://en.wikipedia.org/wiki/Unit_testing)
 - [JRedux](https://en.wikipedia.org/wiki/Unit_testing)
