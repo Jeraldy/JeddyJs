@@ -1,5 +1,5 @@
 declare const _default: ({ cells, ...props }: {
-    cells: any[];
+    cells: Array<any>;
     props: any;
 }) => HTMLElement;
 export default _default;

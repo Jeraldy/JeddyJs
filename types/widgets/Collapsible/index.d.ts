@@ -5,11 +5,11 @@ declare const Collapsible: ({ clickCallBack, label, icon, children, stateKey, st
     label?: string;
     icon?: {
         icon: Icons;
-        style: CSS.Properties<string | 0>;
+        style: CSS.Properties;
     };
-    children?: HTMLElement[];
+    children?: Array<HTMLElement>;
     stateKey: string;
-    style?: CSS.Properties<string | 0>;
-    activeBarColor?: string;
+    style?: CSS.Properties;
+    activeBarColor?: CSS.Color;
 }) => HTMLElement;
 export default Collapsible;

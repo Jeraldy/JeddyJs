@@ -27,7 +27,7 @@ We will build a simple counter application using two approaches. The first part 
     - $ npm install && npm start
 Then open: [http://localhost:9000/](http://localhost:9000/)
 
-#### Step 2: Folder Structure
+#### Step 2: Folder structure
 
     ├── node_modules
     ├── public
@@ -41,7 +41,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── README.md
     ├── tsconfig.json
     └── webpack.config.js
-    
+
 #### Step 3: Coding your app
 
 #### Step 4: Deploying

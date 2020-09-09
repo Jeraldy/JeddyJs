@@ -5,15 +5,15 @@ declare const SideMenu: ({ headNode, menus, headerStyle }: {
     headerStyle: {};
 }) => HTMLElement;
 declare const Menu: ({ icon, title, menuItems, open, onclick }: {
-    icon: "";
-    title: "";
+    icon: '';
+    title: '';
     menuItems: [];
     open: false;
     onclick: () => void;
 }) => HTMLElement;
 declare const MenuItem: ({ icon, title, active, onclick }: {
-    icon: "";
-    title: "";
+    icon: '';
+    title: '';
     active: false;
     onclick: () => void;
 }) => HTMLElement;

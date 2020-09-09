@@ -1,6 +1,6 @@
 import RowAlignment from "./RowAlignment";
 declare const Row: ({ children, align, id, backgroundColor, wrapContent }: {
-    children: (HTMLElement | Text)[];
+    children: Array<HTMLElement | Text>;
     align?: RowAlignment;
     wrapContent?: boolean;
     id?: string;

@@ -1,5 +1,5 @@
 declare const _default: ({ children, ...props }: {
-    children: any[];
+    children: Array<any>;
     props: any;
 }) => HTMLElement;
 export default _default;

@@ -1,4 +1,4 @@
 declare var _default: import("redux").Reducer<import("redux").CombinedState<{
-    reducer: unknown;
-}>, import("redux").Action<any>>;
+    reducer: {};
+}>, import("redux").AnyAction>;
 export default _default;
