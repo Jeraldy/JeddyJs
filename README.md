@@ -43,9 +43,10 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     └── webpack.config.js
 We will be focusing on **index.html** and the **src** folder.
 - **index.html**: This is the entry point of our site
-
+```sh
     ├── public
         └── index.html
+```
 ```html
 <html lang="en">
 <!--Some content has been supressed for brevity-->
