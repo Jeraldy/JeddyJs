@@ -100,7 +100,7 @@ const Collapsible = ({
                 children
             }),
         ],
-        attributes: {
+        attrs: {
             ref: label
         }
     })

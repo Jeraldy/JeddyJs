@@ -2,7 +2,7 @@ import TextView from "../dom/TextView";
 
 export default (props = {}, tag: string) => {
   //@ts-ignore
-  const { children, style, attributes, ...rest } = { ...props }
+  const { children, style, attrs, ...rest } = { ...props }
 
   let node = document.createElement(tag);
 
@@ -29,9 +29,9 @@ export default (props = {}, tag: string) => {
     }
   }
 
-  if (attributes) {
-    for (let key in attributes) {
-      node.setAttribute(key, attributes[key]);
+  if (attrs) {
+    for (let key in attrs) {
+      node.setAttribute(key, attrs[key]);
     }
   }
 
