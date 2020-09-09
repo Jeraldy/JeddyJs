@@ -41,7 +41,19 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── README.md
     ├── tsconfig.json
     └── webpack.config.js
+We will be focusing on **index.html** and the **src** folder
+- **index.html**: This is the entry point for our site
+```html
+<!DOCTYPE html>
+<html lang="en">
+//...some content has been supressed for brevity
+<body>
+    <div id="root"></div>
+	<script src="main.js"></script>
+</body>
 
+</html>
+```
 #### Step 3: Coding your app
 
 #### Step 4: Deploying
@@ -51,13 +63,11 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 - [TodoList](https://en.wikipedia.org/wiki/Unit_testing)
 - [JRedux](https://en.wikipedia.org/wiki/Unit_testing)
 - [Ecommerce](https://en.wikipedia.org/wiki/Unit_testing)
-- To your project link [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
+- To list your cool project here, send your link [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
 
 
 ### Contributing
-The JavaScript Templates project comes with
-[Unit Tests](https://en.wikipedia.org/wiki/Unit_testing).  
-There are two different ways to run the tests:
+ For now you can email me at deusjeraldy@gmail.com
 
 ### License
 The Jeddy JS is released under the
