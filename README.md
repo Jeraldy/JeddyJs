@@ -66,7 +66,7 @@ This is a regular web page so feel free to add global css, icons etc..
         ├── App.js
         └── index.js
 ```
-  - **index.js**:
+  - **index.js**: This is what we have in the index.js file
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -89,6 +89,9 @@ class Main extends StatefulWidget {
 
 Jeddy.Init({ app: new Main() });
 ```
+The Main class has a mutable state since it extends a *StatefulWidget*,
+This gives our app the power to act on user interactivity,Therefor updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by 
+using *this.setState*.
 
 #### Step 3: Coding your app
 
