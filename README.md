@@ -74,10 +74,8 @@ import Div from "jeddy/dom/Div";
 class Main extends StatefulWidget {
     constructor() {
         super()
-        //TODO: Add State here
         return this.connect()
     }
-    //TODO: Replace render
     render() {
         return Div({
             children: [
