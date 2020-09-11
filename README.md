@@ -270,6 +270,7 @@ Jeddy.Init({ app: new Main() });
 #### Step 1: Adding files and folders
   - Lets create some folders and files that will help us keep our app neat.
   - Our new app tree looks like this.
+```sh
     ├── node_modules
     ├── public
     │   └── index.html
@@ -289,7 +290,7 @@ Jeddy.Init({ app: new Main() });
     ├── README.md
     ├── tsconfig.json
     └── webpack.config.js
-
+```
 
 ### More Examples
 - [TodoList](https://en.wikipedia.org/wiki/Unit_testing)
