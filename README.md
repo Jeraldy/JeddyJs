@@ -91,7 +91,99 @@ The Main class has a mutable state since it extends a *StatefulWidget*,
 This gives our app the power to act on user interactivity,And therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by 
 using *this.setState*.
 
-#### Step 3: Coding your app
+#### Step 3: Adding some logic
+*index.js*
+```js
+import { Jeddy, StatefulWidget } from "jeddy";
+import Div from "jeddy/dom/Div";
+
+class Main extends StatefulWidget {
+     constructor() {
+        super()
+        this.state = {
+            counter: 0
+        }
+        return this.connect()
+    }
+
+    handleIncrement() {
+        this.setState({
+            counter: this.state.counter + 1
+        })
+    }
+
+    handleDecrement() {
+        this.setState({
+            counter: this.state.counter - 1
+        })
+    }
+
+    render() {
+        return Div({
+            children: [
+              "Hello World"
+            ]
+        })
+    }
+}
+
+Jeddy.Init({ app: new Main() });
+```
+ - Now we have a counter variable, and two functions to increment and decrement it.
+#### Step 4: Updating our UI.
+ - *index.js*
+```js
+import { Jeddy, StatefulWidget } from "jeddy";
+import Div from "jeddy/dom/Div";
+import Center from "jeddy/layouts/Center";
+import Button from "jeddy/dom/Button";
+
+class Main extends StatefulWidget {
+    constructor() {
+        super()
+        this.state = {
+            counter: 0
+        }
+        return this.connect()
+    }
+
+    handleIncrement() {
+        this.setState({
+            counter: this.state.counter + 1
+        })
+    }
+
+    handleDecrement() {
+        this.setState({
+            counter: this.state.counter - 1
+        })
+    }
+
+    render() {
+        return Center({
+            child: Div({
+                children: [
+                    `Value: ${this.state.counter}`,
+                    Button({
+                        children: ["Increment"],
+                        onClick: () => this.handleIncrement()
+                    }),
+                    Button({
+                        children: ["Decrement"],
+                        onClick: () => this.handleDecrement()
+                    }),
+                ]
+            })
+        })
+    }
+}
+
+Jeddy.Init({ app: new Main() });
+ ```
+- We have now added two buttons to increment and decrement our counter respectively.
+
+#### Step 5: Adding some styles
+
 
 #### Step 4: Deploying
 
