@@ -1,6 +1,6 @@
 ### JeddyJS
-We make it fun and enjoyable to build web UIs using pure javascript(No HTML Tags),
-which makes it easy to write clean, reusable and maintainable code.
+We make it fun and enjoyable to build web UIs using pure javascript(No HTML Tags).
+It is now easy to write clean, reusable and maintainable code with Jeddy.
 
 ### Quick start
 ```sh
