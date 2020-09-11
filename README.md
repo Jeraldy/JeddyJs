@@ -20,7 +20,7 @@ Jeddyjs creates a virtual DOM in memory, which is a representation of the docume
 
 ### Getting started
 We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
-    <p align="center" style="border-radius:20px">
+    <p align="center">
         <img src="counter.PNG">
     </p>
 #### Step 1: Clone the quick start repository
@@ -185,7 +185,73 @@ Jeddy.Init({ app: new Main() });
 - We have now added two buttons to increment and decrement our counter respectively.
 
 #### Step 5: Let's make things pretty
+```js
+import { Jeddy, StatefulWidget } from "jeddy";
+import Div from "jeddy/dom/Div";
+import Center from "jeddy/layouts/Center";
+import Button from "jeddy/dom/Button";
+import Br from "jeddy/dom/Br";
+import './App.css';
 
+class Main extends StatefulWidget {
+    constructor() {
+        super()
+        this.state = {
+            counter: 0
+        }
+        return this.connect()
+    }
+
+    handleIncrement() {
+        this.setState({
+            counter: this.state.counter + 1
+        })
+    }
+
+    handleDecrement() {
+        this.setState({
+            counter: this.state.counter - 1
+        })
+    }
+
+    render() {
+        return Center({
+            child: Div({
+                children: [
+                    Div({
+                        children: [
+                            'Counter',
+                            Br(),
+                            `${this.state.counter}`,
+                        ],
+                        style: {
+                            textAlign: 'center',
+                            fontSize: '6rem',
+                            fontWeight: 'bold'
+                        }
+                    }),
+                    Div({
+                        children: [
+                            Button({
+                                class: 'btn',
+                                children: ["Increment"],
+                                onClick: () => this.handleIncrement()
+                            }),
+                            Button({
+                                class: 'btn',
+                                children: ["Decrement"],
+                                onClick: () => this.handleDecrement()
+                            }),
+                        ]
+                    })
+                ]
+            })
+        })
+    }
+}
+
+Jeddy.Init({ app: new Main() });
+```
 
 #### Step 4: Deploying
 
