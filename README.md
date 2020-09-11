@@ -20,7 +20,7 @@ Jeddyjs creates a virtual DOM in memory, which is a representation of the docume
 
 ### Getting started
 We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
-
+[IMG](counter.PNG)
 #### Step 1: Clone the quick start repository
     - $ git clone https://github.com/Jeraldy/jeddy-quick-start
     - $ cd jeddy-quick-start
@@ -182,7 +182,7 @@ Jeddy.Init({ app: new Main() });
  ```
 - We have now added two buttons to increment and decrement our counter respectively.
 
-#### Step 5: Adding some styles
+#### Step 5: Let's make things pretty
 
 
 #### Step 4: Deploying
