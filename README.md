@@ -262,9 +262,8 @@ Jeddy.Init({ app: new Main() });
  the counts.
 
 #### PART II: The redux way
- - You can find a finished version of the sample code for this part [HERE](here.com).
- - The demo for this can be found [HERE](here.com).
- Since the framework *for now* supports only a single instance of a StatefulWidget (The Main),
+ - You can find a finished version of the sample code for this part [HERE](here.com) and the demo  [HERE](here.com)
+ - Since the framework *for now* supports only a single instance of a StatefulWidget (The Main),
  therefore  this is the recommended way go with. [Redux](https://redux.js.org/) provides an easy way to manage state and therefore keeping our widgets neat.
 
 #### Step 1: Adding files and folders
