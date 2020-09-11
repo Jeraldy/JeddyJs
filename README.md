@@ -24,6 +24,8 @@ We will build a simple counter application using two approaches. The first part 
         <img src="counter.PNG">
     </p>'
 #### PART I:
+ - You can find a finished version of the sample code for this part [HERE](here.com).
+ - The demo for this can be found [HERE](here.com).
 #### Step 1: Clone the quick start repository
     - $ git clone https://github.com/Jeraldy/jeddy-quick-start
     - $ cd jeddy-quick-start
@@ -260,10 +262,33 @@ Jeddy.Init({ app: new Main() });
  the counts.
 
 #### PART II: The redux way
+ - You can find a finished version of the sample code for this part [HERE](here.com).
+ - The demo for this can be found [HERE](here.com).
  Since the framework *for now* supports only a single instance of a StatefulWidget (The Main),
- therefore  this is the recommended way go with, [redux](https://redux.js.org/) provides an easy way to manage state and therefore keeping our widgets neat.
+ therefore  this is the recommended way go with. [Redux](https://redux.js.org/) provides an easy way to manage state and therefore keeping our widgets neat.
 
-#### Step 1: Deploying
+#### Step 1: Adding files and folders
+  - Lets create some folders and files that will help us keep our app neat.
+  - Our new app tree looks like this.
+    ├── node_modules
+    ├── public
+    │   └── index.html
+    ├── src
+    │   ├── Reducers
+    │   │   ├── Counter.js
+    │   │   └── index.js
+    │   ├── Widgets
+    │   │   ├── Increment.js
+    │   │   └── Decrement.js   
+    │   ├── App.css
+    │   ├── App.js
+    │   └── index.js
+    ├── .gitignore
+    ├── package.json
+    ├── package-lock.json
+    ├── README.md
+    ├── tsconfig.json
+    └── webpack.config.js
 
 
 ### More Examples
