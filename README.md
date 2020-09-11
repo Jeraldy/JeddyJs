@@ -22,7 +22,8 @@ Jeddyjs creates a virtual DOM in memory, which is a representation of the docume
 We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
     <p align="center">
         <img src="counter.PNG">
-    </p>
+    </p>'
+#### PART I:
 #### Step 1: Clone the quick start repository
     - $ git clone https://github.com/Jeraldy/jeddy-quick-start
     - $ cd jeddy-quick-start
@@ -35,6 +36,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── public
     │   └── index.html
     ├── src
+    │   ├── App.css
     │   ├── App.js
     │   └── index.js
     ├── .gitignore
@@ -65,6 +67,7 @@ This is a regular web page so feel free to add global css, icons etc..
 - **src**: Here is where will be writting our app logic
 ```sh
     ├── src
+        ├── App.css
         ├── App.js
         └── index.js
 ```
@@ -184,7 +187,7 @@ Jeddy.Init({ app: new Main() });
  ```
 - We have now added two buttons to increment and decrement our counter respectively.
 
-#### Step 5: Let's make things pretty
+#### Step 5: Let's make it pretty
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -252,8 +255,15 @@ class Main extends StatefulWidget {
 
 Jeddy.Init({ app: new Main() });
 ```
+ - We have imported *App.css* which contans some css to style our buttons.
+ You can also add inline styles like the way we have styled the div which displays
+ the counts.
 
-#### Step 4: Deploying
+#### PART II: The redux way
+ Since the framework *for now* supports only a single instance of a StatefulWidget (The Main),
+ therefore  this is the recommended way go with, [redux](https://redux.js.org/) provides an easy way to manage state and therefore keeping our widgets neat.
+
+#### Step 1: Deploying
 
 
 ### More Examples
