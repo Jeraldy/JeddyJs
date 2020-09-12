@@ -5,10 +5,10 @@ It is now easy to write clean, reusable and maintainable code with Jeddy.
 ### Quick start
 ```sh
     # Clone the Quick Start repository
-    $ git clone https://github.com/Jeraldy/jeddy-quick-start
+    $ git clone https://github.com/Jeraldy/jeddy-redux-quick-start
 
     # Go into the repository
-    $ cd jeddy-quick-start
+    $ cd jeddy-redux-quick-start
 
     # Install the dependencies and run
     $ npm install && npm start
@@ -24,7 +24,7 @@ We will build a simple counter application using two approaches. The first part 
         <img src="counter.PNG">
     </p> -->
 #### PART I: The simple way
- - You can find a finished version of the sample code for this part [HERE](here.com).
+ - You can find a finished version of the sample code for this part [HERE](https://github.com/Jeraldy/jeddy-quick-start).
  - The demo for this can be found [HERE](https://jeddy-counter.netlify.app/).
 
 #### Step 1: Clone the quick start repository
@@ -41,8 +41,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── public
     │   └── index.html
     ├── src
-    │   ├── App.css
-    │   ├── App.js
+    │   ├── index.css
     │   └── index.js
     ├── .gitignore
     ├── package.json
@@ -70,8 +69,7 @@ should not be removed. The script tag with *main.js* is needed to load our compi
 - **src**: Here is where will be writing our app logic
 ```sh
     ├── src
-        ├── App.css
-        ├── App.js
+        ├── index.css
         └── index.js
 ```
 - **index.js**:
@@ -192,7 +190,7 @@ Jeddy.Init({ app: new Main() });
  ```
 
 #### Step 5: Let's make it pretty
- We have imported *App.css* which contans some css to style our buttons.
+ We have imported *index.css* which contans some css to style our buttons.
  You can also add inline styles like the way we have styled the div which displays
  the counts.
 ```js
@@ -201,7 +199,7 @@ import Div from "jeddy/dom/Div";
 import Center from "jeddy/layouts/Center";
 import Button from "jeddy/dom/Button";
 import Br from "jeddy/dom/Br";
-import './App.css';
+import './index.css';
 
 class Main extends StatefulWidget {
     constructor() {
