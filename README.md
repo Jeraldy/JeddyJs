@@ -20,9 +20,9 @@ Jeddyjs creates a virtual DOM in memory, which is a representation of the docume
 
 ### Getting started
 We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
-    <p align="center">
+    <!-- <p align="center">
         <img src="counter.PNG">
-    </p>
+    </p> -->
 #### PART I:
  - You can find a finished version of the sample code for this part [HERE](here.com).
  - The demo for this can be found [HERE](here.com).
