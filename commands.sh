@@ -28,7 +28,7 @@ npm run compile
 xcopy /s lib\*.d.ts types\
 
 ## Copy Styles
-xcopy /s src\styles\* lib\styles\
+## xcopy /s src\styles\* lib\styles\
 
 
 
