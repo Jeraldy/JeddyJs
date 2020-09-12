@@ -23,13 +23,16 @@ We will build a simple counter application using two approaches. The first part 
     <!-- <p align="center">
         <img src="counter.PNG">
     </p> -->
-#### PART I:
+#### PART I: The simple way
  - You can find a finished version of the sample code for this part [HERE](here.com).
  - The demo for this can be found [HERE](here.com).
+
 #### Step 1: Clone the quick start repository
-    - $ git clone https://github.com/Jeraldy/jeddy-quick-start
-    - $ cd jeddy-quick-start
-    - $ npm install && npm start
+```sh
+    $ git clone https://github.com/Jeraldy/jeddy-quick-start
+    $ cd jeddy-quick-start
+    $ npm install && npm start
+```
 Then open: [http://localhost:9000/](http://localhost:9000/)
 
 #### Step 2: Folder structure
