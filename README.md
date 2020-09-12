@@ -299,9 +299,9 @@ Jeddy.Init({ app: new Main() });
            └── index.js
 ```
 - A [reducer](https://redux.js.org/basics/reducers) simply contains the actions/functions that mutates the state.
-- will be dispatching/calling those actions from our widgets to increment/decrement the counter.
+- We will be dispatching/calling those actions from our widgets to increment/decrement the counter.
 - Lets take a look into *Counter.js*
-**Counter.js**:
+- **Counter.js**:
 ```js
 import { createReducer } from "jeddy/jredux";
 
@@ -325,16 +325,14 @@ const counterReducer = createReducer({
 export const { reducer, actions } = counterReducer;
 ```
 - This should look familiar. We have initialized our counter to zero as previously.
-- We have defined our functions to increment and decrement the counter respectively.
+- We have defined our functions to *Increment* and *Decrement* the counter respectively.
 - Now lets take a look into the *Reducers/index.js*
-**Reducers/index.js**:
+- **Reducers/index.js**:
   - This is the main entry of our reducers, so all reducers should be registered here.
 ```js
 import { reducer as counterReducer } from './Counter'
 
-export default {
-    counterReducer
-}
+export default { counterReducer }
 ```
 
 #### Step 3: Refactoring our widgets:
@@ -343,10 +341,10 @@ export default {
         ├── Increment.js
         └── Decrement.js 
 ```
-- We have refactored our code to separe the increment and decrement buttons.
+- We have refactored our code to separe the *Increment* and *Decrement* buttons.
 - You actually don't have to do this  for a relatively simple app like this,
 but this is vital for realworld apps with alot of components and complex logic. 
-**Increment.js**
+- **Increment.js**
 ```js
 import { actions } from '../Reducers/Counter';
 import Button from 'jeddy/dom/Button';
@@ -364,8 +362,8 @@ const Increment = () => {
 export default Increment;
 ```
 - This should also look familiar, We have our button which onClick calls the *handleIncrement*
-  defined into the counter reducer. This is the same for Decrement button as well.
-**Decrement.js**
+  defined into the counter reducer. This is the same for *Decrement* button as well.
+- **Decrement.js**
 ```js
 import { actions } from '../Reducers/Counter';
 import Button from 'jeddy/dom/Button';
