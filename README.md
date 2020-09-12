@@ -47,12 +47,12 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── README.md
     ├── tsconfig.json
     └── webpack.config.js
-We will be focusing on **index.html** and the **src** folder.
-- **index.html**: This is the entry point of our site
+- **public/index.html**: This is the entry point of our site
 ```sh
     ├── public
         └── index.html
 ```
+- Here are the contents we have in this file.
 ```html
 <html lang="en">
 <!--Some content has been suppressed for brevity-->
@@ -62,7 +62,7 @@ We will be focusing on **index.html** and the **src** folder.
 </body>
 </html>
 ```
-When running, our app will render its content into the div#root, therefore this div
+When running, Our app will render its content into the div#root, therefore this div
 should not be removed. The script tag with main.js is needed to load our compiled js files.
 This is a regular web page so feel free to add global css, icons etc..
 
