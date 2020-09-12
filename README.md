@@ -462,7 +462,7 @@ Jeddy.Init({ app: new Main({ reducers }) });
   $ npm run build
 ```
  - After running the above command you will find the build folder
- in your workspace which contains a site content ready for hosting.
+ in your workspace which contains site contents ready for hosting.
  - Please read [Webpack guide](https://webpack.js.org/guides/production/)
  for further optimization tips.
 
