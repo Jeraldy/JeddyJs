@@ -271,7 +271,7 @@ Jeddy.Init({ app: new Main() });
 
 #### Step 1: Adding files and folders
   - Lets create some folders and files that will help us keep our app neat.
-  - Our new app tree looks like this.
+  - Our new app tree should look like this.
 ```sh
     ├── node_modules
     ├── public
@@ -302,7 +302,7 @@ Jeddy.Init({ app: new Main() });
 ```
 - A [reducer](https://redux.js.org/basics/reducers) simply contains the actions/functions that mutates the state.
 - We will be dispatching/calling those actions from our widgets to increment/decrement the counter.
-- Lets take a look into *Counter.js*
+- Lets take a look into the *Counter.js*
 - **Counter.js**:
 ```js
 import { createReducer } from "jeddy/jredux";
@@ -344,8 +344,8 @@ export default { counterReducer }
         └── Decrement.js 
 ```
 - We have refactored our code to separe the *Increment* and *Decrement* buttons.
-- You actually don't have to do this  for a relatively simple app like this,
-but this is vital for realworld apps with alot of components and complex logic. 
+- This is trivial  for a relatively simple app like this,
+but this is vital for realworld apps with lots of widgets and complex logic. 
 - **Increment.js**
 ```js
 import { actions } from '../Reducers/Counter';
@@ -460,7 +460,9 @@ Jeddy.Init({ app: new Main({ reducers }) });
 ```
 
 ### Deployment
- - Will be available here
+ - Will be available here 
+
+
 **Thats it...!!! Can't wait to see what you build with jeddy. Keep Learning..👨‍💻**
 
 ### More Examples
