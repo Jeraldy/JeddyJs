@@ -52,7 +52,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── public
         └── index.html
 ```
-- Here are the contents we have in this file.
+- Below is what we have in this file.
 ```html
 <html lang="en">
 <!--Some content has been suppressed for brevity-->
@@ -63,17 +63,16 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 </html>
 ```
 When running, Our app will render its content into the div#root, therefore this div
-should not be removed. The script tag with main.js is needed to load our compiled js files.
-This is a regular web page so feel free to add global css, icons etc..
+should not be removed. The script tag with *main.js* is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
 
-- **src**: Here is where will be writting our app logic
+- **src**: Here is where will be writing our app logic
 ```sh
     ├── src
         ├── App.css
         ├── App.js
         └── index.js
 ```
-  - **index.js**: This is what we have in the index.js file
+  - **index.js**: This is what we have in our index.js file
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
