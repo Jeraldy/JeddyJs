@@ -22,7 +22,7 @@ Jeddyjs creates a virtual DOM in memory, which is a representation of the docume
 We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
     <p align="center">
         <img src="counter.PNG">
-    </p>'
+    </p>
 #### PART I:
  - You can find a finished version of the sample code for this part [HERE](here.com).
  - The demo for this can be found [HERE](here.com).
@@ -264,7 +264,7 @@ Jeddy.Init({ app: new Main() });
 #### PART II: The redux way
  - You can find a finished version of the sample code for this part [HERE](here.com) and the demo  [HERE](here.com)
  - Since the framework *for now* supports only a single instance of a StatefulWidget (The Main),
- therefore  this is the recommended way go with. [Redux](https://redux.js.org/) provides an easy way to manage state and therefore keeping our widgets neat.
+ therefore keeping all your state in the top-level component. This can sometimes get messy if you have a reasonable amounts of data changing over time. [Redux](https://redux.js.org/) provides an easy way to manage state by providing a single source of truth for your state.
 
 #### Step 1: Adding files and folders
   - Lets create some folders and files that will help us keep our app neat.
@@ -289,6 +289,144 @@ Jeddy.Init({ app: new Main() });
     ├── README.md
     ├── tsconfig.json
     └── webpack.config.js
+```
+- [Reducers](https://redux.js.org/basics/reducers):
+```sh
+       ├── Reducers
+           ├── Counter.js
+           └── index.js
+```
+  - A reducer simply contains the actions/functions that mutates the state.
+  - will be dispatching/calling those actions from our widgets to increment/decrement the counter.
+- Lets take a look into *Counter.js*
+**Counter.js**:
+```js
+import { createReducer } from "jeddy/jredux";
+
+const counterReducer = createReducer({
+    name: 'counter',
+    initialState: { counter: 0 },
+    reducers: {
+        handleIncrement: (state) => {
+            return {
+                counter: state.counter + 1
+            }
+        },
+        handleDecrement: (state) => {
+            return {
+                counter: state.counter - 1
+            }
+        }
+    }
+})
+
+export const { reducer, actions } = counterReducer;
+```
+  - This should look familiar. We have initialized our counter to zero as previously.
+  - We have defined our functions to increment and decrement the counter respectively.
+- Now lets take a look into the *Reducers/index.js*
+**Reducers/index.js**:
+ - This is the main entry of our reducers, so all reducers should be registered here.
+```js
+import { reducer as counterReducer } from './Counter'
+
+export default {
+    counterReducer
+}
+```
+- **Widgets**:
+  - We have refactored our code to separe the increment and decrement buttons.
+  - Actually you don't have to do this  for a relatively simple app like this,
+    but this is vital for realworld apps with alot of components and complex logic. 
+```sh
+    ├── Widgets
+        ├── Increment.js
+        └── Decrement.js 
+```
+**Increment.js**
+```js
+import { actions } from '../Reducers/Counter';
+import Button from 'jeddy/dom/Button';
+import { dispatch } from 'jeddy/jredux';
+const { handleIncrement } = actions
+
+const Increment = () => {
+    return Button({
+        class: 'btn',
+        children: ['Increment'],
+        onclick: () => dispatch(handleIncrement())
+    })
+}
+
+export default Increment;
+```
+- This should also look familiar, We have our button which onClick calls the *handleIncrement*
+  defined into the counter reducer. This is the same for Decrement button as well.
+**Decrement.js**
+```js
+import { actions } from '../Reducers/Counter';
+import Button from 'jeddy/dom/Button';
+import { dispatch } from 'jeddy/jredux';
+const { handleDecrement } = actions
+
+const Decrement = () => {
+    return Button({
+        class: 'btn',
+        children: ['Decrement'],
+        onclick: () => dispatch(handleDecrement())
+    })
+}
+
+export default Decrement;
+```
+- **App.js**:
+```sh
+    ├── src  
+        ├── App.js
+```
+ - This just combines the Increment and Decrement widgets to create a single widget.
+ - You can notice we have a connect fuction at the bottom we just gives a way to access the state
+ and pull the counterReducer.
+
+```js
+import Div from "jeddy/dom/Div";
+import Center from "jeddy/layouts/Center";
+import Br from "jeddy/dom/Br";
+import Increment from "./Widgets/Increment";
+import Decrement from "./Widgets/Decrement";
+import { connect } from "jeddy/jredux";
+import './App.css';
+
+const App = ({ counter }) => {
+    return Center({
+        child: Div({
+            children: [
+                Div({
+                    children: ['Counter', Br(), `${counter}`],
+                    style: {
+                        textAlign: 'center',
+                        fontSize: '6rem',
+                        fontWeight: 'bold'
+                    }
+                }),
+                Div({
+                    children: [
+                        Increment(),
+                        Decrement(),
+                    ]
+                })
+            ]
+        })
+    })
+}
+
+const mapStateToProps = (state) => {
+    return {
+        ...state.counterReducer
+    }
+}
+
+export default connect(mapStateToProps)(App)
 ```
 
 ### More Examples
