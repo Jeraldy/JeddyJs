@@ -25,7 +25,7 @@ We will build a simple counter application using two approaches. The first part 
     </p> -->
 #### PART I: The simple way
  - You can find a finished version of the sample code for this part [HERE](here.com).
- - The demo for this can be found [HERE](here.com).
+ - The demo for this can be found [HERE](https://jeddy-counter.netlify.app/).
 
 #### Step 1: Clone the quick start repository
 ```sh
@@ -264,7 +264,7 @@ Jeddy.Init({ app: new Main() });
 ```
 
 #### PART II: The redux way
- - You can find a finished version of the sample code for this part [HERE](here.com) and the demo  [HERE](here.com)
+ - You can find a finished version of the sample code for this part [HERE](https://github.com/Jeraldy/jeddy-redux-quick-start) and the demo  [HERE](https://jeddy-counter.netlify.app/)
  - Redux is, at its core, an incredibly simple pattern. It saves a current value, runs a single function to update that value when needed, and notifies any subscribers that something has changed.
  - Since the framework *for now* supports only a single instance of a StatefulWidget (The Main),
  therefore keeping all your state in the top-level component. This can sometimes get messy if you have a reasonable amounts of data changing over time. [Redux](https://redux.js.org/) provides an easy way to manage state by providing a single source of truth for your state.
@@ -459,9 +459,14 @@ class Main extends StatefulWidget {
 Jeddy.Init({ app: new Main({ reducers }) });
 ```
 
-### Deployment
- - Will be available here 
-
+### Bulding for deployment
+```sh
+  $ npm run build
+```
+ - After running the above command you will find the build folder
+ in your workspace which contains a site content ready for hosting.
+ - Please read [Webpack guide](https://webpack.js.org/guides/production/)
+ for further optimization tips.
 
 **Thats it...!!! Can't wait to see what you build with jeddy. Keep Learning..👨‍💻**
 
@@ -471,9 +476,12 @@ Jeddy.Init({ app: new Main({ reducers }) });
 - [Ecommerce](https://en.wikipedia.org/wiki/Unit_testing)
 - To list your cool project here, send your link [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
 
+### Documentation
+ > Work in progress
 
 ### Contributing
- For now you can email me at deusjeraldy@gmail.com
+ > For now you can email me at deusjeraldy@gmail.com
+ > This is still a work in progress
 
 ### License
 The Jeddy JS is released under the
