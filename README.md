@@ -393,7 +393,9 @@ export default Decrement;
 ```js
 import Div from "jeddy/dom/Div";
 import Center from "jeddy/layouts/Center";
+import Row from "jeddy/layouts/Row";
 import Br from "jeddy/dom/Br";
+import RowAlignment from "jeddy/layouts/RowAlignment";
 import Increment from "./Widgets/Increment";
 import Decrement from "./Widgets/Decrement";
 import { connect } from "jeddy/jredux";
@@ -411,7 +413,10 @@ const App = ({ counter }) => {
                         fontWeight: 'bold'
                     }
                 }),
-                Div({ children: [Increment(), Decrement()] })
+                Row({
+                    children: [Increment(), Decrement()],
+                    align: RowAlignment.SpaceBetween
+                })
             ]
         })
     })
@@ -452,6 +457,8 @@ class Main extends StatefulWidget {
 Jeddy.Init({ app: new Main({ reducers }) });
 ```
 
+### Deployment
+ - Will be available here
 **Thats it...!!! Can't wait to see what you build with jeddy. Keep Learning..👨‍💻**
 
 ### More Examples
