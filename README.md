@@ -388,7 +388,7 @@ export default Decrement;
  - This just combines the Increment and Decrement widgets to create a single widget.
  - You can notice we have a connect fuction at the bottom, this gives us a way to access the state
  and pull out the counterReducer.
- - There the counter variable becomes available to our component like this *const App = ({ counter })=>{}*.
+ - Therefore the counter variable becomes available to our component like this *const App = ({ counter })=>{}*.
 
 ```js
 import Div from "jeddy/dom/Div";
@@ -431,6 +431,9 @@ export default connect(mapStateToProps)(App)
 - At this point every thing is all setup, but our widget constellation doesn't recognise the presence of reducers.
 - Now lets do that in *index.js*
 - **index.js**
+  - We import the root reducer from *'./Reducers/index'* and then passing it 
+  to our main widget so that it becomes available down the tree.
+  - We are calling the updateState inside the *componentDidMount* to subscribe and activate the initial state.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import reducers from './Reducers/index';
@@ -448,6 +451,8 @@ class Main extends StatefulWidget {
 
 Jeddy.Init({ app: new Main({ reducers }) });
 ```
+
+**Thats it...!!! Can't wait to see what you build with jeddy. Keep Learning..👨‍💻**
 
 ### More Examples
 - [TodoList](https://en.wikipedia.org/wiki/Unit_testing)
