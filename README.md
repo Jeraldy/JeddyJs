@@ -141,7 +141,7 @@ Jeddy.Init({ app: new Main() });
 
 #### Step 4: Updating our UI.
  - **index.js** <br/>
-  We have now added two buttons to increment and decrement our counter respectively.
+  Lets add two buttons to *Increment* and *Decrement* our counter respectively.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
