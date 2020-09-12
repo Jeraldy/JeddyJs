@@ -336,7 +336,7 @@ export default {
 ```
 - **Widgets**:
   - We have refactored our code to separe the increment and decrement buttons.
-  - Actually you don't have to do this  for a relatively simple app like this,
+  - You actually don't have to do this  for a relatively simple app like this,
     but this is vital for realworld apps with alot of components and complex logic. 
 ```sh
     ├── Widgets
@@ -385,8 +385,9 @@ export default Decrement;
         ├── App.js
 ```
  - This just combines the Increment and Decrement widgets to create a single widget.
- - You can notice we have a connect fuction at the bottom we just gives a way to access the state
- and pull the counterReducer.
+ - You can notice we have a connect fuction at the bottom, this gives us a way to access the state
+ and pull out the counterReducer.
+ - There the counter variable becomes available to our component like this *const App = ({ counter })=>{}*.
 
 ```js
 import Div from "jeddy/dom/Div";
@@ -409,21 +410,14 @@ const App = ({ counter }) => {
                         fontWeight: 'bold'
                     }
                 }),
-                Div({
-                    children: [
-                        Increment(),
-                        Decrement(),
-                    ]
-                })
+                Div({ children: [Increment(), Decrement()] })
             ]
         })
     })
 }
 
 const mapStateToProps = (state) => {
-    return {
-        ...state.counterReducer
-    }
+    return { ...state.counterReducer }
 }
 
 export default connect(mapStateToProps)(App)
