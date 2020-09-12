@@ -100,7 +100,7 @@ Jeddy.Init({ app: new Main() });
 ```
 
 #### Step 3: Adding some logic
-- *index.js*
+- **index.js**<br/>
 Now we have a counter variable, and two functions to increment and decrement it.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
@@ -140,7 +140,7 @@ Jeddy.Init({ app: new Main() });
 ```
 
 #### Step 4: Updating our UI.
- - *index.js*
+ - **index.js** <br/>
   We have now added two buttons to increment and decrement our counter respectively.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
