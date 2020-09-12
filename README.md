@@ -50,7 +50,9 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── README.md
     ├── tsconfig.json
     └── webpack.config.js
-- **public/index.html**: This is the entry point of our site
+- **public/index.html**: 
+When running, Our app will render its content into the div#root, therefore this div
+should not be removed. The script tag with *main.js* is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
 ```sh
     ├── public
         └── index.html
@@ -65,9 +67,6 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 </body>
 </html>
 ```
-When running, Our app will render its content into the div#root, therefore this div
-should not be removed. The script tag with *main.js* is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
-
 - **src**: Here is where will be writing our app logic
 ```sh
     ├── src
@@ -75,7 +74,10 @@ should not be removed. The script tag with *main.js* is needed to load our compi
         ├── App.js
         └── index.js
 ```
-  - **index.js**: This is what we have in our index.js file
+- **index.js**:
+The Main class has a mutable state since it extends a *StatefulWidget*,
+This gives our app the power to act on user interactivity,And therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by 
+using *this.setState*.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -96,12 +98,10 @@ class Main extends StatefulWidget {
 
 Jeddy.Init({ app: new Main() });
 ```
-The Main class has a mutable state since it extends a *StatefulWidget*,
-This gives our app the power to act on user interactivity,And therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by 
-using *this.setState*.
 
 #### Step 3: Adding some logic
-*index.js*
+- *index.js*
+Now we have a counter variable, and two functions to increment and decrement it.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -138,9 +138,10 @@ class Main extends StatefulWidget {
 
 Jeddy.Init({ app: new Main() });
 ```
- - Now we have a counter variable, and two functions to increment and decrement it.
+
 #### Step 4: Updating our UI.
  - *index.js*
+  We have now added two buttons to increment and decrement our counter respectively.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -189,9 +190,11 @@ class Main extends StatefulWidget {
 
 Jeddy.Init({ app: new Main() });
  ```
-- We have now added two buttons to increment and decrement our counter respectively.
 
 #### Step 5: Let's make it pretty
+ We have imported *App.css* which contans some css to style our buttons.
+ You can also add inline styles like the way we have styled the div which displays
+ the counts.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -259,9 +262,6 @@ class Main extends StatefulWidget {
 
 Jeddy.Init({ app: new Main() });
 ```
- - We have imported *App.css* which contans some css to style our buttons.
- You can also add inline styles like the way we have styled the div which displays
- the counts.
 
 #### PART II: The redux way
  - You can find a finished version of the sample code for this part [HERE](here.com) and the demo  [HERE](here.com)
