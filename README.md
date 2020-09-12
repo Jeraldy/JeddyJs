@@ -263,6 +263,7 @@ Jeddy.Init({ app: new Main() });
 
 #### PART II: The redux way
  - You can find a finished version of the sample code for this part [HERE](here.com) and the demo  [HERE](here.com)
+ - Redux is, at its core, an incredibly simple pattern. It saves a current value, runs a single function to update that value when needed, and notifies any subscribers that something has changed.
  - Since the framework *for now* supports only a single instance of a StatefulWidget (The Main),
  therefore keeping all your state in the top-level component. This can sometimes get messy if you have a reasonable amounts of data changing over time. [Redux](https://redux.js.org/) provides an easy way to manage state by providing a single source of truth for your state.
 
@@ -290,14 +291,15 @@ Jeddy.Init({ app: new Main() });
     ├── tsconfig.json
     └── webpack.config.js
 ```
-- [Reducers](https://redux.js.org/basics/reducers):
+
+#### Step 2: Creating Reducers
 ```sh
        ├── Reducers
            ├── Counter.js
            └── index.js
 ```
-  - A reducer simply contains the actions/functions that mutates the state.
-  - will be dispatching/calling those actions from our widgets to increment/decrement the counter.
+- A [reducer](https://redux.js.org/basics/reducers) simply contains the actions/functions that mutates the state.
+- will be dispatching/calling those actions from our widgets to increment/decrement the counter.
 - Lets take a look into *Counter.js*
 **Counter.js**:
 ```js
@@ -322,11 +324,11 @@ const counterReducer = createReducer({
 
 export const { reducer, actions } = counterReducer;
 ```
-  - This should look familiar. We have initialized our counter to zero as previously.
-  - We have defined our functions to increment and decrement the counter respectively.
+- This should look familiar. We have initialized our counter to zero as previously.
+- We have defined our functions to increment and decrement the counter respectively.
 - Now lets take a look into the *Reducers/index.js*
 **Reducers/index.js**:
- - This is the main entry of our reducers, so all reducers should be registered here.
+  - This is the main entry of our reducers, so all reducers should be registered here.
 ```js
 import { reducer as counterReducer } from './Counter'
 
@@ -334,15 +336,16 @@ export default {
     counterReducer
 }
 ```
-- **Widgets**:
-  - We have refactored our code to separe the increment and decrement buttons.
-  - You actually don't have to do this  for a relatively simple app like this,
-    but this is vital for realworld apps with alot of components and complex logic. 
+
+#### Step 3: Refactoring our widgets:
 ```sh
     ├── Widgets
         ├── Increment.js
         └── Decrement.js 
 ```
+- We have refactored our code to separe the increment and decrement buttons.
+- You actually don't have to do this  for a relatively simple app like this,
+but this is vital for realworld apps with alot of components and complex logic. 
 **Increment.js**
 ```js
 import { actions } from '../Reducers/Counter';
@@ -421,6 +424,30 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(App)
+```
+#### Step 4: Connecting reducers to the widget tree
+```sh
+    ├── src  
+        ├── index.js
+```
+- At this point every thing is all setup, but our widget constellation doesn't recognise the presence of reducers.
+- Now lets do that in *index.js*
+```js
+import { Jeddy, StatefulWidget } from "jeddy";
+import reducers from './Reducers/index';
+import { updateState } from "jeddy/jredux";
+import App from "./App";
+
+class Main extends StatefulWidget {
+    constructor(props) {
+        super(props)
+        return this.connect()
+    }
+    componentDidMount() { updateState(this) }
+    render() { return App() }
+}
+
+Jeddy.Init({ app: new Main({ reducers }) });
 ```
 
 ### More Examples
