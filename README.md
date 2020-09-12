@@ -451,13 +451,15 @@ class Main extends StatefulWidget {
 
 Jeddy.Init({ app: new Main({ reducers }) });
 ```
+
+**Thats it...!!! Can't wait to see what you build with jeddy. Keep Learning..👨‍💻**
+
 ### More Examples
 - [TodoList](https://en.wikipedia.org/wiki/Unit_testing)
 - [JRedux](https://en.wikipedia.org/wiki/Unit_testing)
 - [Ecommerce](https://en.wikipedia.org/wiki/Unit_testing)
 - To list your cool project here, send your link [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
 
-**Thats it...!!! Can't wait to see what you build with jeddy. Keep Learning..👨‍💻**
 
 ### Contributing
  For now you can email me at deusjeraldy@gmail.com
