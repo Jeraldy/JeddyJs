@@ -1,7 +1,8 @@
 {
-  "name": "jeddy-types",
-  "version": "1.0.140",
+  "name": "@types/jeddy-types",
+  "version": "1.0.1",
   "main": "index.d.ts",
+  "types": "index.d.ts",
   "description": "These are the types for JeddyJs",
   "keywords": [
     "Jeddy",
