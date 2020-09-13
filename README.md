@@ -435,12 +435,14 @@ export default connect(mapStateToProps)(App)
     ├── src  
         ├── index.js
 ```
-- At this point every thing is all setup, but our widget constellation doesn't recognise the presence of reducers.
+- At this point every thing is all setup, but our widgets constellation doesn't recognise the presence of reducers.
 - Now lets do that in *index.js*
 - **index.js**
   - We import the root reducer from *'./Reducers/index'* and then passing it 
   to our main widget so that it becomes available down the tree.
-  - We are calling the updateState inside the *componentDidMount* to subscribe and activate the initial state.
+  - We are calling the *updateState* inside the *componentDidMount* to subscribe for the subsequent updates and activate the initial state.
+  - The *componentDidMount* is a life cycle method which gets invoked when our main widget gets connected to the dom tree.
+  
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import reducers from './Reducers/index';
