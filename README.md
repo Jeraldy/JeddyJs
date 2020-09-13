@@ -19,7 +19,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 Jeddy creates a virtual DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first, and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees a better user experience and higher app performance.
 
 ### Getting started
-We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
+We will build a simple counter application using two approaches. The first part will use a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
     <!-- <p align="center">
         <img src="counter.PNG">
     </p> -->
@@ -99,7 +99,8 @@ Jeddy.Init({ app: new Main() });
 
 #### Step 3: Adding some logic
 - **index.js**<br/>
-Now we have a counter variable, and two functions to increment and decrement it.
+Lets add a counter variable, and two functions to Increment and Decrement it.
+
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -171,7 +172,7 @@ class Main extends StatefulWidget {
         return Center({
             child: Div({
                 children: [
-                    `Value: ${this.state.counter}`,
+                    `Counter: ${this.state.counter}`,
                     Button({
                         children: ["Increment"],
                         onClick: () => this.handleIncrement()
