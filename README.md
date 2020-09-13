@@ -1,5 +1,5 @@
-### JeddyJS
-We make it fun and enjoyable to build web UIs using pure javascript(No HTML Tags).
+### Jeddy
+We make it fun and enjoyable to create Web UIs using pure javascript(No HTML Tags).
 It is now easy to write clean, reusable and maintainable code with Jeddy.
 
 ### Quick start
@@ -15,8 +15,8 @@ It is now easy to write clean, reusable and maintainable code with Jeddy.
 ```
 Then open: [http://localhost:9000/](http://localhost:9000/)
 
-### How does Jeddyjs work?
-Jeddyjs creates a virtual DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first, and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees a better user experience and higher app performance.
+### How does Jeddy work?
+Jeddy creates a virtual DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first, and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees a better user experience and higher app performance.
 
 ### Getting started
 We will build a simple counter application using two approaches. The first part will use a a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
@@ -51,7 +51,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     └── webpack.config.js
 - **public/index.html**: 
 When running, Our app will render its content into the div#root, therefore this div
-should not be removed. The script tag with *main.js* is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
+should not be removed. The script tag with *app.bundle.js* is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
 ```sh
     ├── public
         └── index.html
@@ -62,7 +62,7 @@ should not be removed. The script tag with *main.js* is needed to load our compi
 <!--Some content has been suppressed for brevity-->
 <body>
     <div id="root"></div>
-	<script src="main.js"></script>
+	<script src="app.bundle.js"></script>
 </body>
 </html>
 ```
@@ -265,7 +265,7 @@ Jeddy.Init({ app: new Main() });
  - You can find a finished version of the sample code for this part [HERE](https://github.com/Jeraldy/jeddy-redux-quick-start) and the demo  [HERE](https://jeddy-counter.netlify.app/)
  - Redux is, at its core, an incredibly simple pattern. It saves a current value, runs a single function to update that value when needed, and notifies any subscribers that something has changed.
  - Since the framework *for now* supports only a single instance of a StatefulWidget (The Main),
- therefore keeping all your state in the top-level component. This can sometimes get messy if you have a reasonable amounts of data changing over time. [Redux](https://redux.js.org/) provides an easy way to manage state by providing a single source of truth for your state.
+ therefore keeping all your state in the top-level widget. This can sometimes get messy if you have a reasonable amounts of data changing over time. [Redux](https://redux.js.org/) provides an easy way to manage state by providing a single source of truth for your state.
 
 #### Step 1: Adding files and folders
   - Lets create some folders and files that will help us keep our app neat.
@@ -298,7 +298,7 @@ Jeddy.Init({ app: new Main() });
            ├── Counter.js
            └── index.js
 ```
-- A [reducer](https://redux.js.org/basics/reducers) simply contains the actions/functions that mutates the state.
+- [Reducers](https://redux.js.org/basics/reducers) simply contains the actions/functions that mutates the state.
 - We will be dispatching/calling those actions from our widgets to increment/decrement the counter.
 - Lets take a look into the *Counter.js*
 - **Counter.js**:
@@ -341,9 +341,9 @@ export default { counterReducer }
         ├── Increment.js
         └── Decrement.js 
 ```
-- We have refactored our code to separe the *Increment* and *Decrement* buttons.
-- This is trivial  for a relatively simple app like this,
-but this is vital for realworld apps with lots of widgets and complex logic. 
+- We have refactored our code to separate the *Increment* and *Decrement* buttons.
+- This is trivial  for a relatively simple app like this, but it vital for realworld apps with lots of widgets and complex logic.
+
 - **Increment.js**
 ```js
 import { actions } from '../Reducers/Counter';
@@ -361,7 +361,7 @@ const Increment = () => {
 
 export default Increment;
 ```
-- This should also look familiar, We have our button which onClick calls the *handleIncrement*
+- This should also look familiar, We have our button which on click calls the *handleIncrement*
   defined into the counter reducer. This is the same for *Decrement* button as well.
 - **Decrement.js**
 ```js
@@ -386,9 +386,10 @@ export default Decrement;
         ├── App.js
 ```
  - This just combines the Increment and Decrement widgets to create a single widget.
- - You can notice we have a connect fuction at the bottom, this gives us a way to access the state
+ - You can notice that we have a connect function at the bottom, this gives us a way to access the state
  and pull out the counterReducer.
- - Therefore the counter variable becomes available to our component like this *const App = ({ counter })=>{}*.
+ - The ES6 spread operator(...) unpacks the state into its individual props.
+ - Therefore the counter variable becomes available to our widget like this *const App = ({ counter })=>{}*.
 
 ```js
 import Div from "jeddy/dom/Div";
