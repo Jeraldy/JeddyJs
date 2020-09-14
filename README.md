@@ -473,7 +473,7 @@ Jeddy.Init({ app: new Main({ reducers }) });
 **Thats it...!!! Can't wait to see what you build with jeddy. Keep Learning..👨‍💻**
 
 ### More Examples (To be added soon)
-- [TodoList](https://en.wikipedia.org/wiki/Unit_testing)
+- TodoList [Demo](https://jeddy-todo-list.netlify.app/) [Code](https://github.com/Jeraldy/jeddy-example-projects)
 <!-- - [ShoppingCart](https://en.wikipedia.org/wiki/Unit_testing)
 - [SideMenu](https://en.wikipedia.org/wiki/Unit_testing) -->
 - To list your cool project here, send your link [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
