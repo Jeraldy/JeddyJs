@@ -16,7 +16,7 @@ rm -r css
 cd ..
 
 ## Add CSS Types to types
-xcopy /s src\css\*.d.ts types\css\
+xcopy src\css\*.d.ts types\css\ /S /Q /Y
 
 ## Compile
 npm run compile
@@ -25,7 +25,7 @@ npm run compile
 ## typedoc --out docs --theme minimal  --excludePrivate
 
 ## Copy Types
-xcopy /s lib\*.d.ts types\
+xcopy lib\*.d.ts types\ /S /Q /Y
 
 ## Copy Styles
 ## xcopy /s src\styles\* lib\styles\
@@ -42,7 +42,7 @@ rm -r lib\**\*.js.map
 rm -r lib\**\**\*.js.map
 
 ## Put back css types
-xcopy /s src\css\*.d.ts lib\css\
+xcopy  src\css\*.d.ts lib\css\ /S /Q /Y
 
 ## Publish Jeddy Library
 cd lib
