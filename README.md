@@ -343,7 +343,7 @@ export default { counterReducer }
         └── Decrement.js 
 ```
 - We have refactored our code to separate the *Increment* and *Decrement* buttons.
-- This is trivial  for a relatively simple app like this, but it vital for realworld apps with lots of widgets and complex logic.
+- This is trivial  for a relatively simple app like this, but vital for realworld apps with lots of widgets and complex logic.
 
 - **Increment.js**
 ```js
