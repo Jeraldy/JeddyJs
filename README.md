@@ -475,7 +475,7 @@ Jeddy.Init({ app: new Main({ reducers }) });
 ### More Examples
 - TodoList [[Demo](https://jeddy-todo-list.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 - Form Items [[Demo](https://jeddy-form-items.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
-- Simple Table(Data Fetch from API) [[Demo](https://jeddy-simple-table.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
+- Simple Table(With data fetch from API end point) [[Demo](https://jeddy-simple-table.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 > To list your cool project here ping me => [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
 
 ### Documentation
