@@ -474,6 +474,7 @@ Jeddy.Init({ app: new Main({ reducers }) });
 
 ### More Examples (To be added soon)
 - TodoList [[Demo](https://jeddy-todo-list.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
+- Form Items [[Demo](https://jeddy-form-items.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 <!-- - [ShoppingCart](https://en.wikipedia.org/wiki/Unit_testing)
 - [SideMenu](https://en.wikipedia.org/wiki/Unit_testing) -->
 > To list your cool project here Ping me => [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
