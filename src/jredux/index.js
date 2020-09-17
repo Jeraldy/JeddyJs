@@ -38,8 +38,8 @@ export const connect = (mapStoreToState, index = 0) => {
     }
 }
 
-export const connectLibrary = (mapStoreToState) => {
-    return (widget) => (args) => {
+export const connectLibrary = (mapStoreToState, args) => {
+    return (widget) => {
         if (widget.Reducer && widget.UniqueName) {
             if (!reducers.hasOwnProperty(widget.UniqueName)) {
                 const reducerName = widget.UniqueName
