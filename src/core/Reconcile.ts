@@ -162,6 +162,10 @@ function updateElement($parent: any, newNode: any, oldNode: any, index = 0) {
 
 function isDynamicList(newNode, oldNode) {
     if (newNode.props && oldNode.props) {
+        if (newNode.props.type == "checkbox" 
+            && oldNode.props.type == "checkbox") {
+           return true
+        }
         return newNode.props.key && oldNode.props.key
     }
     return false

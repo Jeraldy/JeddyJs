@@ -1,10 +1,17 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
-import reducer from "./reducer";
+import initReducer from './reducer';
+import { combineReducers } from 'redux';
 
-const store = configureStore({ reducer })
+let reducers = { initReducer }
+const store = configureStore({ reducer: combineReducers({ ...reducers }) })
 
 export const replaceReducer = (rootReducer) => {
     store.replaceReducer(rootReducer)
+}
+
+export const register = (newReducers) => {
+    reducers = { ...reducers, ...newReducers }
+    replaceReducer(combineReducers({ ...reducers }))
 }
 
 export const dispatch = (props) => {
@@ -27,6 +34,19 @@ export const connect = (mapStoreToState, index = 0) => {
             widget.onInit()
         }
         index += 1;
+        return widget(mapStoreToState(store.getState()), args)
+    }
+}
+
+export const connectLibrary = (mapStoreToState) => {
+    return (widget) => (args) => {
+        if (widget.Reducer && widget.UniqueName) {
+            if (!reducers.hasOwnProperty(widget.UniqueName)) {
+                const reducerName = widget.UniqueName
+                const _reducer = widget.Reducer(reducerName).reducer
+                register({ [reducerName]: _reducer })
+            }
+        }
         return widget(mapStoreToState(store.getState()), args)
     }
 }

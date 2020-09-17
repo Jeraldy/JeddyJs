@@ -482,7 +482,7 @@ Jeddy.Init({ app: new Main({ reducers }) });
  > Work in progress
 
 ### Contributing
- > For now you can email me at deusjeraldy@gmail.com
+ > For now you can email me at deusjeraldy@gmail.com <br/>
  > This is still a work in progress
 
 ### License

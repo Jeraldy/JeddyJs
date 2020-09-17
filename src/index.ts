@@ -1,6 +1,5 @@
 import { generateHTree, updateElement } from './core/Reconcile';
-import { replaceReducer } from "./jredux/index";
-import { combineReducers } from 'redux';
+import { register } from "./jredux/index";
 
 interface LifeCycleMethods {
     componentDidMount(): void
@@ -23,7 +22,7 @@ export class StatefulWidget implements LifeCycleMethods {
     constructor(props?: any) {
         this.props = props
         if (props && props.reducers) {
-            replaceReducer(combineReducers({ ...props.reducers }))
+            register(props.reducers)
         }
         this.componentMounted()
     }
