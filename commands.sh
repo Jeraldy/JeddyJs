@@ -47,8 +47,8 @@ xcopy  src\css\*.d.ts lib\css\ /S /Q /Y
 ## Publish Jeddy Library
 cd lib
 
-# npm version patch
-# npm publish --access=public
+npm version patch
+npm publish --access=public
 
 ## Publish Jeddy Types
 cd..
