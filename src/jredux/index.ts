@@ -10,8 +10,13 @@ export const replaceReducer = (rootReducer) => {
 }
 
 export const register = (newReducers) => {
-    reducers = { ...reducers, ...newReducers }
-    replaceReducer(combineReducers({ ...reducers }))
+    Object.keys(newReducers).forEach(name => {
+        if (!reducers.hasOwnProperty(name)) {
+            reducers = { ...reducers, [name]: newReducers[name] }
+            replaceReducer(combineReducers({ ...reducers }))
+        }
+    })
+    return store.getState()
 }
 
 export const dispatch = (props) => {
@@ -34,19 +39,6 @@ export const connect = (mapStoreToState, index = 0) => {
             widget.onInit()
         }
         index += 1;
-        return widget(mapStoreToState(store.getState()), args)
-    }
-}
-
-export const connectLibrary = (mapStoreToState, args) => {
-    return (widget) => {
-        if (widget.Reducer && widget.UniqueName) {
-            if (!reducers.hasOwnProperty(widget.UniqueName)) {
-                const reducerName = widget.UniqueName
-                const _reducer = widget.Reducer(reducerName).reducer
-                register({ [reducerName]: _reducer })
-            }
-        }
         return widget(mapStoreToState(store.getState()), args)
     }
 }
