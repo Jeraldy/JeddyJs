@@ -60,5 +60,5 @@ npm publish --access=public
 cd..
 
 git add .
-git commit -m "jlib and jredux"
+git commit -m "dom/Path"
 git push
