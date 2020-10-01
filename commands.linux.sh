@@ -28,7 +28,7 @@ npm run compile
 cp lib/*.d.ts types/
 
 ## Copy Styles
-## xcopy /s src\styles\* lib\styles\
+## mkdir -p lib/styles && cp  src/styles/* lib/styles
 
 ## Remove types from lib
 rm -r lib/*.d.ts

@@ -5,8 +5,11 @@
   "types": "./types/*",
   "description": "Reactive UI building Framework",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose ./__tests__/",
     "compile": "tsc"
+  },
+  "jest": {
+    "testMatch": [ "**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ]
   },
   "keywords": [
     "UI",

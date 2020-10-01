@@ -223,4 +223,8 @@ function generateHTree(node: any) {
     }
 }
 
-export { generateHTree, updateElement }
+function sum(a, b) {
+    return a + b;
+  }
+
+export { generateHTree, updateElement,sum }
