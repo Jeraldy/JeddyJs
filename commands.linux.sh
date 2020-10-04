@@ -32,6 +32,8 @@ mkdir -p types/jredux && cp lib/jredux/*.d.ts types/jredux
 mkdir -p types/utils && cp lib/utils/*.d.ts types/utils
 mkdir -p types/layouts && cp lib/layouts/*.d.ts types/layouts
 mkdir -p types/widgets && cp lib/widgets/*.d.ts types/widgets
+mkdir -p types/widgets/Card && cp lib/widgets/Card/*.d.ts types/widgets/Card
+mkdir -p types/widgets/Icon && cp lib/widgets/Icon/*.d.ts types/widgets/Icon
 
 ## Copy Styles
 ## mkdir -p lib/styles && cp  src/styles/* lib/styles
