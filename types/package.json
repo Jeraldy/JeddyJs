@@ -1,0 +1,12 @@
+{
+  "name": "jeddy-types",
+  "version": "1.0.164",
+  "main": "./index.d.ts",
+  "description": "Types for JeddyJs",
+  "keywords": [
+    "Jeddy",
+    "Types"
+  ],
+  "author": "Jeraldy Deus | deusjeraldy@gmail.com",
+  "license": "ISC"
+}
