@@ -5,5 +5,5 @@ export interface args extends NodeArgs {
     alt?: string;
     src?: string;
 }
-declare const Img: (args?: args) => HTMLElement;
+declare const Img: (args?: args) => HTMLElement | Text;
 export default Img;

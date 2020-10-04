@@ -2,5 +2,5 @@ declare const Option: ({ value, text, attributes }?: {
     value?: string;
     text?: string;
     attributes?: {};
-}) => HTMLElement;
+}) => HTMLElement | Text;
 export default Option;

@@ -3,5 +3,5 @@ declare const Style: ({ media, type, children, attributes }?: {
     type?: string;
     children?: Array<HTMLElement | Text>;
     attributes?: {};
-}) => HTMLElement;
+}) => HTMLElement | Text;
 export default Style;

@@ -3,5 +3,5 @@ export interface args extends NodeArgs {
     value?: string;
     checked?: boolean;
 }
-declare const RadioInput: (args?: args) => HTMLElement;
+declare const RadioInput: (args?: args) => HTMLElement | Text;
 export default RadioInput;

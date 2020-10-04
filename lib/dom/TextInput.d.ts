@@ -5,5 +5,5 @@ export interface args extends NodeArgs {
     autocomplete?: string;
     ariaLabel?: string;
 }
-declare const TextInput: (args?: args) => HTMLElement;
+declare const TextInput: (args?: args) => HTMLElement | Text;
 export default TextInput;

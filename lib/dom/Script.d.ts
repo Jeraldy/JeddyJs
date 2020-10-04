@@ -7,5 +7,5 @@ declare const Script: ({ children, async, charSet, defer, src, type, attributes 
     src?: string;
     type?: string;
     attributes?: {};
-}) => HTMLElement;
+}) => HTMLElement | Text;
 export default Script;

@@ -9,5 +9,5 @@ export interface args extends NodeArgs {
     rel?: string;
     target?: string;
 }
-declare const A: (args?: args) => HTMLElement;
+declare const A: (args?: args) => HTMLElement | Text;
 export default A;
