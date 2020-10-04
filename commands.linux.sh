@@ -20,7 +20,7 @@ mkdir -p types/css && cp src/css/*.d.ts types/css
 
 ## Compile
 npm run compile
-
+npm run test
 ## Generate Documentation
 ## typedoc --out docs --theme minimal  --excludePrivate
 

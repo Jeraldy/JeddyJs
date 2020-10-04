@@ -20,7 +20,7 @@ xcopy src\css\*.d.ts types\css\ /S /Q /Y
 
 ## Compile
 npm run compile
-
+npm run test
 ## Generate Documentation
 ## typedoc --out docs --theme minimal  --excludePrivate
 
@@ -51,13 +51,13 @@ npm version patch
 npm publish --access=public
 
 ## Publish Jeddy Types
-cd..
+cd ..
 cd types 
 
 npm version patch
 npm publish --access=public
 
-cd..
+cd ..
 
 git add .
 git commit -m "tests"

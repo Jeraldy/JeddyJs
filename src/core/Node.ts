@@ -1,8 +1,14 @@
 import TextView from "../dom/TextView";
 
-export default (props = {}, tag: string) => {
+/**
+ * Builds a real DOM object
+ * @param  {object} props     Node props eg. style, id,...etc
+ * @param  {string} tag       HTMLTag eg. div, button, input,...etc
+ * @return {HTMLElement|Text}
+ */
+const Node = (props: object = {}, tag: string): HTMLElement | Text => {
   //@ts-ignore
-  const { children, style, attrs, ...rest } = { ...props }
+  const { children, style, attrs, ...rest } = props
 
   let node = document.createElement(tag);
 
@@ -48,3 +54,4 @@ export default (props = {}, tag: string) => {
   return node;
 };
 
+export default Node;

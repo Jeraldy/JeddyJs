@@ -1,4 +1,4 @@
-import { generateHTree, updateElement } from './core/Reconcile';
+import { generateVTree, updateElement } from './core/Reconcile';
 import { register } from "./jredux/index";
 
 interface LifeCycleMethods {
@@ -34,8 +34,8 @@ export class StatefulWidget implements LifeCycleMethods {
         let oldTree = this.node
         updateElement(
             document.getElementById('root'),
-            generateHTree(newTree),
-            generateHTree(oldTree)
+            generateVTree(newTree),
+            generateVTree(oldTree)
         )
         this.node = newTree
         this.componentDidUpdate()
@@ -59,7 +59,7 @@ export const Jeddy = {
     Init({ app }: { app: HTMLElement }) {
         updateElement(
             document.getElementById('root'),
-            generateHTree(app),
+            generateVTree(app),
             0
         )
     },
