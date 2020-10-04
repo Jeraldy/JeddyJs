@@ -1,18 +1,18 @@
 ## Compile Project
 cd lib
-rm -r core 
-rm -r layouts 
-rm -r utils 
-rm -r widgets
-rm -r styles
+rm -rf core 
+rm -rf layouts 
+rm -rf utils 
+rm -rf widgets
+rm -rf styles
 cd ..
 
 cd types
-rm -r core 
-rm -r layouts 
-rm -r utils 
-rm -r widgets 
-rm -r css
+rm -rf core 
+rm -rf layouts 
+rm -rf utils 
+rm -rf widgets 
+rm -rf css
 cd ..
 
 ## Add CSS Types to types
@@ -31,13 +31,13 @@ cp lib/*.d.ts types/
 ## mkdir -p lib/styles && cp  src/styles/* lib/styles
 
 ## Remove types from lib
-rm -r lib/*.d.ts
-rm -r lib/**/*.d.ts
-rm -r lib/**/**/*.d.ts
+rm -rf lib/*.d.ts
+rm -rf lib/**/*.d.ts
+rm -rf lib/**/**/*.d.ts
 
-rm -r lib/*.js.map
-rm -r lib/**/*.js.map
-rm -r lib/**/**/*.js.map
+rm -rf lib/*.js.map
+rm -rf lib/**/*.js.map
+rm -rf lib/**/**/*.js.map
 
 ## Put back css types
 mkdir -p lib/css && cp  src/css/*.d.ts lib/css

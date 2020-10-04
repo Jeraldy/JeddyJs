@@ -6,6 +6,7 @@
   "description": "Reactive UI building Framework",
   "scripts": {
     "test": "jest --verbose ./__tests__/",
+    "test-specific": "jest --verbose ./__tests__/jredux/reducer.test.js",
     "compile": "tsc"
   },
   "jest": {
