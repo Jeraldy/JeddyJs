@@ -26,6 +26,12 @@ npm run test
 
 ## Copy Types
 cp lib/*.d.ts types/
+mkdir -p types/dom && cp lib/dom/*.d.ts types/dom
+mkdir -p types/core && cp lib/core/*.d.ts types/core
+mkdir -p types/jredux && cp lib/jredux/*.d.ts types/jredux
+mkdir -p types/utils && cp lib/utils/*.d.ts types/utils
+mkdir -p types/layouts && cp lib/layouts/*.d.ts types/layouts
+mkdir -p types/widgets && cp lib/widgets/*.d.ts types/widgets
 
 ## Copy Styles
 ## mkdir -p lib/styles && cp  src/styles/* lib/styles
@@ -40,7 +46,7 @@ rm -rf lib/**/*.js.map
 rm -rf lib/**/**/*.js.map
 
 ## Put back css types
-mkdir -p lib/css && cp  src/css/*.d.ts lib/css
+cp  src/css/*.d.ts lib/css
 
 ## Publish Jeddy Library
 cd lib
