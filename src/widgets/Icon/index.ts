@@ -3,7 +3,7 @@ import TextView from "../../dom/TextView"
 import Icons from "../../utils/Icons"
 import * as CSS from "../../css";
 
-export default ({ name, style }: { name: Icons, style?: CSS.Properties }) => {
+export default ({ name, style }: { name: Icons | string, style?: CSS.Properties }) => {
     return I({
         class: 'material-icons',
         children: [TextView(name)],
