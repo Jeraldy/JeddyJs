@@ -440,8 +440,8 @@ export default connect(mapStateToProps)(App)
 - **index.js**
   - We import the root reducer from *'./Reducers/index'* and then passing it 
   to our main widget so that it becomes available down the tree.
-  - We are calling the *updateState* inside the *componentDidMount* to subscribe for the subsequent updates and activate the initial state.
-  - The *componentDidMount* is a life cycle method which gets invoked when our main widget gets connected to the dom tree.
+  - We are calling the *updateState* inside the *connectedCallBack* to subscribe for the subsequent updates and activate the initial state.
+  - The *connectedCallBack* is a life cycle method which gets invoked when our main widget gets connected to the dom tree.
   
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
@@ -454,7 +454,7 @@ class Main extends StatefulWidget {
         super(props)
         return this.connect()
     }
-    componentDidMount() { updateState(this) }
+    connectedCallBack() { updateState(this) }
     render() { return App() }
 }
 

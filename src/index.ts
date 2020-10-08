@@ -2,17 +2,17 @@ import { generateVTree, updateElement } from './core/Reconcile';
 import { register } from "./jredux/index";
 
 interface LifeCycleMethods {
-    componentDidMount(): void
-    componentDidUpdate(): void
-    componetWillUpdate(): void
+    connectedCallBack(): void
+    updatedCallback(): void
+    willUpdateCallBack(): void
     mapStoreToState(reduxState: any): {}
     render(): any
 }
 
 export class StatefulWidget implements LifeCycleMethods {
-    componentDidMount(): void { }
-    componentDidUpdate(): void { }
-    componetWillUpdate(): void { }
+    connectedCallBack(): void { }
+    updatedCallback(): void { }
+    willUpdateCallBack(): void { }
     mapStoreToState(reduxState: any): {} { return {} }
     render(): any { throw new Error("Method not implemented."); }
     private node: any;
@@ -28,7 +28,7 @@ export class StatefulWidget implements LifeCycleMethods {
     }
 
     setState(newState: {}) {
-        this.componetWillUpdate()
+        this.willUpdateCallBack()
         this.state = { ...this.state, ...newState }
         let newTree = this.render()
         let oldTree = this.node
@@ -38,13 +38,13 @@ export class StatefulWidget implements LifeCycleMethods {
             generateVTree(oldTree)
         )
         this.node = newTree
-        this.componentDidUpdate()
+        this.updatedCallback()
         return this.state
     }
 
     private componentMounted() {
         document.addEventListener("DOMContentLoaded", (_) => {
-            this.componentDidMount()
+            this.connectedCallBack()
         });
     }
 
