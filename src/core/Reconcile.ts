@@ -144,7 +144,7 @@ function setProps($target: HTMLElement, props: any): void {
 function updateProp($target: HTMLElement, name: string, newVal: string, oldVal: string): void {
     if (!newVal) {
         removeProp($target, name, oldVal);
-    } else if (!oldVal || newVal !== oldVal) {
+    } else if (!oldVal || newVal !== oldVal || $target.tagName == "INPUT") {
         setProp($target, name, newVal);
     }
 }
