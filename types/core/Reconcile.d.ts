@@ -86,7 +86,7 @@ declare function updateProps($target: HTMLElement, newProps: {}, oldProps?: obje
  */
 declare function addEventListeners($target: HTMLElement, props: any): void;
 /**
- * Converts an VTree into a DOM Element
+ * Converts a VTree into a DOM Element
  * @param  {HTMLElement} $target HTMLElement
  * @param  {object} node         VTree
  * @return {HTMLElement | Text}  HTMLElement | Text

@@ -142,9 +142,13 @@ function setProps($target: HTMLElement, props: any): void {
  * @return {void}            
  */
 function updateProp($target: HTMLElement, name: string, newVal: string, oldVal: string): void {
-    if (!newVal) {
+    if (!newVal
+        || $target.nodeName == "INPUT"
+        || $target.nodeName == "TEXTAREA") {
         removeProp($target, name, oldVal);
-    } else if (!oldVal || newVal !== oldVal || $target.tagName == "INPUT") {
+    } else if (!oldVal || newVal !== oldVal
+        || $target.nodeName == "INPUT"
+        || $target.nodeName == "TEXTAREA") {
         setProp($target, name, newVal);
     }
 }
@@ -182,7 +186,7 @@ function addEventListeners($target: HTMLElement, props: any): void {
 }
 
 /**
- * Converts an VTree into a DOM Element
+ * Converts a VTree into a DOM Element
  * @param  {HTMLElement} $target HTMLElement
  * @param  {object} node         VTree
  * @return {HTMLElement | Text}  HTMLElement | Text         
@@ -227,7 +231,7 @@ function changed(node1: any | string, node2: any | string): boolean {
  * @param  {number} index        Index of the current element
  * @return {void}        
  */
-function updateElement($parent: any, newNode: any, oldNode?: any, index = 0): void {
+function updateElement($parent: any, newNode: any, oldNode?: any, index: number = 0): void {
     if (!oldNode) {
         $parent.appendChild(createElement(newNode));
     } else if (!newNode) {
