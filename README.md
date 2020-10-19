@@ -53,7 +53,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 When running, the app will render its content into the `div#root`, therefore this div
 should not be removed. The script tag with `app.bundle.js` is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
 - **src/index.js**:
-This is the main entry of our app, and the `Jeddy.Init` connects our logic to the dom.
+This is the main entry of our app, and the `Jeddy.Init` connects the app logic to the dom.
 The *Main* class has a mutable state since it extends a `StatefulWidget`, 
 this gives our app the power to act on user interactivity, and therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by using `this.setState`.
 ```js
@@ -333,7 +333,7 @@ export default Decrement;
  - You can notice that we have a connect function at the bottom, this gives us a way to access the state
  and pull out the counterReducer.
  - The ES6 spread operator(...) unpacks the state into its individual props.
- - Therefore the counter variable becomes available to our widget like this `const App = ({ counter })=>{}`.
+ - Therefore the counter variable becomes available to our widget like this `({ counter })`.
 
 ```js
 import Div from "jeddy/dom/Div";
@@ -403,9 +403,9 @@ Jeddy.Init({ app: new Main({ reducers }) });
 ```sh
   $ npm run build
 ```
- - After running the above command you will find the build folder
+ After running the above command you will find the build folder
  in your workspace which contains site contents ready for hosting.
- - Please read [Webpack guide](https://webpack.js.org/guides/production/)
+ Please read [Webpack guide](https://webpack.js.org/guides/production/)
  for further optimization tips.
 
 **Thats it...!!! Can't wait to see what you build with jeddy. Keep Learning..👨‍💻**
@@ -414,7 +414,7 @@ Jeddy.Init({ app: new Main({ reducers }) });
 - TodoList [[Demo](https://jeddy-todo-list.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 - Form Items [[Demo](https://jeddy-form-items.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 - Simple Table(With data fetch from API end point) [[Demo](https://jeddy-simple-table.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
-> To list your cool project here ping me => [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
+> To list your cool project here open a PR or send the links to [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
 
 ### Documentation
  > Work in progress
