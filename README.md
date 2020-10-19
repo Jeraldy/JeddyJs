@@ -51,7 +51,7 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     └── webpack.config.js
 **public/index.html**: 
 When running, the app will render its content into the `div#root`, therefore this div
-should not be removed. The script tag with `app.bundle.js` is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
+should not be removed. The script tag with `app.bundle.js` is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..<br>
 **src/index.js**:
 This is the main entry of our app, and the `Jeddy.Init` connects the app logic to the dom.
 The *Main* class has a mutable state since it extends a `StatefulWidget`, 
