@@ -29,9 +29,9 @@ We will build a simple counter application using two approaches. The first part 
 
 #### Step 1: Clone the quick start repository
 ```sh
-    $ git clone https://github.com/Jeraldy/jeddy-quick-start
-    $ cd jeddy-quick-start
-    $ npm install && npm start
+$ git clone https://github.com/Jeraldy/jeddy-quick-start
+$ cd jeddy-quick-start
+$ npm install && npm start
 ```
 Then open: [http://localhost:9000/](http://localhost:9000/)
 
@@ -49,10 +49,10 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── README.md
     ├── tsconfig.json
     └── webpack.config.js
-- **public/index.html**: 
+**public/index.html**: 
 When running, the app will render its content into the `div#root`, therefore this div
 should not be removed. The script tag with `app.bundle.js` is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
-- **src/index.js**:
+**src/index.js**:
 This is the main entry of our app, and the `Jeddy.Init` connects the app logic to the dom.
 The *Main* class has a mutable state since it extends a `StatefulWidget`, 
 this gives our app the power to act on user interactivity, and therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by using `this.setState`.
@@ -274,9 +274,9 @@ const counterReducer = createReducer({
 
 export const { reducer, actions } = counterReducer;
 ```
-- This should look familiar. We have initialized our counter to zero as previously.
-- We have defined our functions to `Increment` and `Decrement` the counter respectively.
-- Now lets take a look into the `Reducers/index.js`.This is the main entry of our reducers, so all reducers should be registered here.
+This should look familiar. We have initialized our counter to zero as previously.
+We have defined our functions to `Increment` and `Decrement` the counter respectively.
+Now lets take a look into the `Reducers/index.js`.This is the main entry of our reducers, so all reducers should be registered here.
 ```js
 import { reducer as counterReducer } from './Counter'
 
