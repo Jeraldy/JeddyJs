@@ -421,8 +421,8 @@ Jeddy.Init({ app: new Main({ reducers }) });
  > Work in progress
 
 ### Contributing
- > For now you can email me at deusjeraldy@gmail.com <br/>
- > This is still a work in progress
+We love your input!
+[Please read the guideline](https://github.com/Jeraldy/JeddyJs/blob/master/CONTRIBUTING.md)
 
 ### License
 The Jeddy JS is released under the
