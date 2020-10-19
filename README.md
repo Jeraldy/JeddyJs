@@ -310,8 +310,8 @@ const Increment = () => {
 
 export default Increment;
 ```
-- This should also look familiar, We have our button which on click calls the *handleIncrement*
-  defined into the counter reducer. This is the same for *Decrement* button as well.
+This should also look familiar, We have our button which on click calls the *handleIncrement*
+defined into the counter reducer. This is the same for *Decrement* button as well.
 *src/Widgets/Decrement.js*
 ```js
 import { actions } from '../Reducers/Counter';
