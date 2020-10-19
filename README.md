@@ -255,8 +255,7 @@ Jeddy.Init({ app: new Main() });
 #### Step 2: Creating Reducers
 - [Reducers](https://redux.js.org/basics/reducers) simply contains the actions/functions that mutates the state.
 - We will be dispatching/calling those actions from our widgets to increment/decrement the counter.
-- Lets take a look into the *Counter.js*
-*src/Reducers/Counter.js*:
+- Lets take a look into the *src/Reducers/Counter.js*:
 ```js
 import { createReducer } from "jeddy/jredux";
 
@@ -278,8 +277,7 @@ export const { reducer, actions } = counterReducer;
 - This should look familiar. We have initialized our counter to zero as previously.
 - We have defined our functions to *Increment* and *Decrement* the counter respectively.
 - Now lets take a look into the *Reducers/index.js*
-- **Reducers/index.js**:
-  - This is the main entry of our reducers, so all reducers should be registered here.
+- **Reducers/index.js**: This is the main entry of our reducers, so all reducers should be registered here.
 ```js
 import { reducer as counterReducer } from './Counter'
 
@@ -288,11 +286,12 @@ export default { counterReducer }
 
 #### Step 3: Refactoring our widgets:
 - We have refactored our code to separate the *Increment* and *Decrement* buttons.
-- This is trivial  for a relatively simple app like this, but vital for realworld apps with lots of widgets and complex logic.
+- Separating these two button might seem trivial  for a relatively simple app like this.
+But this is a common pattern for real apps which normally have lots of widgets and complex logic.
 ```sh
     ├── Widgets
         ├── Increment.js
-        └── Decrement.js 
+        └── Decrement.js
 ```
 *src/Widgets/Increment.js*
 ```js
