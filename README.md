@@ -4,14 +4,14 @@ It is now easy to write clean, reusable and maintainable code with Jeddy.
 
 ### Quick start
 ```sh
-    # Clone the Quick Start repository
-    $ git clone https://github.com/Jeraldy/jeddy-redux-quick-start
+# Clone the Quick Start repository
+$ git clone https://github.com/Jeraldy/jeddy-redux-quick-start
 
-    # Go into the repository
-    $ cd jeddy-redux-quick-start
+# Go into the repository
+$ cd jeddy-redux-quick-start
 
-    # Install the dependencies and run
-    $ npm install && npm start
+# Install the dependencies and run
+$ npm install && npm start
 ```
 Then open: [http://localhost:9000/](http://localhost:9000/)
 
