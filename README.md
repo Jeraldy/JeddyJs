@@ -50,12 +50,12 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     ├── tsconfig.json
     └── webpack.config.js
 - **public/index.html**: 
-When running, Our app will render its content into the *div#root*, therefore this div
+When running, the app will render its content into the `div#root`, therefore this div
 should not be removed. The script tag with `app.bundle.js` is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
 - **src/index.js**:
 This is the main entry of our app, and the `Jeddy.Init` connects our logic to the dom.
-The Main class has a mutable state since it extends a `StatefulWidget`,
-This gives our app the power to act on user interactivity,And therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by using `this.setState`.
+The *Main* class has a mutable state since it extends a `StatefulWidget`, 
+this gives our app the power to act on user interactivity, and therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by using `this.setState`.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
