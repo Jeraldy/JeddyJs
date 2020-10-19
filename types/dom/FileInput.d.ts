@@ -1,4 +1,4 @@
-import { NodeArgs } from '../core/Args';
+import { NodeArgs } from '../core/CommonArgs';
 export interface args extends NodeArgs {
     value?: string;
     accept?: string;
