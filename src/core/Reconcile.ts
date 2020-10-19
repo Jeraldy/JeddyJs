@@ -142,9 +142,7 @@ function setProps($target: HTMLElement, props: any): void {
  * @return {void}            
  */
 function updateProp($target: HTMLElement, name: string, newVal: string, oldVal: string): void {
-    if (!newVal
-        || $target.nodeName == "INPUT"
-        || $target.nodeName == "TEXTAREA") {
+    if (!newVal) {
         removeProp($target, name, oldVal);
     } else if (!oldVal || newVal !== oldVal
         || $target.nodeName == "INPUT"

@@ -52,7 +52,6 @@ export class StatefulWidget implements LifeCycleMethods {
         this.node = this.render()
         return this.node
     }
-
 }
 
 export const Jeddy = {
