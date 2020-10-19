@@ -51,11 +51,11 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
     └── webpack.config.js
 - **public/index.html**: 
 When running, Our app will render its content into the *div#root*, therefore this div
-should not be removed. The script tag with *app.bundle.js* is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
+should not be removed. The script tag with `app.bundle.js` is needed to load our compiled js files. This is a regular *html* file so feel free to add global css, icons etc..
 - **src/index.js**:
-This is the main entry of our app, and the *Jeddy.Init* connects our logic to the dom.
-The Main class has a mutable state since it extends a *StatefulWidget*,
-This gives our app the power to act on user interactivity,And therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by using *this.setState*.
+This is the main entry of our app, and the `Jeddy.Init` connects our logic to the dom.
+The Main class has a mutable state since it extends a `StatefulWidget`,
+This gives our app the power to act on user interactivity,And therefore updating the corresponding parts of the UI bindend to the state mutated. All we have to do is to ensure the state is notified for changes by using `this.setState`.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -115,7 +115,7 @@ Jeddy.Init({ app: new Main() });
 ```
 
 #### Step 4: Updating our UI (src/index.js).
-  Lets add two buttons to *Increment* and *Decrement* the counter respectively.
+  Lets add two buttons to `Increment` and `Decrement` the counter respectively.
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
 import Div from "jeddy/dom/Div";
@@ -160,7 +160,7 @@ Jeddy.Init({ app: new Main() });
  ```
 
 #### Step 5: Let's make it pretty
- We have imported *index.css* which contans some css to style our buttons.
+ We have imported `index.css` which contans some css to style our buttons.
  You can also add inline styles like the way we have styled the div which displays
  the counts.
 ```js
@@ -255,7 +255,7 @@ Jeddy.Init({ app: new Main() });
 #### Step 2: Creating Reducers
 - [Reducers](https://redux.js.org/basics/reducers) simply contains the actions/functions that mutates the state.
 - We will be dispatching/calling those actions from our widgets to increment/decrement the counter.
-- Lets take a look into the *src/Reducers/Counter.js*:
+- Lets take a look into the `src/Reducers/Counter.js`
 ```js
 import { createReducer } from "jeddy/jredux";
 
@@ -275,9 +275,8 @@ const counterReducer = createReducer({
 export const { reducer, actions } = counterReducer;
 ```
 - This should look familiar. We have initialized our counter to zero as previously.
-- We have defined our functions to *Increment* and *Decrement* the counter respectively.
-- Now lets take a look into the *Reducers/index.js*
-- **Reducers/index.js**: This is the main entry of our reducers, so all reducers should be registered here.
+- We have defined our functions to `Increment` and `Decrement` the counter respectively.
+- Now lets take a look into the `Reducers/index.js`.This is the main entry of our reducers, so all reducers should be registered here.
 ```js
 import { reducer as counterReducer } from './Counter'
 
@@ -285,7 +284,7 @@ export default { counterReducer }
 ```
 
 #### Step 3: Refactoring our widgets:
-- We have refactored our code to separate the *Increment* and *Decrement* buttons.
+- We have refactored our code to separate the `Increment` and `Decrement` buttons.
 - Separating these two button might seem trivial  for a relatively simple app like this.
 But this is a common pattern for real apps which normally have lots of widgets and complex logic.
 ```sh
@@ -310,8 +309,8 @@ const Increment = () => {
 
 export default Increment;
 ```
-This should also look familiar, We have our button which on click calls the *handleIncrement*
-defined into the counter reducer. This is the same for *Decrement* button as well.
+This should also look familiar, We have our button which on click calls the `handleIncrement`
+defined into the counter reducer. This is the same for `Decrement` button as well.
 *src/Widgets/Decrement.js*
 ```js
 import { actions } from '../Reducers/Counter';
@@ -334,7 +333,7 @@ export default Decrement;
  - You can notice that we have a connect function at the bottom, this gives us a way to access the state
  and pull out the counterReducer.
  - The ES6 spread operator(...) unpacks the state into its individual props.
- - Therefore the counter variable becomes available to our widget like this *const App = ({ counter })=>{}*.
+ - Therefore the counter variable becomes available to our widget like this `const App = ({ counter })=>{}`.
 
 ```js
 import Div from "jeddy/dom/Div";
@@ -379,8 +378,8 @@ export default connect(mapStateToProps)(App)
 - Now lets do that in the *src/index.js*
 - We import the root reducer from *'./Reducers/index'* and then passing it 
   to our main widget so that it becomes available down the tree.
-- We are calling the *updateState* inside the *connectedCallBack* to subscribe for the subsequent updates and activate the initial state.
-- The *connectedCallBack* is a life cycle method which gets invoked when our main widget gets connected to the dom tree.
+- We are calling the *updateState* inside the `connectedCallBack` to subscribe for the subsequent updates and activate the initial state.
+- The `connectedCallBack` is a life cycle method which gets invoked when our main widget gets connected to the dom tree.
 *src/index.js*
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
