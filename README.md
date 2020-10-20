@@ -424,6 +424,19 @@ Latest ✔ | Latest ✔ | Latest ✔ | 11+ ✔ | 9.1+ ✔ | Latest ✔ |
 ### Documentation
  > Work in progress
 
+### Contributors ✨
+Thanks goes to these wonderful people:
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+     <td align="center"><a href="https://jeraldy.github.io/">
+     <img src="https://avatars2.githubusercontent.com/u/29575941?s=400&u=ce945c5568ab55b31edf6d7a0ea20722c81684c9&v=4" width="100px;" alt="Jeraldy Deus"/><br /><sub><b>Jeraldy Deus</b></sub></a><br />
+     <a href="https://github.com/Jeraldy/JeddyJs/commits?author=Jeraldy" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 ### Contributing
 We love your input!
 [Please read the guideline](https://github.com/Jeraldy/JeddyJs/blob/master/CONTRIBUTING.md)
