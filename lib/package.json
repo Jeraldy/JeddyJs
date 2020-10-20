@@ -1,6 +1,6 @@
 {
   "name": "jeddy",
-  "version": "1.0.172",
+  "version": "1.0.173",
   "main": "./index.js",
   "types": "./index.d.ts",
   "description": "Reactive UI building Framework",
