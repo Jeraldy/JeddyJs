@@ -439,7 +439,7 @@ Thanks goes to these wonderful people:
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 ### Contributing
 We love your input!
-[Please read the guideline](https://github.com/Jeraldy/JeddyJs/blob/master/CONTRIBUTING.md)
+[Please read the guideline.](https://github.com/Jeraldy/JeddyJs/blob/master/CONTRIBUTING.md)
 
 ### License
 The Jeddy JS is released under the
