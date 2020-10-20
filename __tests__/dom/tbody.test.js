@@ -1,4 +1,4 @@
-const TBody = require("../../lib/dom/TBody");
+const TBody = require("../../lib/dom/Tbody");
 
 test('TBody', () => {
     var el = TBody.default({})
