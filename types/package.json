@@ -1,6 +1,6 @@
 {
   "name": "jeddy-types",
-  "version": "1.0.176",
+  "version": "1.0.177",
   "main": "./index.d.ts",
   "description": "Types for JeddyJs",
   "keywords": [

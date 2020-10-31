@@ -2,6 +2,9 @@
 Is a web UI development framework which makes it fun and enjoyable to create Web UIs using pure javascript **(No HTML Tags)**.
 It is now easy to write clean, reusable and maintainable code with Jeddy.
 
+### Progress 🚀
+Currently in Beta
+
 ### Quick start
 ```sh
 # Clone the Quick Start repository
