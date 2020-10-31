@@ -1,5 +1,5 @@
 ### Jeddy
-We make it fun and enjoyable to create Web UIs using pure javascript(No HTML Tags).
+Is a web UI development framework which makes it fun and enjoyable to create Web UIs using pure javascript **(No HTML Tags)**.
 It is now easy to write clean, reusable and maintainable code with Jeddy.
 
 ### Quick start
@@ -422,9 +422,7 @@ Jeddy.Init({ app: new Main({ reducers }) });
 Latest ✔ | Latest ✔ | Latest ✔ | 9.1+ ✔ | Latest ✔ |
 
 ### Documentation
-You can find the JeddyJs documentation [here](https://jeddyjs.netlify.app/).  
-Check out the [Getting Started](https://jeddyjs.netlify.app/) page for a quick overview.
-You can improve it by sending pull requests to [this repository](https://github.com/Jeraldy/JeddyJs).
+You can find the JeddyJs documentation [here](https://jeddyjs.netlify.app/). Check out the [Getting Started](https://jeddyjs.netlify.app/) page for a quick overview. You can improve it by sending pull requests to [this repository](https://github.com/Jeraldy/JeddyJs).
 
 ### Contributors ✨
 Thanks goes to these wonderful people:
