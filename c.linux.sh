@@ -1,6 +1,7 @@
 ## Compile Project
 cd lib
 rm -rf core 
+rm -rf dom 
 rm -rf layouts 
 rm -rf utils 
 rm -rf widgets
