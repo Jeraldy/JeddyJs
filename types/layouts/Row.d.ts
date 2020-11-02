@@ -1,4 +1,4 @@
-import RowAlignment from "./RowAlignment";
+import RowAlignment from "./RowAlign";
 import { NodeArgs } from "../core/CommonArgs";
 export interface args extends NodeArgs {
     align?: RowAlignment;

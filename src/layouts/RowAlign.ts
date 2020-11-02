@@ -1,4 +1,4 @@
-enum RowAlignment {
+enum RowAlign {
     SpaceEvenly = 'space-evenly',
     SpaceBetween = 'space-between',
     Start = 'flex-start',
@@ -6,4 +6,4 @@ enum RowAlignment {
     Center = 'center'
 }
 
-export default RowAlignment;
+export default RowAlign;

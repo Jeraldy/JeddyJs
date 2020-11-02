@@ -1,5 +1,6 @@
 import { generateVTree, updateElement } from './core/Reconcile';
 import { register } from "./jredux/index";
+import MediaQuery from './core/MediaQuery';
 
 interface LifeCycleMethods {
     connectedCallBack(): void
@@ -24,6 +25,7 @@ export class StatefulWidget implements LifeCycleMethods {
         if (props && props.reducers) {
             register(props.reducers)
         }
+        MediaQuery()
         this.componentMounted()
     }
 

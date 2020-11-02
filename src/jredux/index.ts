@@ -1,5 +1,5 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
-import initReducer from './reducer';
+import { reducer as initReducer } from './reducer';
 import { combineReducers } from 'redux';
 
 let reducers = { initReducer }

@@ -1,5 +1,5 @@
 import Div from "../dom/Div"
-import RowAlignment from "./RowAlignment"
+import RowAlignment from "./RowAlign"
 import * as CSS from "../css/index";
 import { NodeArgs } from "../core/CommonArgs";
 
