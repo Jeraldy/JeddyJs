@@ -6,3 +6,5 @@ enum Device {
     DESKTOP = 5,
     TV = 6
 }
+
+export default Device;

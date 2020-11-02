@@ -1,5 +1,6 @@
 import { actions } from "../jredux/reducer";
 import { dispatch } from "../jredux/index";
+import Device from "../utils/Device";
 const { setMediaQuery } = actions
 
 function updateMediaQuery() {
