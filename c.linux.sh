@@ -5,6 +5,7 @@ rm -rf layouts
 rm -rf utils 
 rm -rf widgets
 rm -rf styles
+rm README.md
 cd ..
 
 cd types
@@ -35,6 +36,7 @@ mkdir -p types/widgets && cp lib/widgets/*.d.ts types/widgets
 mkdir -p types/widgets/Card && cp lib/widgets/Card/*.d.ts types/widgets/Card
 mkdir -p types/widgets/Icon && cp lib/widgets/Icon/*.d.ts types/widgets/Icon
 
+cp src/README.md lib/
 ## Copy Styles
 ## mkdir -p lib/styles && cp  src/styles/* lib/styles
 
