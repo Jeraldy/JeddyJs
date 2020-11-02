@@ -36,7 +36,7 @@ mkdir -p types/widgets && cp lib/widgets/*.d.ts types/widgets
 mkdir -p types/widgets/Card && cp lib/widgets/Card/*.d.ts types/widgets/Card
 mkdir -p types/widgets/Icon && cp lib/widgets/Icon/*.d.ts types/widgets/Icon
 
-cp src/README.md lib/
+cp README.md lib/
 ## Copy Styles
 ## mkdir -p lib/styles && cp  src/styles/* lib/styles
 
