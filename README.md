@@ -42,7 +42,7 @@ Jeddy.Init({ app: new Main() });
  ```
  This will render a page with a button. Clicking the button will increment the number of clicks.
 
-#### More Examples
+#### *More Examples*
 - TodoList [[Demo](https://jeddy-todo-list.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 - Form Items [[Demo](https://jeddy-form-items.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 - Simple Table(With data fetch from API end point) [[Demo](https://jeddy-simple-table.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
