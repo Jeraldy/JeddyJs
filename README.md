@@ -3,9 +3,27 @@
 
 Is a web UI development framework which makes it fun and enjoyable to create Web UIs using pure javascript **(No HTML Tags)**.
 It is now easy to write clean, reusable and maintainable code with Jeddy.
+```js
+import { Jeddy, StatefulWidget } from "jeddy";
+import Button from "jeddy/dom/Button";
 
-### Progress 🚀
-Currently in Beta
+class Main extends StatefulWidget {
+    constructor() {
+        super()
+        this.state = 0
+        return this.connect()
+    }
+
+    render() {
+        return Button({
+            children: [`Clicked: ${this.state} times`],
+            onClick: () => this.setState(this.state + 1)
+        })
+    }
+}
+
+Jeddy.Init({ app: new Main() });
+ ```
 
 ### Quick start
 ```sh
@@ -23,53 +41,6 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 ### How does Jeddy work?
 Jeddy creates a virtual DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first, and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees a better user experience and higher app performance.
 
-### Getting started
-We will build a simple counter application using two approaches. The first part will use a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
-    <!-- <p align="center">
-        <img src="counter.PNG">
-    </p> -->
-#### PART I: The simple way(Using a StatefulWidget)
- - You can find a finished version of the sample code for this part [HERE](https://github.com/Jeraldy/jeddy-quick-start).
- - The demo for this can be found [HERE](https://jeddy-counter.netlify.app/).
-
-#### Step 1: Clone the quick start repository
-```sh
-$ git clone https://github.com/Jeraldy/jeddy-quick-start
-$ cd jeddy-quick-start
-$ npm install && npm start
-```
-Then open: [http://localhost:9000/](http://localhost:9000/)
-
-#### Example
-```js
-import { Jeddy, StatefulWidget } from "jeddy";
-import Div from "jeddy/dom/Div";
-import Button from "jeddy/dom/Button";
-
-class Main extends StatefulWidget {
-    constructor() {
-        super()
-        this.state = { counter: 0 }
-        return this.connect()
-    }
-
-    render() {
-        return Div({
-                children: [
-                    `Counts: ${this.state.counter}`,
-                    Button({
-                        children: ["Increment"],
-                        onClick: () => this.setState({ 
-                                counter: this.state.counter + 1 
-                            })
-                    })
-                ]
-            })
-    }
-}
-
-Jeddy.Init({ app: new Main() });
- ```
 
 ### More Examples
 - TodoList [[Demo](https://jeddy-todo-list.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
