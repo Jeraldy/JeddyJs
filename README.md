@@ -27,9 +27,7 @@ import Button from "jeddy/dom/Button";
 
 class Main extends StatefulWidget {
     constructor() {
-        super()
         this.state = 0
-        return this.connect()
     }
 
     render() {
