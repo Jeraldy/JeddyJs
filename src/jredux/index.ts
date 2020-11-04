@@ -1,8 +1,8 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
-import { reducer as initReducer } from './reducer';
+import { reducer as RMediaQuery } from './reducer';
 import { combineReducers } from 'redux';
 
-let reducers = { initReducer }
+let reducers = { RMediaQuery }
 const store = configureStore({ reducer: combineReducers({ ...reducers }) })
 
 export const replaceReducer = (rootReducer) => {
