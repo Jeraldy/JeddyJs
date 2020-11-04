@@ -1,4 +1,5 @@
-### Jeddy
+
+# Jeddy &middot; [![Build Status](https://travis-ci.com/Jeraldy/JeddyJs.svg?branch=master)](https://travis-ci.com/Jeraldy/JeddyJs)[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 Is a web UI development framework which makes it fun and enjoyable to create Web UIs using pure javascript **(No HTML Tags)**.
 It is now easy to write clean, reusable and maintainable code with Jeddy.
 
