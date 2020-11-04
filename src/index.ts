@@ -29,9 +29,13 @@ export class StatefulWidget implements LifeCycleMethods {
         this.componentMounted()
     }
 
-    setState(newState: {}) {
+    setState(newState: any) {
         this.willUpdateCallBack()
-        this.state = { ...this.state, ...newState }
+        if (typeof this.state === "object") {
+            this.state = { ...this.state, ...newState }
+        } else {
+            this.state = newState
+        }
         let newTree = this.render()
         let oldTree = this.node
         updateElement(

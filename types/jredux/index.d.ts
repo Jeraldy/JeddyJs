@@ -1,6 +1,6 @@
 export declare const replaceReducer: (rootReducer: any) => void;
 export declare const register: (newReducers: any) => import("redux").CombinedState<{
-    initReducer: {
+    RMediaQuery: {
         availHeight: number;
         availWidth: number;
         colorDepth: number;

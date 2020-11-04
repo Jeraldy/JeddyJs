@@ -15,7 +15,7 @@ export declare class StatefulWidget implements LifeCycleMethods {
     state: any;
     props: any;
     constructor(props?: any);
-    setState(newState: {}): any;
+    setState(newState: any): any;
     private componentMounted;
     connect(): any;
 }

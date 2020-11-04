@@ -10,3 +10,8 @@ script:
 
 script:
   - npm test
+
+deploy:
+  provider: npm
+  email: "deusjeraldy@gmail.com"
+  api_key: "YOUR_AUTH_TOKEN"
