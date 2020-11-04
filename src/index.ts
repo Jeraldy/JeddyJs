@@ -25,6 +25,7 @@ export class StatefulWidget implements LifeCycleMethods {
         if (props && props.reducers) {
             register(props.reducers)
         }
+        this.node = this.render()
         MediaQuery()
         this.componentMounted()
     }
@@ -53,20 +54,23 @@ export class StatefulWidget implements LifeCycleMethods {
             this.connectedCallBack()
         });
     }
-
-    connect() {
-        this.node = this.render()
-        return this.node
-    }
 }
 
 export const Jeddy = {
-    Init({ app }: { app: HTMLElement }) {
-        updateElement(
-            document.getElementById('root'),
-            generateVTree(app),
-            0
-        )
+    Init({ app }: { app: HTMLElement | StatefulWidget }) {
+        if (app instanceof StatefulWidget) {
+            updateElement(
+                document.getElementById('root'),
+                generateVTree(app.render()),
+                0
+            )
+        } else {
+            updateElement(
+                document.getElementById('root'),
+                generateVTree(app),
+                0
+            )
+        }
     },
 }
 

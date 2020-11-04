@@ -4,9 +4,6 @@
 Is a web UI development framework which makes it fun and enjoyable to create Web UIs using pure javascript **(No HTML Tags)**.
 It is now easy to write clean, reusable and maintainable code with Jeddy.
 
-### Progress 🚀
-Currently in Beta
-
 ### Quick start
 ```sh
 # Clone the Quick Start repository
@@ -23,53 +20,29 @@ Then open: [http://localhost:9000/](http://localhost:9000/)
 ### How does Jeddy work?
 Jeddy creates a virtual DOM in memory, which is a representation of the document object model. Instead of manipulating the browser's DOM directly, all the changes are applied to the virtual DOM first, and then, using a diffing algorithm, the minimal scope of necessary DOM operations is calculated. Finally, the real DOM tree is updated accordingly by applying changes only to what needs to be changed, ensuring minimum time consumed. This method guarantees a better user experience and higher app performance.
 
-### Getting started
-We will build a simple counter application using two approaches. The first part will use a simple stateful widget, and then we will enhnace it by using [redux](https://redux.js.org/). The second approach is recommended for better state management and performance.
-    <!-- <p align="center">
-        <img src="counter.PNG">
-    </p> -->
-#### PART I: The simple way(Using a StatefulWidget)
- - You can find a finished version of the sample code for this part [HERE](https://github.com/Jeraldy/jeddy-quick-start).
- - The demo for this can be found [HERE](https://jeddy-counter.netlify.app/).
-
-#### Step 1: Clone the quick start repository
-```sh
-$ git clone https://github.com/Jeraldy/jeddy-quick-start
-$ cd jeddy-quick-start
-$ npm install && npm start
-```
-Then open: [http://localhost:9000/](http://localhost:9000/)
-
-#### Example
+### Example
 ```js
 import { Jeddy, StatefulWidget } from "jeddy";
-import Div from "jeddy/dom/Div";
 import Button from "jeddy/dom/Button";
 
 class Main extends StatefulWidget {
     constructor() {
         super()
-        this.state = { counter: 0 }
+        this.state = 0
         return this.connect()
     }
 
     render() {
-        return Div({
-                children: [
-                    `Counts: ${this.state.counter}`,
-                    Button({
-                        children: ["Increment"],
-                        onClick: () => this.setState({ 
-                                counter: this.state.counter + 1 
-                            })
-                    })
-                ]
-            })
+        return Button({
+            children: [`Clicked: ${this.state} times`],
+            onClick: () => this.setState(this.state + 1)
+        })
     }
 }
 
 Jeddy.Init({ app: new Main() });
  ```
+ This will render a page with a button. Clicking the button will increment the number of clicks.
 
 ### More Examples
 - TodoList [[Demo](https://jeddy-todo-list.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
@@ -77,13 +50,14 @@ Jeddy.Init({ app: new Main() });
 - Simple Table(With data fetch from API end point) [[Demo](https://jeddy-simple-table.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 > To list your cool project here open a PR or send the links to [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
 
+### Documentation
+You can find the JeddyJs documentation [here](https://jeddyjs.netlify.app/). Check out the [Getting Started](https://jeddyjs.netlify.app/) page for a quick overview. You can improve it by sending pull requests to [this repository](https://github.com/Jeraldy/JeddyJs).
+
 ### Browser Support
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png)
 | --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | Latest ✔ | 9.1+ ✔ | Latest ✔ |
 
-### Documentation
-You can find the JeddyJs documentation [here](https://jeddyjs.netlify.app/). Check out the [Getting Started](https://jeddyjs.netlify.app/) page for a quick overview. You can improve it by sending pull requests to [this repository](https://github.com/Jeraldy/JeddyJs).
 
 ### Contributors ✨
 Thanks goes to these wonderful people:

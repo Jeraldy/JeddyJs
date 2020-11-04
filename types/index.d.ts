@@ -17,11 +17,10 @@ export declare class StatefulWidget implements LifeCycleMethods {
     constructor(props?: any);
     setState(newState: any): any;
     private componentMounted;
-    connect(): any;
 }
 export declare const Jeddy: {
     Init({ app }: {
-        app: HTMLElement;
+        app: HTMLElement | StatefulWidget;
     }): void;
 };
 export {};
