@@ -25,6 +25,8 @@ jobs:
         provider: npm
         email: "$NPM_EMAIL"
         api_key: "$NPM_API_TOKEN"
+        access: "public"
+        tag: "beta"
         on:
           branch: master
       after_deploy:
@@ -40,6 +42,8 @@ jobs:
         provider: npm
         email: "$NPM_EMAIL"
         api_key: "$NPM_API_TOKEN"
+        access: "public"
+        tag: "beta"
         on:
           branch: master
       after_deploy:

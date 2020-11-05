@@ -52,20 +52,20 @@ rm -rf lib/**/**/*.js.map
 cp  src/css/*.d.ts lib/css
 
 ## Publish Jeddy Library
-# cd lib
+cd lib
 
-# npm version patch
+npm version patch
 # npm publish --access=public --tag beta
 
 # ## Publish Jeddy Types
-# cd ..
-# cd types 
+cd ..
+cd types 
 
-# npm version patch
+npm version patch
 # npm publish --access=public --tag beta
 
-# cd ..
+cd ..
 
 git add .
-git commit -m "bash cmd"
+git commit -m "travis ci"
 git push
