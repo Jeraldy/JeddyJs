@@ -20,11 +20,13 @@ jobs:
       script: echo "Deploying to npm ..."
       before_deploy: 
         - cd lib
+        - ls
       deploy:
         provider: npm
         email: "$NPM_EMAIL"
         api_key: "$NPM_TOKEN"
-        on: deploy-npm-release
+        on:
+          branch: master
       after_deploy:
         - cd ..
 
@@ -33,11 +35,12 @@ jobs:
       script: echo "Deploying to npm ..."
       before_deploy: 
         - cd types
+        - ls
       deploy:
         provider: npm
         email: "$NPM_EMAIL"
         api_key: "$NPM_TOKEN"
-        on: deploy-npm-release
+        on:
+          branch: master
       after_deploy:
-        - ls
         - cd ..
