@@ -39,4 +39,5 @@ jobs:
         api_key: "$NPM_TOKEN"
         on: deploy-npm-release
       after_deploy:
+        - ls
         - cd ..
