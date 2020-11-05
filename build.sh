@@ -22,7 +22,7 @@ mkdir -p types/css && cp src/css/*.d.ts types/css
 
 ## Compile
 npm run compile
-npm run test
+## npm run test
 
 ## Copy Types
 cp lib/*.d.ts types/

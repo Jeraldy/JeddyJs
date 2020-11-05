@@ -5,14 +5,16 @@ language: node_js
 node_js:
   - 10
 
-script:
-  - npm install
-
-script:
-  - npm test
-
 jobs:
   include:
+    - stage: npm install
+      node_js: "10"
+      script: npm install
+
+    - stage: npm test
+      node_js: "10"
+      script: npm test
+
     - stage: npm publish lib
       node_js: "10"
       script: echo "Deploying to npm ..."
@@ -25,6 +27,7 @@ jobs:
         on: deploy-npm-release
       after_deploy:
         - cd ..
+
     - stage: npm publish types
       node_js: "10"
       script: echo "Deploying to npm ..."
