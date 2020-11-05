@@ -1,0 +1,49 @@
+{
+  "name": "jeddy-redux-quick-start",
+  "version": "1.0.0",
+  "description": "jeddy-redux-quick-start",
+  "private": true,
+  "scripts": {
+    "start": "npm run jpx&&npm run jrun",
+    "jrun": "webpack-dev-server --open --config webpack.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "npm run jpx && npm run jbrm && webpack --config webpack.prod.js && npm run jbcp",
+    "jbrm": "run-script-os",
+    "jbrm:win32": "del -r build /S /Q",
+    "jbrm:darwin:linux": "rm -r build",
+    "jbcp": "run-script-os",
+    "jbcp:win32": "xcopy public build /S /Q /Y",
+    "jbcp:darwin:linux": "cp -a public/* build/",
+    "jpx": "run-script-os",
+    "jpx:win32": "xcopy node_modules\\jeddy-types node_modules\\@types\\jeddy\\ /S /Q /Y",
+    "jpx:darwin:linux": "cp -r node_modules/jeddy-types/* node_modules/@types/jeddy/"
+  },
+  "keywords": [],
+  "author": "Jeraldy Deus",
+  "license": "ISC",
+  "devDependencies": {
+    "@nx-js/observer-util": "^4.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^5.0.2",
+    "html-loader": "^1.3.2",
+    "jeddy": "1.0.186",
+    "jeddy-types": "1.0.186",
+    "node-sass": "^4.13.1",
+    "run-script-os": "^1.1.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^5.1.4"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.6",
+    "prismjs": "^1.22.0"
+  }
+}

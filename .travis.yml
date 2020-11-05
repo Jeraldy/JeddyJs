@@ -11,7 +11,29 @@ script:
 script:
   - npm test
 
-deploy:
-  provider: npm
-  email: "deusjeraldy@gmail.com"
-  api_key: "YOUR_AUTH_TOKEN"
+jobs:
+  include:
+    - stage: npm publish lib
+      node_js: "10"
+      script: echo "Deploying to npm ..."
+      before_deploy: 
+        - cd lib
+      deploy:
+        provider: npm
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_TOKEN"
+        on: deploy-npm-release
+      after_deploy:
+        - cd ..
+    - stage: npm publish types
+      node_js: "10"
+      script: echo "Deploying to npm ..."
+      before_deploy: 
+        - cd types
+      deploy:
+        provider: npm
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_TOKEN"
+        on: deploy-npm-release
+      after_deploy:
+        - cd ..

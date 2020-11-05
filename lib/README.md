@@ -27,9 +27,7 @@ import Button from "jeddy/dom/Button";
 
 class Main extends StatefulWidget {
     constructor() {
-        super()
         this.state = 0
-        return this.connect()
     }
 
     render() {
@@ -44,14 +42,16 @@ Jeddy.Init({ app: new Main() });
  ```
  This will render a page with a button. Clicking the button will increment the number of clicks.
 
-### More Examples
+#### *More Examples*
 - TodoList [[Demo](https://jeddy-todo-list.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 - Form Items [[Demo](https://jeddy-form-items.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
 - Simple Table(With data fetch from API end point) [[Demo](https://jeddy-simple-table.netlify.app/)] [[Code](https://github.com/Jeraldy/jeddy-example-projects)]
-> To list your cool project here open a PR or send the links to [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
+> To list your cool project here send a PR or a link to [jeraldydeus@gmail.com](jeraldydeus@gmail.com)
 
 ### Documentation
-You can find the JeddyJs documentation [here](https://jeddyjs.netlify.app/). Check out the [Getting Started](https://jeddyjs.netlify.app/) page for a quick overview. You can improve it by sending pull requests to [this repository](https://github.com/Jeraldy/JeddyJs).
+- You can find the JeddyJs documentation [here](https://jeddyjs.netlify.app/). 
+- Check out the [Getting Started](https://jeddyjs.netlify.app/) page for a quick overview. 
+- You can improve the docs by sending pull requests to [this repository](https://github.com/Jeraldy/JeddyJs).
 
 ### Browser Support
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png)
