@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
     name: 'RMediaQuery',
-    initialState: { device: 0, ...window.screen },
+    initialState: { device: 10 },
     reducers: {
         setMediaQuery(state, action) {
             return { ...action.payload }

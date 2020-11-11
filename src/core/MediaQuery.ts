@@ -4,7 +4,7 @@ import Device from "../utils/Device";
 const { setMediaQuery } = actions
 
 function updateMediaQuery() {
-    let device = 0
+    let device = 10
     if (window.matchMedia("(max-width: 321px)").matches) {
         device = Device.TINY //1
     } else if (window.matchMedia("(max-width: 480px)").matches) {

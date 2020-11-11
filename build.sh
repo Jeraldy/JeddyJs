@@ -67,5 +67,5 @@ npm version patch
 cd ..
 
 git add .
-git commit -m "travis ci"
+git commit -m "media query"
 git push

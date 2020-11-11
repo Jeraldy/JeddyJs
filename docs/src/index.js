@@ -6,7 +6,6 @@ import App from "./App";
 class Main extends StatefulWidget {
     constructor(props) {
         super(props)
-        return this.connect()
     }
     connectedCallBack() { updateState(this) }
     render() { 

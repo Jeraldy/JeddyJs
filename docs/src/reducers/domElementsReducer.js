@@ -7,6 +7,7 @@ const _reducer = createReducer({
         activePage: "Address",
         description: "The HTML <address> element indicates that the enclosed HTML provides contact information for a person or people, or for an organization.",
         stateKey: "Content Sectioning,Address,",
+        isLandingPage: true
     },
     reducers: {
         setActivePage(state, action) {
@@ -20,6 +21,12 @@ const _reducer = createReducer({
             return {
                 ...state,
                 activeMenu: action.payload,
+            }
+        },
+        toggleLandingPage(state) {
+            return {
+                ...state,
+                isLandingPage: !state.isLandingPage
             }
         },
         updateMenu(state, action) {

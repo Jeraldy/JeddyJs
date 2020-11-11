@@ -1,6 +1,6 @@
 import Div from "jeddy/dom/Div"
 import Row from "jeddy/layouts/Row";
-import RowAlignment from "jeddy/layouts/RowAlignment";
+import RowAlign from "jeddy/layouts/RowAlign";
 import Html from "../Html";
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
                             Html(`Released under the MIT License | 
                             Copyright © ${new Date().getFullYear()} Jeraldy Deus`)
                         ],
-                        align: RowAlignment.Center
+                        align: RowAlign.Center
                     })
                 ],
                 style: {

@@ -3,7 +3,7 @@ import P from "jeddy/dom/P";
 import Card from "jeddy/widgets/Card";
 import PrettyCode from "../../../PrettyCode";
 import Hr from "jeddy/dom/Hr";
-import RowAlignment from "jeddy/layouts/RowAlignment";
+import RowAlign from "jeddy/layouts/RowAlign";
 import Row from "jeddy/layouts/Row";
 import Center from "jeddy/layouts/Center";
 import Span from "jeddy/dom/Span";
@@ -29,11 +29,11 @@ const _Row = () => {
             }),
             PrettyCode(`
 import Row from "jeddy/layouts/Row";
-import RowAlignment from "jeddy/layouts/RowAlignment";
+import RowAlign from "jeddy/layouts/RowAlign";
 
 Row({
     children:["Children here"],
-    align: RowAlignment.Start,
+    align: RowAlign.Start,
     wrapContent: true // Specifies whether the flex items should wrap or not
      //... Any valid attribute/event
 })`),
@@ -50,7 +50,7 @@ import Row from "jeddy/layouts/Row";
 
 Row({
     children:["Children here"],
-    //align: RowAlignment.Start,
+    //align: RowAlign.Start,
     //wrapContent: true
 })`),
             Div({
@@ -66,16 +66,16 @@ Row({
                 style: { backgroundColor: "#D7EEEC", padding: "4px", padding: "4px" }
             }),
             P({
-                children: ILabel("2.RowAlignment.SpaceEvenly"),
+                children: ILabel("2.RowAlign.SpaceEvenly"),
                 style: { fontWeight: "bold", fontSize: "15px" }
             }),
             PrettyCode(`
 import Row from "jeddy/layouts/Row";
-import RowAlignment from "jeddy/layouts/RowAlignment";
+import RowAlign from "jeddy/layouts/RowAlign";
 
 Row({
     children:["Children here"],
-    align: RowAlignment.SpaceEvenly,
+    align: RowAlign.SpaceEvenly,
 })`),
             Div({
                 children: [
@@ -85,22 +85,22 @@ Row({
                             TextBox("2"),
                             TextBox("3")
                         ],
-                        align: RowAlignment.SpaceEvenly
+                        align: RowAlign.SpaceEvenly
                     })
                 ],
                 style: { backgroundColor: "#D7EEEC", padding: "4px", }
             }),
             P({
-                children: ILabel("3.RowAlignment.SpaceBetween"),
+                children: ILabel("3.RowAlign.SpaceBetween"),
                 style: { fontWeight: "bold", fontSize: "15px" }
             }),
             PrettyCode(`
 import Row from "jeddy/layouts/Row";
-import RowAlignment from "jeddy/layouts/RowAlignment";
+import RowAlign from "jeddy/layouts/RowAlign";
 
 Row({
     children:["Children here"],
-    align: RowAlignment.SpaceBetween,
+    align: RowAlign.SpaceBetween,
 })`),
             Div({
                 children: [
@@ -110,22 +110,22 @@ Row({
                             TextBox("2"),
                             TextBox("3")
                         ],
-                        align: RowAlignment.SpaceBetween
+                        align: RowAlign.SpaceBetween
                     })
                 ],
                 style: { backgroundColor: "#D7EEEC", padding: "4px", }
             }),
             P({
-                children:ILabel("4.RowAlignment.Center"),
+                children:ILabel("4.RowAlign.Center"),
                 style: { fontWeight: "bold", fontSize: "15px" }
             }),
             PrettyCode(`
 import Row from "jeddy/layouts/Row";
-import RowAlignment from "jeddy/layouts/RowAlignment";
+import RowAlign from "jeddy/layouts/RowAlign";
 
 Row({
     children:["Children here"],
-    align: RowAlignment.Center,
+    align: RowAlign.Center,
 })`),
             Div({
                 children: [
@@ -135,22 +135,22 @@ Row({
                             TextBox("2"),
                             TextBox("3")
                         ],
-                        align: RowAlignment.Center
+                        align: RowAlign.Center
                     })
                 ],
                 style: { backgroundColor: "#D7EEEC", padding: "4px", }
             }),
             P({
-                children: ILabel("5.RowAlignment.End"),
+                children: ILabel("5.RowAlign.End"),
                 style: { fontWeight: "bold", fontSize: "15px" }
             }),
             PrettyCode(`
 import Row from "jeddy/layouts/Row";
-import RowAlignment from "jeddy/layouts/RowAlignment";
+import RowAlign from "jeddy/layouts/RowAlign";
 
 Row({
     children:["Children here"],
-    align: RowAlignment.End,
+    align: RowAlign.End,
 })`),
             Div({
                 children: [
@@ -160,7 +160,7 @@ Row({
                             TextBox("2"),
                             TextBox("3")
                         ],
-                        align: RowAlignment.End
+                        align: RowAlign.End
                     })
                 ],
                 style: { backgroundColor: "#D7EEEC", padding: "4px", }

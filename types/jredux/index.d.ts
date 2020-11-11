@@ -1,13 +1,6 @@
 export declare const replaceReducer: (rootReducer: any) => void;
 export declare const register: (newReducers: any) => import("redux").CombinedState<{
     RMediaQuery: {
-        availHeight: number;
-        availWidth: number;
-        colorDepth: number;
-        height: number;
-        orientation: ScreenOrientation;
-        pixelDepth: number;
-        width: number;
         device: number;
     };
 }>;

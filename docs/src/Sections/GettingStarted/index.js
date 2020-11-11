@@ -15,7 +15,6 @@ import Step9 from "./Sections/Step9";
 import Step8 from "./Sections/Step8";
 import Step7 from "./Sections/Step7";
 import Step6 from "./Sections/Step6";
-import RowAlignment from "jeddy/layouts/RowAlignment";
 
 const GettingStarted = ({ activePart }) => {
     return  Row({

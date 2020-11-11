@@ -1,5 +1,5 @@
 import TextView from "jeddy/dom/TextView";
-import RowAlignment from "jeddy/layouts/RowAlignment";
+import RowAlign from "jeddy/layouts/RowAlign";
 //@ts-ignore
 import Icon from "jeddy/widgets/Icon";
 import Icons from "jeddy/utils/Icons";
@@ -93,7 +93,8 @@ export default ({
                             }),
                             endItem(children, stateKey, key, pending)
                         ],
-                        align: RowAlignment.SpaceBetween,
+                        align: RowAlign.SpaceBetween,
+                        //@ts-ignore
                         wrapContent: false
                     })
                 ],

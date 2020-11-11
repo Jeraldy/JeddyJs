@@ -19,7 +19,7 @@ const Menu = ({ activeMenu }) => {
             fontWeight: "bold",
             width: "200px",
             position: "fixed",
-            top: "60px",
+            top: "80px",
             left: "60px"
         }
     })
