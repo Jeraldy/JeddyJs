@@ -2,11 +2,41 @@ import Row from "jeddy/layouts/Row"
 import Card from "jeddy/widgets/Card";
 import Menu from "./Menu/index";
 import Div from "jeddy/dom/Div";
-import { connect } from "jeddy/jredux";
+import { connect, dispatch } from "jeddy/jredux";
 import _Card from "./Sections/_Card";
 import _Icon from "./Sections/_Icon";
+import Device from "jeddy/utils/Device";
 
-const Widget = ({ activePart }) => {
+const Widget = ({ activePart, device, isSmallMenuOpen }) => {
+    const isSmall = (device <= Device.TABLET && device != 0)
+    if (isSmall) {
+        return Div({
+            children: [
+                Card({
+                    children: [
+                        isSmallMenuOpen ? Div({
+                            children: [Menu()],
+                        }) : null
+                    ],
+                    style: {
+                        width: isSmallMenuOpen ? "200px" : "0px",
+                        position: "fixed",
+                        top: "140px",
+                        overflowY: "scroll",
+                        transition: "width .2s",
+                        zIndex: 1
+                    }
+                }),
+                Card({
+                    children: [activeSection(activePart)],
+                    style: {
+                        borderRadius: "8px",
+                        padding: "10px",
+                    }
+                })
+            ]
+        })
+    }
     return Row({
         children: [
             Div({
@@ -35,6 +65,10 @@ function activeSection(activePart) {
     return "Not implemented.!"
 }
 
-const mapStateToProps = (state) => ({ ...state.widgetReducer })
+const mapStateToProps = (state) => ({
+    ...state.widgetReducer,
+    isSmallMenuOpen: state.gettingStartedReducer.isSmallMenuOpen,
+    device: state.RMediaQuery.device
+})
 
 export default connect(mapStateToProps)(Widget);

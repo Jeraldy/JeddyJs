@@ -34,12 +34,12 @@ function _updateState(context) {
 }
 
 export const connect = (mapStoreToState, index = 0) => {
-    return (widget) => (args) => {
+    return (widget) => (...args) => {
         if (widget.onInit && index == 1) {
             widget.onInit()
         }
         index += 1;
-        return widget(mapStoreToState(store.getState()), args)
+        return widget(mapStoreToState(store.getState()), ...args)
     }
 }
 

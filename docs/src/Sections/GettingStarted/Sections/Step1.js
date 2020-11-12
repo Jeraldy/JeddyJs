@@ -9,7 +9,7 @@ const Step1 = () => {
     return Div({
         children: [
             P({
-                children: ["Main State"],
+                children: ["Introduction"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "20px"
@@ -17,7 +17,7 @@ const Step1 = () => {
             }),
             Hr(),
             P({
-                children: ["Prerequisites"],
+                children: ["Pre-requisites"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "15px"

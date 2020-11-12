@@ -10,7 +10,7 @@ const Step9 = () => {
     return Div({
         children: [
             P({
-                children: ["Redux State"],
+                children: ["Connecting reducers"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "20px"
@@ -32,13 +32,6 @@ const Step9 = () => {
                 ],
                 style: {
                     marginTop: "20px"
-                }
-            }),
-            P({
-                children: ["Connecting reducers"],
-                style: {
-                    fontWeight: "bold",
-                    fontSize: "15px"
                 }
             }),
             Div({

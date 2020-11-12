@@ -9,7 +9,7 @@ const Step10 = () => {
     return Div({
         children: [
             P({
-                children: ["Redux State"],
+                children: ["Deployment"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "20px"
@@ -30,13 +30,6 @@ const Step10 = () => {
                     })
                 ],
                 style: { marginTop: "20px" }
-            }),
-            P({
-                children: ["Deployment"],
-                style: {
-                    fontWeight: "bold",
-                    fontSize: "15px"
-                }
             }),
             PrettyCode(`$ npm run build`),
             Div({

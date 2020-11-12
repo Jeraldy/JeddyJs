@@ -80,9 +80,9 @@ const TopBar = ({ }) => {
         ],
         style: {
             height: '60px',
-            //position: "fixed",
-             //width: "100vw",
-            // top: "0",
+            position: "fixed",
+            width: "100%",
+        //    top: "0",
             zIndex: "1"
         }
     })

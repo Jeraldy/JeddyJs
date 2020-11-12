@@ -8,7 +8,7 @@ const Step4 = () => {
     return Div({
         children: [
             P({
-                children: ["Main State"],
+                children: ["UI Update"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "20px"
@@ -16,7 +16,6 @@ const Step4 = () => {
             }),
             Hr(),
             P({
-                children: ["UI Update"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "15px"

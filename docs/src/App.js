@@ -10,14 +10,18 @@ import Widgets from "./Sections/Widgets/index";
 import Layouts from "./Sections/Layouts/index";
 import Footer from "./Footer/index";
 import Landing from "./Landing/index";
+import Device from "jeddy/utils/Device";
+import Fab from "./Menu/Fab";
+import MenuMobile from "./Menu/MenuMobile";
 
-const App = ({ activeMenu, isLandingPage }) => {
+const App = ({ activeMenu, isLandingPage, device }) => {
+    const isSmall = (device <= Device.TABLET && device != 0)
     if (isLandingPage) {
         return Div({
             children: [
                 Toolbar(),
                 Landing(),
-                // Footer()
+                Footer()
             ],
             style: { width: "100vw", height: "100%" }
         })
@@ -25,17 +29,21 @@ const App = ({ activeMenu, isLandingPage }) => {
     return Div({
         children: [
             Toolbar(),
-            Menu(),
+            isSmall ? MenuMobile() : Menu(),
             Div({
-                children: [activeSection(activeMenu)],
+                children: [
+                    activeSection(activeMenu)
+                ],
                 style: {
-                    paddingLeft: "100px",
-                    margin: "80px 50px 60px 220px"
+                    padding: "10px",
+                    paddingTop: isSmall ? "10px" : "80px",
+                    paddingLeft: isSmall ? "" : "300px"
                 }
             }),
+            isSmall ? Fab() : null,
             Footer()
         ],
-        style: { width: "100%", backgroundColor: "white" }
+        style: {  backgroundColor: "white" }
     })
 }
 
@@ -43,7 +51,7 @@ function activeSection(section) {
     switch (section) {
         case "Getting Started":
             return GettingStarted()
-        case "Dom Elements":
+        case "Elements":
             return DomElements()
         case "Widgets":
             return Widgets()
@@ -53,6 +61,9 @@ function activeSection(section) {
     return "Not Available for now.!"
 }
 
-const mapStateToProps = (state) => ({ ...state.domElementsReducer })
+const mapStateToProps = (state) => ({
+    ...state.domElementsReducer,
+    ...state.RMediaQuery
+})
 
 export default connect(mapStateToProps)(App)

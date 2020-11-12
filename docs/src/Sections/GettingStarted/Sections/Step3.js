@@ -7,20 +7,13 @@ const Step3 = () => {
     return Div({
         children: [
             P({
-                children: ["Main State"],
+                children: ["Event Listeners"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "20px"
                 }
             }),
             Hr(),
-            P({
-                children: ["Event Listeners"],
-                style: {
-                    fontWeight: "bold",
-                    fontSize: "15px"
-                }
-            }),
             Div({
                 children: [
                     ` Let’s create a counter variable inside the state to keep track of our counts.

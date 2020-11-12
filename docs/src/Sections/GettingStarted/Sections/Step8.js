@@ -11,7 +11,7 @@ const Step8 = () => {
     return Div({
         children: [
             P({
-                children: ["Redux State"],
+                children: ["Refactoring"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "20px"
@@ -33,13 +33,6 @@ const Step8 = () => {
                 ],
                 style: {
                     marginTop: "20px"
-                }
-            }),
-            P({
-                children: ["Refactoring"],
-                style: {
-                    fontWeight: "bold",
-                    fontSize: "15px"
                 }
             }),
             Div({

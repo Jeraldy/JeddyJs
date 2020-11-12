@@ -5,7 +5,8 @@ import CollapsibleGroup from "../../../Collapse/CollapsibleGroup";
 import { connect, dispatch } from "jeddy/jredux";
 import { actions } from "../../../reducers/widgetReducer";
 import Menus from "./Menus";
-
+import { actions as _actions} from "../../../reducers/gettingStartedReducer";
+const { toggleSmallMenu } = _actions
 const { updateMenu, setActivePart } = actions
 
 const Menu = ({ stateKey }) => {
@@ -34,6 +35,7 @@ function createMenu(children, stateKey, updateMenu, menu = []) {
                 dispatch(updateMenu(stateKey))
                 if (item.onClick) {
                     item.onClick()
+                    dispatch(toggleSmallMenu())
                 }
             },
         }

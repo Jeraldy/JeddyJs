@@ -11,6 +11,7 @@ import Device from "jeddy/utils/Device";
 const { toggleLandingPage } = actions
 
 const Landing = ({ device }) => {
+    const isSmall = (device <= Device.MOBILE && device != 0)
     return Div({
         children: [
             Center({
@@ -42,11 +43,11 @@ const Landing = ({ device }) => {
                                             children: [
                                                 Div({
                                                     children: [
-                                                        "Create Web UIs using pure javascript (No HTML Tags). It helps you write clean, reusable and maintainable code."
+                                                        "Create Web UIs using pure javascript (No HTML Tags). Jeddy  helps you write clean, reusable and maintainable code."
                                                     ],
                                                     style: {
                                                         fontSize: "18px",
-                                                        //width: "500px",
+                                                        width: isSmall ? "" : "500px",
                                                         textAlign: "center",
                                                         marginBottom: "20px"
                                                     }
@@ -62,66 +63,69 @@ const Landing = ({ device }) => {
                                         })
                                     ],
                                     style: {
-                                        fontSize: (device <= Device.MOBILE && device != 0) ? "40px" : "70px",
+                                        fontSize: isSmall ? "40px" : "70px",
                                         color: "black",
                                         textAlign: "center"
                                     }
                                 })
                             ],
                         }),
-                        // Div({
-                        //     children: [
-                        //         Row({
-                        //             children: [
-                        //                 Card({
-                        //                     style: {
-                        //                         height: "50px",
-                        //                         width: "200px",
-                        //                         borderRadius: "20px",
-                        //                         border: "2px solid #B1FF7C",
-                        //                         cursor: "pointer"
-                        //                     },
-                        //                     children: [
-                        //                         Center({
-                        //                             child: "GIT HUB"
-                        //                         })
-                        //                     ],
-                        //                     onClick: () => {
-                        //                         let win = window.open("https://github.com/Jeraldy/JeddyJs", '_blank');
-                        //                         win.focus();
-                        //                     }
-                        //                 }),
-                        //                 Card({
-                        //                     style: {
-                        //                         height: "50px",
-                        //                         width: "200px",
-                        //                         borderRadius: "20px",
-                        //                         backgroundColor: "#42a5f5",
-                        //                         color: "white",
-                        //                         cursor: "pointer"
-                        //                     },
-                        //                     children: [
-                        //                         Center({
-                        //                             child: "GET STARTED"
-                        //                         })
-                        //                     ],
-                        //                     onClick: () => dispatch(toggleLandingPage())
-                        //                 })
-                        //             ],
-                        //             align: RowAlign.SpaceEvenly
-                        //         })
-                        //     ],
-                        //     style: {
-                        //         marginTop: "50px"
-                        //     }
-                        // })
+                        Div({
+                            children: [
+                                Row({
+                                    children: [
+                                        Card({
+                                            style: {
+                                                height: isSmall ? "30px" : "50px",
+                                                width: isSmall ? "150px" : "200px",
+                                                borderRadius: "20px",
+                                                border: "2px solid #B1FF7C",
+                                                cursor: "pointer"
+                                            },
+                                            children: [
+                                                Center({
+                                                    child: "GIT HUB"
+                                                })
+                                            ],
+                                            onClick: () => {
+                                                let win = window.open("https://github.com/Jeraldy/JeddyJs", '_blank');
+                                                win.focus();
+                                            }
+                                        }),
+                                        Div({ style: { width: isSmall ? "10px" : "0px" } }),
+                                        Card({
+                                            style: {
+                                                height: isSmall ? "30px" : "50px",
+                                                width: isSmall ? "150px" : "200px",
+                                                borderRadius: "20px",
+                                                backgroundColor: "#42a5f5",
+                                                border: "2px solid #42a5f5",
+                                                color: "white",
+                                                cursor: "pointer"
+                                            },
+                                            children: [
+                                                Center({
+                                                    child: "GET STARTED"
+                                                })
+                                            ],
+                                            onClick: () => dispatch(toggleLandingPage()),
+                                            role: "button"
+                                        })
+                                    ],
+                                    align: RowAlign.SpaceEvenly
+                                })
+                            ],
+                            style: {
+                                marginTop: "50px"
+                            }
+                        })
                     ]
                 })
             })
         ],
         style: {
             padding: "50px",
-            ///height: "70%"
+            paddingTop: "90px"
         }
     })
 }

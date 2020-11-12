@@ -7,9 +7,9 @@ const Menu = ({ activeMenu }) => {
     return Div({
         children: [
             MenuItem("Getting Started", activeMenu),
-            MenuItem("Dom Elements", activeMenu),
             MenuItem("Layouts", activeMenu),
             MenuItem("Widgets", activeMenu),
+            MenuItem("Elements", activeMenu),
             // MenuItem("Templates", activeMenu),
             // MenuItem("Redux", activeMenu),
             // MenuItem("Tutorials", activeMenu),
@@ -20,7 +20,7 @@ const Menu = ({ activeMenu }) => {
             width: "200px",
             position: "fixed",
             top: "80px",
-            left: "60px"
+            left: "60px",
         }
     })
 }

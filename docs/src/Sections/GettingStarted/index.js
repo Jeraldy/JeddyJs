@@ -15,11 +15,40 @@ import Step9 from "./Sections/Step9";
 import Step8 from "./Sections/Step8";
 import Step7 from "./Sections/Step7";
 import Step6 from "./Sections/Step6";
+import Device from "jeddy/utils/Device";
 
-const GettingStarted = ({ activePart }) => {
-    return  Row({
+const GettingStarted = ({ activePart, device, isSmallMenuOpen }) => {
+    const isSmall = (device <= Device.TABLET && device != 0)
+    if (isSmall) {
+        return Div({
+            children: [
+                Card({
+                    children: [
+                        isSmallMenuOpen ? Div({
+                            children: [Menu(), PartII()],
+                        }) : null
+                    ],
+                    style: {
+                        width: isSmallMenuOpen ? "200px" : "0px",
+                        position: "fixed",
+                        top: "140px",
+                        overflowY: "scroll",
+                        transition: "width .2s",
+                        zIndex: 1
+                    }
+                }),
+                Card({
+                    children: [activeSection(activePart)],
+                    style: {
+                        borderRadius: "8px",
+                        padding: "10px",
+                    }
+                }),
+            ]
+        })
+    }
+    return Row({
         children: [
-   
             Div({
                 children: [
                     Div({
@@ -45,7 +74,7 @@ const GettingStarted = ({ activePart }) => {
                     marginLeft: "50px",
                     borderRadius: "8px",
                     padding: "10px",
-                    marginRight: "50px"
+                    marginRight: "50px",
                 }
             }),
         ],
@@ -68,7 +97,9 @@ function activeSection(activePart) {
     }
 }
 
-const mapStateToProps = (state) => {
-    return { ...state.gettingStartedReducer, }
-}
+const mapStateToProps = (state) => ({
+    ...state.gettingStartedReducer,
+    ...state.RMediaQuery
+})
+
 export default connect(mapStateToProps)(GettingStarted);

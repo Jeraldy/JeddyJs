@@ -7,20 +7,13 @@ const Step5 = () => {
     return Div({
         children: [
             P({
-                children: ["Main State"],
+                children: ["Styling"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "20px"
                 }
             }),
             Hr(),
-            P({
-                children: ["Styling"],
-                style: {
-                    fontWeight: "bold",
-                    fontSize: "15px"
-                }
-            }),
             Div({
                 children: [
                     `Styling in JeddyJs is simple. You can write inline css or write a separate file and then import it.

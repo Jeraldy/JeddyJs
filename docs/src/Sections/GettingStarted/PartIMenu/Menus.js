@@ -1,7 +1,7 @@
 export default (selectedItem) => {
     return [
         {
-            label: "1. Installation",
+            label: "1. Introduction",
             onClick: () => {
                 selectedItem(1)
                 console.log("Hollaaa")

@@ -43,14 +43,13 @@ Card({
                     Card({
                         style: {
                             height: "200px",
-                            width: "300px"
+                            width: "200px"
                         }
                     })
                 ],
                 style: {
                     backgroundColor: "#D7EEEC",
-                    padding: "50px",
-                    paddingLeft: "100px"
+                    padding: "20px",
                 }
             })
         ],

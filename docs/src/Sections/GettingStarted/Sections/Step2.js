@@ -8,20 +8,13 @@ const Step2 = () => {
     return Div({
         children: [
             P({
-                children: ["Main State"],
+                children: ["Folder Structure"],
                 style: {
                     fontWeight: "bold",
                     fontSize: "20px"
                 }
             }),
             Hr(),
-            P({
-                children: ["Folder Structure"],
-                style: {
-                    fontWeight: "bold",
-                    fontSize: "15px"
-                }
-            }),
             Div({
                 children: [
                     PrettyCode(
