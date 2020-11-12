@@ -15,7 +15,7 @@ import Fab from "./Menu/Fab";
 import MenuMobile from "./Menu/MenuMobile";
 
 const App = ({ activeMenu, isLandingPage, device }) => {
-    const isSmall = (device <= Device.TABLET && device != 0)
+    const isSmall = device <= Device.TABLET
     if (isLandingPage) {
         return Div({
             children: [
@@ -23,7 +23,7 @@ const App = ({ activeMenu, isLandingPage, device }) => {
                 Landing(),
                 Footer()
             ],
-            style: { width: "100vw", height: "100%" }
+            style: { height: "100%" }
         })
     }
     return Div({
@@ -43,7 +43,7 @@ const App = ({ activeMenu, isLandingPage, device }) => {
             isSmall ? Fab() : null,
             Footer()
         ],
-        style: {  backgroundColor: "white" }
+        style: { backgroundColor: "white" }
     })
 }
 

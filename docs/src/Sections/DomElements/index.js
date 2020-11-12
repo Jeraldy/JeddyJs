@@ -6,12 +6,10 @@ import { connect } from "jeddy/jredux";
 import Div from "jeddy/dom/Div";
 import Device from "jeddy/utils/Device";
 
-export default connect((state) => ({
-    ...state.gettingStartedReducer,
-    ...state.RMediaQuery
-}))
+export default connect((state) =>
+    ({ ...state.gettingStartedReducer, ...state.RMediaQuery }))
     (({ device, isSmallMenuOpen }) => {
-        const isSmall = (device <= Device.TABLET && device != 0)
+        const isSmall = device <= Device.TABLET
         if (isSmall) {
             return Div({
                 children: [
@@ -26,7 +24,7 @@ export default connect((state) => ({
                             position: "fixed",
                             top: "140px",
                             overflowY: "scroll",
-                            height:"70vh",
+                            height: "70vh",
                             transition: "width .2s",
                             zIndex: 1
                         }

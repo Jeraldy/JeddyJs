@@ -6,9 +6,9 @@ import Center from "jeddy/layouts/Center";
 import { connect, dispatch } from "jeddy/jredux";
 import Img from "jeddy/dom/Img";
 import LOGO from "../Assets/logo.png";
-console.log(LOGO)
 import { actions } from "../reducers/domElementsReducer";
 const {  toggleLandingPage } = actions
+
 const TopBar = ({ }) => {
     return Card({
         children: [

@@ -5,46 +5,46 @@ language: node_js
 node_js:
   - 10
 
-jobs:
-  include:
-    - stage: npm install
-      node_js: "10"
-      script: npm install
+# jobs:
+#   include:
+#     - stage: npm install
+#       node_js: "10"
+#       script: npm install
 
-    - stage: npm test
-      node_js: "10"
-      script: npm test
+#     - stage: npm test
+#       node_js: "10"
+#       script: npm test
 
-    - stage: npm publish lib
-      node_js: "10"
-      script: echo "Deploying to npm ..."
-      before_deploy: 
-        - cd lib
-        - ls
-      deploy:
-        provider: npm
-        email: "$NPM_EMAIL"
-        api_key: "$NPM_API_TOKEN"
-        access: "public"
-        tag: "beta"
-        on:
-          branch: master
-      after_deploy:
-        - cd ..
+#     - stage: npm publish lib
+#       node_js: "10"
+#       script: echo "Deploying to npm ..."
+#       before_deploy: 
+#         - cd lib
+#         - ls
+#       deploy:
+#         provider: npm
+#         email: "$NPM_EMAIL"
+#         api_key: "$NPM_API_TOKEN"
+#         access: "public"
+#         tag: "beta"
+#         on:
+#           branch: master
+#       after_deploy:
+#         - cd ..
 
-    - stage: npm publish types
-      node_js: "10"
-      script: echo "Deploying to npm ..."
-      before_deploy: 
-        - cd types
-        - ls
-      deploy:
-        provider: npm
-        email: "$NPM_EMAIL"
-        api_key: "$NPM_API_TOKEN"
-        access: "public"
-        tag: "beta"
-        on:
-          branch: master
-      after_deploy:
-        - cd ..
+#     - stage: npm publish types
+#       node_js: "10"
+#       script: echo "Deploying to npm ..."
+#       before_deploy: 
+#         - cd types
+#         - ls
+#       deploy:
+#         provider: npm
+#         email: "$NPM_EMAIL"
+#         api_key: "$NPM_API_TOKEN"
+#         access: "public"
+#         tag: "beta"
+#         on:
+#           branch: master
+#       after_deploy:
+#         - cd ..

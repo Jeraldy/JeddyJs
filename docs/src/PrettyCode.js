@@ -2,8 +2,9 @@ import Prism from 'prismjs';
 import Code from 'jeddy/dom/Code';
 import Pre from 'jeddy/dom/Pre';
 import { connect } from 'jeddy/jredux';
+import Device from 'jeddy/utils/Device';
 
-const PrettyCode = ({ }, code, lang = "javascript") => {
+const PrettyCode = ({ device }, code, lang = "javascript") => {
     let html = Prism.highlight(code, Prism.languages.javascript, 'javascript');
     if (lang != "javascript") {
         html = Prism.highlight(code, Prism.languages.html, 'html')
@@ -20,7 +21,7 @@ const PrettyCode = ({ }, code, lang = "javascript") => {
             borderRadius: "8px",
             border: "none",
             borderLeft: "4px solid #ccc",
-            overflowX: "scroll"
+            overflowX: device > Device.TABLET ? "" : "scroll"
         }
     })
 }
