@@ -55,14 +55,14 @@ cp  src/css/*.d.ts lib/css
 cd lib
 
 npm version patch
-# npm publish --access=public --tag beta
+npm publish --access=public --tag beta
 
 # ## Publish Jeddy Types
 cd ..
 cd types 
 
 npm version patch
-# npm publish --access=public --tag beta
+npm publish --access=public --tag beta
 
 cd ..
 
