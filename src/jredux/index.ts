@@ -3,7 +3,7 @@ import { reducer as RMediaQuery } from './reducer';
 import { combineReducers } from 'redux';
 
 let reducers = { RMediaQuery }
-const store = configureStore({ reducer: combineReducers({ ...reducers }) })
+export const store = configureStore({ reducer: combineReducers({ ...reducers }) })
 
 export const replaceReducer = (rootReducer) => {
     store.replaceReducer(rootReducer)

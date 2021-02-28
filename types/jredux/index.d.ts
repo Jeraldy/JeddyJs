@@ -1,3 +1,16 @@
+export declare const store: import("@reduxjs/toolkit").EnhancedStore<import("redux").CombinedState<{
+    RMediaQuery: {
+        device: number;
+    };
+}>, import("redux").AnyAction, [import("redux-thunk").ThunkMiddleware<import("redux").CombinedState<{
+    RMediaQuery: {
+        device: number;
+    };
+}>, import("redux").AnyAction, null> | import("redux-thunk").ThunkMiddleware<import("redux").CombinedState<{
+    RMediaQuery: {
+        device: number;
+    };
+}>, import("redux").AnyAction, undefined>]>;
 export declare const replaceReducer: (rootReducer: any) => void;
 export declare const register: (newReducers: any) => import("redux").CombinedState<{
     RMediaQuery: {
