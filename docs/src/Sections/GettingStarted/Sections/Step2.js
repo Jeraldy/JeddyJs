@@ -64,7 +64,6 @@ import Div from "jeddy/dom/Div";
 class Main extends StatefulWidget {
     constructor() {
         super()
-        return this.connect()
     }
     render() {
         return Div({

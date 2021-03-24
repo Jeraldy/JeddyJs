@@ -66,7 +66,6 @@ class Main extends StatefulWidget {
         this.state = { 
             counter: 0
         }
-        return this.connect()
     }
 
     handleIncrement() {
