@@ -65,11 +65,11 @@ npm version patch
 npm publish --access=public --tag beta
 
 ## Publish Jeddy Types
-cd ..
-cd jeddy-scripts 
+# cd ..
+# cd jeddy-scripts 
 
-npm version patch
-npm publish --access=public --tag beta
+# npm version patch
+# npm publish --access=public --tag beta
 
 cd ..
 
