@@ -57,9 +57,16 @@ cd lib
 npm version patch
 npm publish --access=public --tag beta
 
-# ## Publish Jeddy Types
+## Publish Jeddy Types
 cd ..
 cd types 
+
+npm version patch
+npm publish --access=public --tag beta
+
+## Publish Jeddy Types
+cd ..
+cd jeddy-scripts 
 
 npm version patch
 npm publish --access=public --tag beta
@@ -67,5 +74,5 @@ npm publish --access=public --tag beta
 cd ..
 
 git add .
-git commit -m "redux store"
+git commit -m "jeddy-scripts"
 git push

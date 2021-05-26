@@ -1,0 +1,8 @@
+{
+  "name": "jeddy-scripts",
+  "version": "0.0.2",
+  "main": "./index.js",
+  "bin": "./index.js",
+  "author": "Jeraldy Deus | deusjeraldy@gmail.com",
+  "license": "ISC"
+}
