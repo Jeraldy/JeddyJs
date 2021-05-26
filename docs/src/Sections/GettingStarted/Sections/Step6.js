@@ -25,7 +25,7 @@ const Step6 = () => {
                     "And the source code ",
                     A({
                         children: ["here."],
-                        href: "https://github.com/Jeraldy/jeddy-redux-quick-start"
+                        href: "https://github.com/Jeraldy/jredux-quick-start"
                     })
                 ],
                 style: {

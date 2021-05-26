@@ -9,7 +9,8 @@ module.exports = merge(common, {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
     port: 9000,
-    hot: true
+    hot: true,
+    overlay: true
   },
   output: {
     filename: 'app.bundle.js',
