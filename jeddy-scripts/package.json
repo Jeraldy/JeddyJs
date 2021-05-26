@@ -1,8 +1,11 @@
 {
   "name": "jeddy-scripts",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "./index.js",
   "bin": "./index.js",
   "author": "Jeraldy Deus | deusjeraldy@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.0.0"
+  }
 }
