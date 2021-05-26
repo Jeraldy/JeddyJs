@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var args = process.argv.splice(2)[0]
 const fse = require('fs-extra');
 var exec = require('child_process').exec;
