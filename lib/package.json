@@ -1,6 +1,6 @@
 {
   "name": "jeddy",
-  "version": "1.0.198",
+  "version": "1.0.199",
   "main": "./index.js",
   "types": "./index.d.ts",
   "description": "Reactive UI building Framework",
@@ -13,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^1.3.6",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "jeddy-types": "*",
+    "jeddy-scripts": "*"
   }
 }

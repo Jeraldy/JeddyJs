@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 var args = process.argv.splice(2)[0]
 const fse = require('fs-extra');
 var exec = require('child_process').exec;
@@ -22,9 +21,11 @@ switch (args) {
 function startServer() {
     var cmd = exec('webpack-dev-server --open --config webpack.dev.js');
     cmd.stdout.on('data', (data) => console.log(data));
+    cmd.stderr.on('data', (data) =>  console.error(data));
 }
 
 function buildScript() {
     var cmd = exec('webpack --config webpack.prod.js');
     cmd.stdout.on('data', (data) => console.log(data));
+    cmd.stderr.on('data', (data) =>  console.error(data));
 }
